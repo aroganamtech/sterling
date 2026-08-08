@@ -1,0 +1,348 @@
+export const standardFamilies = [
+  {
+    code: 'EN',
+    name: 'European Standards',
+    body: 'CEN / European Committee for Standardization',
+    summary:
+      'The EN 12101 series is the primary product and system standard family for smoke and heat control. It defines both the performance classes for equipment and the design basis for complete systems.',
+    parts: [
+      ['EN 12101-1', 'Smoke barriers / smoke curtains'],
+      ['EN 12101-2', 'Natural smoke and heat exhaust ventilators'],
+      ['EN 12101-3', 'Powered smoke and heat exhaust ventilators'],
+      ['EN 12101-6', 'Pressure differential systems'],
+      ['EN 12101-7', 'Smoke duct sections'],
+      ['EN 12101-8', 'Smoke control dampers'],
+      ['EN 12101-9', 'Control panels'],
+      ['EN 12101-10', 'Power supplies'],
+      ['EN 12101-13', 'Pressure differential systems — design and calculation'],
+    ],
+  },
+  {
+    code: 'NFPA',
+    name: 'National Fire Protection Association',
+    body: 'NFPA, United States',
+    summary:
+      'NFPA documents give the design methodology most commonly referenced on international projects, particularly for atria, transport tunnels and large-volume smoke management.',
+    parts: [
+      ['NFPA 92', 'Standard for Smoke Control Systems'],
+      ['NFPA 204', 'Standard for Smoke and Heat Venting'],
+      ['NFPA 130', 'Fixed Guideway Transit and Passenger Rail Systems'],
+      ['NFPA 502', 'Road Tunnels, Bridges and Limited Access Highways'],
+      ['NFPA 88A', 'Parking Structures'],
+      ['NFPA 101', 'Life Safety Code'],
+      ['NFPA 75', 'Information Technology Equipment'],
+      ['NFPA 850', 'Electric Generating Plants'],
+    ],
+  },
+  {
+    code: 'BS',
+    name: 'British Standards',
+    body: 'BSI, United Kingdom',
+    summary:
+      'BS documents remain widely used across the region for smoke ventilation design guidance and for the overall fire safety design of buildings.',
+    parts: [
+      ['BS 7346-4', 'Functional recommendations for smoke and heat exhaust'],
+      ['BS 7346-7', 'Code of practice — car park ventilation'],
+      ['BS 7346-8', 'Code of practice — smoke control systems'],
+      ['BS 9999', 'Fire safety in the design and use of buildings'],
+      ['BS 9991', 'Fire safety — residential buildings'],
+      ['BS EN 12101-13', 'Pressure differential systems — design'],
+    ],
+  },
+  {
+    code: 'ASHRAE',
+    name: 'ASHRAE',
+    body: 'American Society of Heating, Refrigerating and Air-Conditioning Engineers',
+    summary:
+      'ASHRAE guidance underpins the airflow, pressurisation and HVAC interface engineering that smoke control depends on.',
+    parts: [
+      ['ASHRAE Handbook — HVAC Applications', 'Fire and smoke control chapter'],
+      ['Handbook of Smoke Control Engineering', 'Design methodology and calculation'],
+      ['ASHRAE 62.1', 'Ventilation for acceptable indoor air quality'],
+    ],
+  },
+  {
+    code: 'IBC',
+    name: 'International Building Code',
+    body: 'International Code Council',
+    summary:
+      'The IBC sets the prescriptive framework for smoke control in jurisdictions that adopt the I-Codes, including atrium, underground and covered mall provisions.',
+    parts: [
+      ['IBC Chapter 9', 'Fire protection and life safety systems'],
+      ['IBC Section 909', 'Smoke control systems'],
+      ['IBC Section 404', 'Atriums'],
+      ['IBC Section 405', 'Underground buildings'],
+    ],
+  },
+  {
+    code: 'SCDF',
+    name: 'SCDF Fire Code',
+    body: 'Singapore Civil Defence Force',
+    summary:
+      'The Singapore Fire Code governs smoke control provisions for projects in Singapore, including engineering performance-based submissions.',
+    parts: [
+      ['Fire Code Chapter 7', 'Mechanical ventilation and smoke control'],
+      ['Fire Code Chapter 8', 'Fire safety provisions for specific occupancies'],
+      ['Fire Safety Engineering', 'Performance-based submission requirements'],
+    ],
+  },
+];
+
+export const complianceMatrix = {
+  columns: ['EN 12101', 'NFPA 92', 'NFPA 130 / 502', 'BS 7346 / BS 9999', 'ASHRAE', 'IBC 909', 'SCDF'],
+  rows: [
+    { type: 'Shopping Malls & Atria', values: [3, 3, 0, 3, 2, 2, 3] },
+    { type: 'Commercial Towers', values: [3, 3, 0, 3, 2, 2, 3] },
+    { type: 'Hotels', values: [3, 2, 0, 3, 2, 2, 3] },
+    { type: 'Hospitals', values: [3, 3, 0, 2, 3, 2, 3] },
+    { type: 'Airports', values: [3, 3, 1, 2, 2, 2, 3] },
+    { type: 'Metro & Rail', values: [2, 1, 3, 1, 1, 1, 2] },
+    { type: 'Road Tunnels', values: [2, 0, 3, 0, 1, 0, 2] },
+    { type: 'Car Parks', values: [3, 2, 0, 3, 2, 2, 3] },
+    { type: 'Warehouses', values: [3, 3, 0, 2, 1, 2, 3] },
+    { type: 'Industrial Plants', values: [3, 3, 0, 2, 2, 2, 2] },
+    { type: 'Data Centres', values: [2, 3, 0, 1, 3, 2, 2] },
+  ],
+  legend: [
+    { level: 3, label: 'Primary basis of design' },
+    { level: 2, label: 'Commonly referenced' },
+    { level: 1, label: 'Applies in part' },
+    { level: 0, label: 'Not typically applicable' },
+  ],
+};
+
+export const library = [
+  {
+    category: 'White Papers',
+    items: [
+      { title: 'Sizing smoke reservoirs in tall atria', meta: '12 pages · PDF', note: 'Reservoir depth, spill plumes and the practical limits of channelling.' },
+      { title: 'Why pressurisation systems fail the door-force test', meta: '9 pages · PDF', note: 'Leakage assumptions, relief sizing and the dynamic case.' },
+      { title: 'Impulse ventilation in basement car parks', meta: '14 pages · PDF', note: 'Thrust, stagnation zones and CFD verification practice.' },
+    ],
+  },
+  {
+    category: 'Technical Guides',
+    items: [
+      { title: 'Smoke control system selection guide', meta: '20 pages · PDF', note: 'Choosing between natural, mechanical and hybrid strategies.' },
+      { title: 'Integrated systems testing: a practical checklist', meta: '8 pages · PDF', note: 'What to test, in what order, and what evidence to keep.' },
+      { title: 'Fit-out design guide for retail tenancies', meta: '6 pages · PDF', note: 'Protecting the smoke strategy through tenant churn.' },
+    ],
+  },
+  {
+    category: 'Case Studies',
+    items: [
+      { title: 'Reducing extract capacity through CFD optimisation', meta: '4 pages · PDF', note: 'How scenario modelling lowered installed fan capacity.' },
+      { title: 'Retrofitting smoke control in an operating terminal', meta: '5 pages · PDF', note: 'Phasing, possessions and legacy system integration.' },
+      { title: 'Zoned response in a multi-hall data centre', meta: '4 pages · PDF', note: 'Avoiding facility-wide shutdown on a single incident.' },
+    ],
+  },
+  {
+    category: 'Installation & Maintenance',
+    items: [
+      { title: 'Smoke curtain installation manual', meta: 'PDF', note: 'Headbox fixing, alignment and commissioning procedure.' },
+      { title: 'Smoke ventilator maintenance schedule', meta: 'PDF', note: 'Weekly, monthly and annual statutory testing tasks.' },
+      { title: 'Smoke control panel O&M guide', meta: 'PDF', note: 'Fault diagnosis, battery replacement and self-test records.' },
+    ],
+  },
+];
+
+export const downloads = [
+  { title: 'Company Profile', type: 'PDF', size: '4.2 MB', desc: 'Capability statement, engineering services and reference projects.' },
+  { title: 'Smoke Curtain Catalogue', type: 'PDF', size: '6.8 MB', desc: 'Automatic, static, vertical and perimeter curtain systems.' },
+  { title: 'Smoke Ventilator Catalogue', type: 'PDF', size: '5.4 MB', desc: 'Natural roof, louvred and facade ventilator range.' },
+  { title: 'Smoke Extraction Fan Datasheets', type: 'PDF', size: '3.1 MB', desc: 'F300 and F400 certified fan performance data.' },
+  { title: 'Control System Datasheet', type: 'PDF', size: '1.9 MB', desc: 'PLC smoke control panels, interfaces and monitoring.' },
+  { title: 'Product Certificates Pack', type: 'ZIP', size: '12.6 MB', desc: 'CE, EN 12101 and third-party test certification.' },
+  { title: 'BIM / Revit Object Library', type: 'ZIP', size: '18.4 MB', desc: 'Native Revit families with performance parameters.' },
+  { title: 'Maintenance Schedule Template', type: 'XLSX', size: '0.4 MB', desc: 'Statutory testing register for facilities teams.' },
+];
+
+export const faqs = [
+  {
+    group: 'Smoke control basics',
+    items: [
+      {
+        q: 'What is the difference between smoke ventilation and smoke control?',
+        a: 'Smoke ventilation removes smoke from a space. Smoke control is the wider engineering discipline of managing where smoke goes — containing it, directing it, holding it above head height and keeping it out of escape routes. Ventilation is one tool within a smoke control strategy.',
+      },
+      {
+        q: 'Why does a building need smoke control if it has sprinklers?',
+        a: 'Sprinklers control fire growth; they do not remove smoke, and the smoke produced remains the principal cause of harm. Most codes require both, and the two systems are designed to work together — sprinkler activation is often part of the smoke control cause-and-effect.',
+      },
+      {
+        q: 'What is a smoke reservoir?',
+        a: 'A smoke reservoir is a volume bounded at ceiling level — by structure, downstands or smoke curtains — that holds the buoyant smoke layer in a controlled area so it can be extracted efficiently and kept above the occupied zone.',
+      },
+    ],
+  },
+  {
+    group: 'System selection',
+    items: [
+      {
+        q: 'Natural or mechanical ventilation — how do we choose?',
+        a: 'It depends on building height, roof availability, the required clear layer and the reliability of buoyancy in the design fire. Natural systems are simpler and cheaper to run where the geometry supports them; mechanical systems give predictable performance where it does not. We usually assess both against the fire strategy before recommending.',
+      },
+      {
+        q: 'When is CFD modelling actually necessary?',
+        a: 'Whenever the geometry falls outside the assumptions of the standard calculation methods — very large or interconnected volumes, unusual roof forms, transport interchanges — or wherever an authority requires a performance-based demonstration. It is also worth doing voluntarily when it can reduce installed capacity.',
+      },
+      {
+        q: 'Can smoke control be retrofitted to an existing building?',
+        a: 'Yes, and it is common in refurbishment and change-of-use projects. The constraints are structural openings, available plant space and shaft routes. We start with a survey and a feasibility study before committing to a strategy.',
+      },
+    ],
+  },
+  {
+    group: 'Testing & compliance',
+    items: [
+      {
+        q: 'How often must smoke control systems be tested?',
+        a: 'Typical practice is a weekly functional test, a more detailed monthly test, and a full annual test with documented results — but the governing requirement is set by the local code and the fire strategy. We build the schedule into the O&M documentation at handover.',
+      },
+      {
+        q: 'What is integrated systems testing?',
+        a: 'It is the end-to-end test of the fire alarm, smoke control, sprinkler, lift and access control systems responding together to the agreed cause-and-effect matrix. It is the point at which the design is proven as a system rather than as separate packages.',
+      },
+      {
+        q: 'Which certification should equipment carry?',
+        a: 'Smoke control equipment should carry third-party certification against the relevant part of EN 12101 (or the equivalent required by the project code), with test reports traceable to the specific product configuration installed.',
+      },
+    ],
+  },
+  {
+    group: 'Maintenance',
+    items: [
+      {
+        q: 'What does an annual maintenance visit cover?',
+        a: 'Functional operation of every device, actuator and damper; fan performance verification; control panel and battery condition; full cause-and-effect re-test; and a documented report with any remedial recommendations.',
+      },
+      {
+        q: 'Can systems be monitored remotely?',
+        a: 'Yes. Our control systems support IoT telemetry with automatic self-test logging and fault alerting, which converts statutory testing into a continuous data record rather than a periodic manual exercise.',
+      },
+    ],
+  },
+];
+
+export const news = [
+  {
+    slug: 'en-12101-13-pressure-differential',
+    title: 'EN 12101-13 and what it changes for pressurisation design',
+    date: '2026-06-18',
+    category: 'Standards',
+    excerpt:
+      'The design and calculation part of the EN 12101 series changes how leakage and relief are justified. A look at the practical implications for high-rise projects.',
+  },
+  {
+    slug: 'cfd-reduces-installed-capacity',
+    title: 'When CFD pays for itself: reducing installed extract capacity',
+    date: '2026-05-02',
+    category: 'Engineering',
+    excerpt:
+      'Three recent projects where scenario modelling justified a lower extract rate than the prescriptive calculation, with capital and energy savings across the asset life.',
+  },
+  {
+    slug: 'car-park-impulse-design-pitfalls',
+    title: 'Five recurring pitfalls in impulse car park ventilation design',
+    date: '2026-03-27',
+    category: 'Design',
+    excerpt:
+      'Stagnation zones behind beams, under-provided make-up air and thrust assumptions that do not survive the as-built layout.',
+  },
+  {
+    slug: 'integrated-systems-testing',
+    title: 'Integrated systems testing: planning it before you need it',
+    date: '2026-02-11',
+    category: 'Delivery',
+    excerpt:
+      'Why the testing plan belongs in the design stage, and what a defensible commissioning record actually contains.',
+  },
+  {
+    slug: 'smoke-control-in-data-centres',
+    title: 'Smoke control in high air-change environments',
+    date: '2026-01-15',
+    category: 'Engineering',
+    excerpt:
+      'Detection sensitivity, containment aisles and zoned response strategies for data centres and other critical facilities.',
+  },
+  {
+    slug: 'tenant-fitout-design-guide',
+    title: 'Protecting the smoke strategy through tenant fit-out',
+    date: '2025-11-20',
+    category: 'Design',
+    excerpt:
+      'Retail smoke strategies are typically invalidated within two years of handover. A fit-out design guide is the cheapest way to prevent it.',
+  },
+];
+
+export const vacancies = [
+  {
+    role: 'Mechanical Engineer',
+    location: 'Singapore',
+    type: 'Full time',
+    summary: 'System sizing, equipment selection and technical submissions for smoke control projects across the region.',
+    requirements: ['Degree in Mechanical Engineering', '3+ years in HVAC or fire systems', 'Working knowledge of EN 12101 or NFPA 92'],
+  },
+  {
+    role: 'Fire Protection Engineer',
+    location: 'Singapore / India',
+    type: 'Full time',
+    summary: 'Fire strategy interface, performance-based design support and authority liaison.',
+    requirements: ['Fire engineering degree or equivalent', 'Experience with performance-based submissions', 'Familiarity with SCDF or equivalent authority process'],
+  },
+  {
+    role: 'CFD Engineer',
+    location: 'India',
+    type: 'Full time',
+    summary: 'Smoke and egress modelling, scenario development and technical reporting.',
+    requirements: ['FDS / PyroSim or Ansys Fluent experience', 'Strong fluid mechanics fundamentals', 'Clear technical writing'],
+  },
+  {
+    role: 'BIM Engineer',
+    location: 'India',
+    type: 'Full time',
+    summary: 'Revit family development, model coordination and clash resolution for smoke control packages.',
+    requirements: ['Advanced Revit and Navisworks', 'MEP coordination experience', 'Understanding of builders work requirements'],
+  },
+  {
+    role: 'Project Engineer',
+    location: 'Singapore',
+    type: 'Full time',
+    summary: 'Site delivery, installation supervision, programme and subcontractor coordination.',
+    requirements: ['Engineering degree', 'Site delivery experience on MEP packages', 'Strong coordination and reporting discipline'],
+  },
+  {
+    role: 'Service Engineer',
+    location: 'Singapore / Malaysia',
+    type: 'Full time',
+    summary: 'Planned maintenance, statutory testing, fault diagnosis and system re-commissioning.',
+    requirements: ['Electromechanical background', 'Fault finding on control and actuator systems', 'Willingness to travel'],
+  },
+  {
+    role: 'Sales Engineer',
+    location: 'Singapore / India',
+    type: 'Full time',
+    summary: 'Consultant and contractor engagement, technical proposals and specification support.',
+    requirements: ['Technical sales experience in building services', 'Comfortable presenting to consultants', 'Commercial proposal writing'],
+  },
+];
+
+export const projectTypes = [
+  'New build — commercial',
+  'New build — industrial',
+  'New build — infrastructure',
+  'Retrofit / refurbishment',
+  'System upgrade or replacement',
+  'Maintenance & statutory testing',
+  'CFD modelling only',
+  'Fire engineering consultancy',
+  'Other',
+];
+
+export const enquiryRouting = {
+  'CFD modelling only': { team: 'Engineering & Modelling', channel: 'engineering' },
+  'Fire engineering consultancy': { team: 'Engineering & Modelling', channel: 'engineering' },
+  'Maintenance & statutory testing': { team: 'Service & Maintenance', channel: 'service' },
+  'System upgrade or replacement': { team: 'Service & Maintenance', channel: 'service' },
+  'New build — infrastructure': { team: 'Infrastructure Projects', channel: 'engineering' },
+};
