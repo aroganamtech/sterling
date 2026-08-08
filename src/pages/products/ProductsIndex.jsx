@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../components/Icon';
 import Seo from '../../components/Seo';
+import PageHero from '../../components/PageHero';
 import SmokeCanvas from '../../components/SmokeCanvas';
 import Reveal, { RevealGroup } from '../../components/Reveal';
 import Section, { SectionHead } from '../../components/Section';
@@ -58,75 +59,54 @@ export default function ProductsIndex() {
       />
 
       {/* ------------------------------- hero ------------------------------- */}
-      <section className="relative isolate overflow-hidden bg-white">
-        <div className="pointer-events-none absolute inset-0 grid-lines-dark opacity-40" />
-
-        <div className="shell relative py-16 md:py-24">
-          <Reveal as="nav" className="flex items-center gap-2 text-[11.5px] uppercase tracking-[0.14em] text-steel-500">
-            <Link to="/" className="transition-colors hover:text-navy-900">
-              Home
+      <PageHero
+        eyebrow="Product range"
+        title={
+          <>
+            Engineered
+            <span className="block text-signal-400">ventilation products</span>
+          </>
+        }
+        lede="Three families of equipment — natural, smoke and mechanical ventilation — engineered, certified and delivered as part of a complete life safety strategy rather than as line items on a schedule."
+        breadcrumbs={[{ label: 'Products' }]}
+        actions={
+          <>
+            <Link to="/contact" className="btn-primary">
+              Request Quotation
+              <Icon name="arrow" className="h-4 w-4" />
             </Link>
-            <Icon name="chevronRight" className="h-3 w-3 text-steel-300" strokeWidth={2} />
-            <span className="font-semibold text-signal-600">Products</span>
-          </Reveal>
-
-          <div className="mt-8 max-w-4xl">
-            <Reveal>
-              <span className="eyebrow">Product range</span>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1 className="mt-6 font-display text-[clamp(2.4rem,6vw,4.8rem)] font-semibold uppercase leading-[1] text-navy-900">
-                Engineered
-                <span className="block text-signal-600">ventilation products</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-7 max-w-2xl text-[17px] leading-relaxed text-steel-600">
-                Three families of equipment — natural, smoke and mechanical ventilation — engineered, certified and
-                delivered as part of a complete life safety strategy rather than as line items on a schedule.
-              </p>
-            </Reveal>
-
-            <Reveal delay={240}>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link to="/contact" className="btn-primary">
-                  Request Quotation
-                  <Icon name="arrow" className="h-4 w-4" />
-                </Link>
-                <button type="button" onClick={() => setAssistant(true)} className="btn-navy">
-                  <Icon name="spark" className="h-4 w-4" />
-                  AI Assistant
-                </button>
-                <BrochureButton className="btn-outline" />
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal delay={320} className="mt-16 grid gap-px border border-steel-200 bg-steel-200 sm:grid-cols-3">
-            {categories.map((c) => (
-              <a
-                key={c.id}
-                href={`#${c.id}`}
-                className="group bg-white px-6 py-6 transition-colors hover:bg-steel-50"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center border border-steel-200 text-navy-700 transition-colors group-hover:border-signal-500 group-hover:bg-signal-600 group-hover:text-white">
-                    <Icon name={c.icon} className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="font-display text-[16px] font-semibold uppercase leading-tight text-navy-900">
-                      {c.name}
-                    </p>
-                    <p className="mt-0.5 text-[11.5px] uppercase tracking-[0.1em] text-steel-500">
-                      {c.items.length} products
-                    </p>
-                  </div>
+            <button type="button" onClick={() => setAssistant(true)} className="btn-navy">
+              <Icon name="spark" className="h-4 w-4" />
+              AI Assistant
+            </button>
+            <BrochureButton className="btn-outline" />
+          </>
+        }
+      >
+        <Reveal delay={320} className="mt-16 flex flex-wrap gap-px border border-white/10 bg-white/10">
+          {categories.map((c) => (
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              className="group min-w-[240px] flex-1 bg-navy-950/80 px-6 py-6 transition-colors hover:bg-navy-900"
+            >
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center border border-white/15 text-signal-400 transition-colors group-hover:border-signal-500 group-hover:bg-signal-600 group-hover:text-white">
+                  <Icon name={c.icon} className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="font-display text-[16px] font-semibold uppercase leading-tight text-white">
+                    {c.name}
+                  </p>
+                  <p className="mt-0.5 text-[11.5px] uppercase tracking-[0.1em] text-navy-300">
+                    {c.items.length} products
+                  </p>
                 </div>
-              </a>
-            ))}
-          </Reveal>
-        </div>
-      </section>
+              </div>
+            </a>
+          ))}
+        </Reveal>
+      </PageHero>
 
       {/* ---------------------------- accordion ---------------------------- */}
       <Section id="categories" tone="tint">
@@ -191,7 +171,7 @@ export default function ProductsIndex() {
               { icon: 'cfd', t: 'CFD verification', s: 'Scenario modelling before any equipment is committed.', to: '/engineering/smoke-modelling-cfd' },
               { icon: 'bim', t: 'BIM content', s: 'Native Revit families with performance parameters.', to: '/engineering/bim-revit' },
               { icon: 'compliance', t: 'Compliance mapping', s: 'EN, NFPA, BS and SCDF reconciled into one basis.', to: '/engineering/compliance-consulting' },
-              { icon: 'wrench', t: 'Lifetime service', s: 'Statutory testing and condition monitoring.', to: '/solutions/control-automation' },
+              { icon: 'wrench', t: 'Lifetime service', s: 'Statutory testing and condition monitoring.', to: '/solutions' },
             ].map((c) => (
               <Link key={c.t} to={c.to} className="group flex h-full flex-col bg-white p-7 transition-colors hover:bg-steel-50">
                 <Icon name={c.icon} className="h-7 w-7 text-navy-700 transition-colors group-hover:text-signal-600" />

@@ -12,7 +12,7 @@ export default function SolutionsIndex() {
       <PageHero
         eyebrow="Solutions"
         title="Engineered smoke management systems"
-        lede="Eight system families that combine into one life safety strategy. Each is engineered from the design fire and the building — never selected from a catalogue."
+        lede="Four system families that combine into one life safety strategy. Each is engineered from the design fire and the building — never selected from a catalogue."
         breadcrumbs={[{ label: 'Solutions' }]}
         actions={
           <>

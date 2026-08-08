@@ -27,15 +27,15 @@ export const navigation = [
     columns: [
       {
         title: 'Containment & Ventilation',
-        items: solutions.slice(0, 4).map((s) => ({
+        items: solutions.slice(0, 2).map((s) => ({
           label: s.title,
           to: `/solutions/${s.slug}`,
           blurb: s.menuBlurb,
         })),
       },
       {
-        title: 'Infrastructure & Control',
-        items: solutions.slice(4).map((s) => ({
+        title: 'Extraction & Pressurisation',
+        items: solutions.slice(2).map((s) => ({
           label: s.title,
           to: `/solutions/${s.slug}`,
           blurb: s.menuBlurb,
@@ -77,8 +77,34 @@ export const navigation = [
       },
     ],
   },
-  { label: 'Industries', to: '/industries' },
-  { label: 'Projects', to: '/projects' },
+  {
+    label: 'Services',
+    to: '/services',
+    description: 'Full lifecycle support — installation, maintenance and technical services for every system we deliver.',
+    columns: [
+      {
+        title: 'Delivery',
+        items: [
+          { label: 'Installation Services', to: '/services/installation', blurb: 'Certified installation to approved shop drawings' },
+          { label: 'System Design & Engineering', to: '/services/system-design-engineering', blurb: 'Sizing, coordination and specification' },
+          { label: 'Commissioning', to: '/services/commissioning', blurb: 'Witnessed integrated systems testing' },
+          { label: 'Retrofit & Upgrades', to: '/services/retrofit-upgrades', blurb: 'Modernising legacy smoke control systems' },
+        ],
+      },
+      {
+        title: 'Support',
+        items: [
+          { label: 'Maintenance & AMC', to: '/services/maintenance', blurb: 'Scheduled statutory testing and servicing' },
+          { label: 'Inspection & Testing', to: '/services/inspection-testing', blurb: 'Periodic compliance verification' },
+          { label: 'Technical Consultation', to: '/services/technical-consultation', blurb: 'Specialist advice at any project stage' },
+          { label: 'Emergency Support', to: '/services/emergency-support', blurb: 'Rapid response when systems need attention' },
+        ],
+      },
+    ],
+  },
+  // Hidden from navbar per request — routes still work, just not linked here.
+  // { label: 'Industries', to: '/industries' },
+  // { label: 'Projects', to: '/projects' },
   {
     label: 'Resources',
     to: '/resources',
@@ -101,6 +127,6 @@ export const navigation = [
       },
     ],
   },
-  { label: 'Careers', to: '/careers', compact: true },
+  // { label: 'Careers', to: '/careers', compact: true },
   { label: 'Contact', to: '/contact' },
 ];

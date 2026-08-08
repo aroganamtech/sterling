@@ -55,7 +55,7 @@ export const engineeringServices = [
   },
   {
     slug: 'fire-engineering-support',
-    title: 'Fire Engineering Support',
+    title: 'Engineering Support',
     icon: 'fire',
     menuBlurb: 'Strategy input from concept through commissioning',
     tagline: 'Smoke control input to the fire strategy, at the right stage',

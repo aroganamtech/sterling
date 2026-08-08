@@ -111,10 +111,10 @@ export default function CFDCompare() {
           </div>
 
           {/* labels */}
-          <span className="pointer-events-none absolute left-4 top-4 bg-signal-600/90 px-3 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-white">
+          <span className="pointer-events-none absolute left-0 top-0 bg-signal-600/90 px-3 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-white">
             Without engineered smoke control
           </span>
-          <span className="pointer-events-none absolute right-4 top-4 bg-white/90 px-3 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-navy-900">
+          <span className="pointer-events-none absolute right-0 top-0 bg-white/90 px-3 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-navy-900">
             Sterling engineered system
           </span>
 

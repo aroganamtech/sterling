@@ -16,7 +16,7 @@ const columns = [
     links: [
       ...productCategories.map((c) => ({ label: c.name, to: `/products#${c.id}` })),
       ...products
-        .filter((p) => ['smoke-curtain', 'smoke-ventilator', 'window-actuator', 'car-park-jet-fan'].includes(p.slug))
+        .filter((p) => ['smoke-control-panel', 'smoke-control-damper', 'window-actuator', 'axial-flow-fan'].includes(p.slug))
         .map((p) => ({ label: p.name, to: `/products/${p.slug}` })),
       { label: 'All products', to: '/products' },
     ],
@@ -60,25 +60,6 @@ export default function Footer() {
       />
 
       <div className="relative">
-        {/* CTA strip */}
-        <div className="border-b border-white/10">
-          <div className="shell flex flex-col items-start justify-between gap-6 py-12 lg:flex-row lg:items-center">
-            <div>
-              <span className="eyebrow-light">Start a conversation</span>
-              <h2 className="h2 mt-4 max-w-2xl text-white">Let’s build safer buildings together</h2>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-primary">
-                Request Engineering Consultation
-                <Icon name="arrow" className="h-4 w-4" />
-              </Link>
-              <Link to="/resources/downloads" className="btn-ghost">
-                Download Company Profile
-              </Link>
-            </div>
-          </div>
-        </div>
-
         {/* main */}
         <div className="shell grid gap-12 py-16 lg:grid-cols-[1.15fr_2.6fr]">
           <div>

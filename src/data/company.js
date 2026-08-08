@@ -17,10 +17,7 @@ export const company = {
 
 // TODO — confirm all counters with management before publishing.
 export const metrics = [
-  { value: 18, suffix: '+', label: 'Years of engineering experience' },
-  { value: 640, suffix: '+', label: 'Projects delivered' },
-  { value: 14, suffix: '', label: 'Countries served' },
-  { value: 25000, suffix: '+', label: 'Systems installed' },
+  { value: 20, suffix: '+', label: 'Years of engineering experience' },
 ];
 
 // TODO — replace with the registered office details.

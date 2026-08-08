@@ -300,18 +300,13 @@ export default function Contact() {
       </Section>
 
       <Section tone="tint" padded={false}>
-        <div className="grid md:grid-cols-2">
-          {offices.map((o) => (
-            <iframe
-              key={o.id}
-              title={`${o.label} location`}
-              src={o.map}
-              className="h-[340px] w-full grayscale"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          ))}
-        </div>
+        <iframe
+          title={`${offices[0].label} location`}
+          src={offices[0].map}
+          className="h-[340px] w-full grayscale"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </Section>
     </>
   );

@@ -14,20 +14,11 @@
 export const productCategories = [
   {
     id: 'natural-ventilation',
-    name: 'Natural Ventilation',
+    name: 'Smoke Ventilator',
     icon: 'vent',
     tagline: 'Buoyancy and wind-driven ventilation',
     blurb:
       'Roof, ridge and facade ventilators plus the actuators that drive them — daily comfort ventilation and heat relief without fan energy.',
-    accent: 'ember',
-  },
-  {
-    id: 'smoke-ventilation',
-    name: 'Smoke Ventilation',
-    icon: 'curtain',
-    tagline: 'Life safety smoke and heat control',
-    blurb:
-      'Certified smoke curtains, ventilators, dampers, fans and control equipment that contain smoke, protect escape routes and support firefighting.',
     accent: 'ember',
   },
   {
@@ -36,7 +27,7 @@ export const productCategories = [
     icon: 'extract',
     tagline: 'Powered air movement and extraction',
     blurb:
-      'Axial, centrifugal, jet and tunnel fans plus air handling equipment for pollutant control, process ventilation and fire-mode duty.',
+      'Adjustable-pitch axial flow fans for general ventilation, process extraction and heat relief, selected from certified curves at the real system resistance.',
     accent: 'ember',
   },
 ];
@@ -65,7 +56,7 @@ export const products = [
   /* ======================= NATURAL VENTILATION ======================= */
   {
     slug: 'louvred-roof-ventilator',
-    name: 'Louvred Roof Ventilator',
+    name: 'Sterling Ostro',
     category: 'natural-ventilation',
     model: 'SV-LRV',
     shape: 'louvre',
@@ -138,7 +129,7 @@ export const products = [
   },
   {
     slug: 'window-actuator',
-    name: 'Window Actuator',
+    name: 'Sterling Elite',
     category: 'natural-ventilation',
     model: 'SV-WA',
     shape: 'actuator',
@@ -211,7 +202,7 @@ export const products = [
   },
   {
     slug: 'dome-roof-ventilator',
-    name: 'Dome Roof Ventilator',
+    name: 'Sterling Access',
     category: 'natural-ventilation',
     model: 'SV-DRV',
     shape: 'dome',
@@ -274,7 +265,7 @@ export const products = [
       { title: 'Low maintenance', text: 'Sealed mechanism and stainless fixings suited to long service intervals.' },
     ],
     certifications: [CERT.en2, CERT.ce, CERT.iso, CERT.nfpa204],
-    related: ['louvred-roof-ventilator', 'window-actuator', 'smoke-ventilator'],
+    related: ['louvred-roof-ventilator', 'window-actuator'],
     seo: {
       title: 'Dome Roof Ventilator | Daylight & Natural Ventilation | Sterling Ventilation',
       description:
@@ -284,7 +275,7 @@ export const products = [
   },
   {
     slug: 'ridge-ventilator',
-    name: 'Ridge Ventilator',
+    name: 'Sterling LAM',
     category: 'natural-ventilation',
     model: 'SV-RV',
     shape: 'ridge',
@@ -356,7 +347,7 @@ export const products = [
   },
   {
     slug: 'facade-louvre-ventilator',
-    name: 'Facade Louvre Ventilator',
+    name: 'Sterling Blade',
     category: 'natural-ventilation',
     model: 'SV-FLV',
     shape: 'facade',
@@ -426,159 +417,191 @@ export const products = [
       keywords: 'facade louvre, weather louvre, make-up air inlet, ventilation louvre, rain defence louvre',
     },
   },
+  {
+    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
+    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
+    slug: 'sterling-velo',
+    name: 'Sterling Velo',
+    category: 'natural-ventilation',
+    model: 'SV-VELO',
+    shape: 'actuator',
+    tagline: 'Louvre window actuation for controlled natural ventilation',
+    short:
+      'PLACEHOLDER SPEC — replace with verified data. Motorised louvre window drive for daily comfort ventilation, sized and controlled to match the opening.',
+    long: [
+      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
+      'Intended as a louvre-window drive covering the same mixed-mode comfort and life-safety duty as the rest of the Sterling actuator range.',
+    ],
+    quickStats: [
+      ['Stroke', 'TBC'],
+      ['Thrust / pull', 'TBC'],
+      ['Supply', '24 V DC'],
+      ['Protection', 'IP 55 (TBC)'],
+    ],
+    features: [
+      { icon: 'target', title: 'Adjustable stroke', text: 'Placeholder — confirm actual travel range.' },
+      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
+      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm fire-mode behaviour.' },
+    ],
+    specs: [
+      {
+        group: 'Electrical',
+        rows: [
+          ['Supply voltage', '24 V DC (TBC)'],
+          ['Control', 'TBC'],
+        ],
+      },
+    ],
+    applications: ['Louvre windows', 'Facade ventilation'],
+    benefits: [{ title: 'Mixed-mode operation', text: 'Placeholder benefit text — confirm before publishing.' }],
+    certifications: [CERT.ce],
+    related: ['window-actuator', 'sterling-centro', 'sterling-kas-s6a'],
+    seo: {
+      title: 'Sterling Velo | Louvre Window Actuator | Sterling Ventilation (Draft)',
+      description: 'Placeholder listing — content pending verification.',
+      keywords: 'sterling velo, louvre window actuator',
+    },
+  },
+  {
+    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
+    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
+    slug: 'sterling-centro',
+    name: 'Sterling Centro',
+    category: 'natural-ventilation',
+    model: 'SV-CENTRO',
+    shape: 'actuator',
+    tagline: 'Central pivot window actuation',
+    short:
+      'PLACEHOLDER SPEC — replace with verified data. Motorised drive for central pivot windows used in natural ventilation schemes.',
+    long: [
+      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
+      'Intended for centre-pivot sashes where a balanced, synchronised drive is needed to keep the window square through its travel.',
+    ],
+    quickStats: [
+      ['Stroke', 'TBC'],
+      ['Thrust / pull', 'TBC'],
+      ['Supply', '24 V DC'],
+      ['Protection', 'IP 55 (TBC)'],
+    ],
+    features: [
+      { icon: 'layers', title: 'Synchronised drives', text: 'Placeholder — confirm actual sync arrangement.' },
+      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
+      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm fire-mode behaviour.' },
+    ],
+    specs: [
+      {
+        group: 'Electrical',
+        rows: [
+          ['Supply voltage', '24 V DC (TBC)'],
+          ['Control', 'TBC'],
+        ],
+      },
+    ],
+    applications: ['Central pivot windows', 'Atrium high-level ventilation'],
+    benefits: [{ title: 'Balanced actuation', text: 'Placeholder benefit text — confirm before publishing.' }],
+    certifications: [CERT.ce],
+    related: ['window-actuator', 'sterling-velo', 'sterling-kas-s6a'],
+    seo: {
+      title: 'Sterling Centro | Central Pivot Window Actuator | Sterling Ventilation (Draft)',
+      description: 'Placeholder listing — content pending verification.',
+      keywords: 'sterling centro, central pivot window actuator',
+    },
+  },
+  {
+    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
+    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
+    slug: 'sterling-kas-s6a',
+    name: 'Sterling KAS S6A',
+    category: 'natural-ventilation',
+    model: 'KAS S6A',
+    shape: 'actuator',
+    tagline: 'Pivot AOV window actuation',
+    short:
+      'PLACEHOLDER SPEC — replace with verified data. Automatic opening vent (AOV) drive for pivot windows, serving both comfort ventilation and smoke vent duty.',
+    long: [
+      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
+      'Positioned as an AOV-duty pivot window actuator — daily ventilation with a fire-alarm-driven override to the vent position.',
+    ],
+    quickStats: [
+      ['Stroke', 'TBC'],
+      ['Thrust / pull', 'TBC'],
+      ['Supply', '24 V DC'],
+      ['Protection', 'IP 55 (TBC)'],
+    ],
+    features: [
+      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm AOV fire-mode behaviour.' },
+      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
+      { icon: 'shield', title: 'Obstruction detection', text: 'Placeholder — confirm before publishing.' },
+    ],
+    specs: [
+      {
+        group: 'Electrical',
+        rows: [
+          ['Supply voltage', '24 V DC (TBC)'],
+          ['Control', 'TBC'],
+        ],
+      },
+    ],
+    applications: ['Pivot AOV windows', 'Stairwell smoke vents (AOV)'],
+    benefits: [{ title: 'Dual comfort / life-safety duty', text: 'Placeholder benefit text — confirm before publishing.' }],
+    certifications: [CERT.ce, CERT.en2],
+    related: ['window-actuator', 'sterling-velo', 'sterling-centro'],
+    seo: {
+      title: 'Sterling KAS S6A | Pivot AOV Window Actuator | Sterling Ventilation (Draft)',
+      description: 'Placeholder listing — content pending verification.',
+      keywords: 'sterling kas s6a, pivot AOV window actuator',
+    },
+  },
+  {
+    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
+    // Structure and copy cloned from 'smoke-control-panel'. Replace before publishing.
+    slug: 'sterling-500-cb',
+    name: 'Sterling 500-CB',
+    category: 'natural-ventilation',
+    model: '500-CB',
+    shape: 'panel',
+    tagline: 'Multi-zone control panel',
+    short:
+      'PLACEHOLDER SPEC — replace with verified data. Multi-zone control and indicating panel for larger installations spanning several zones.',
+    long: [
+      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
+      'Positioned as the multi-zone counterpart to the Sterling 400 Series single-zone panel, for larger networked installations.',
+    ],
+    quickStats: [
+      ['Zones', 'Multi-zone (TBC)'],
+      ['Standby', 'TBC'],
+      ['Interfaces', 'TBC'],
+      ['Standards', 'TBC'],
+    ],
+    features: [
+      { icon: 'control', title: 'Multi-zone sequencing', text: 'Placeholder — confirm actual zone capacity.' },
+      { icon: 'shield', title: 'Monitored circuits', text: 'Placeholder — confirm before publishing.' },
+      { icon: 'layers', title: 'BMS integration', text: 'Placeholder — confirm actual interfaces.' },
+    ],
+    specs: [
+      {
+        group: 'System',
+        rows: [
+          ['Zones', 'TBC'],
+          ['Interfaces', 'TBC'],
+        ],
+      },
+    ],
+    applications: ['Multi-zone commercial developments', 'Networked panel installations'],
+    benefits: [{ title: 'Scales across zones', text: 'Placeholder benefit text — confirm before publishing.' }],
+    certifications: [CERT.ce],
+    related: ['smoke-control-panel', 'smoke-control-damper'],
+    seo: {
+      title: 'Sterling 500-CB | Multi Zone Control Panel | Sterling Ventilation (Draft)',
+      description: 'Placeholder listing — content pending verification.',
+      keywords: 'sterling 500-cb, multi zone control panel',
+    },
+  },
 
-  /* ======================== SMOKE VENTILATION ======================== */
-  {
-    slug: 'smoke-curtain',
-    name: 'Smoke Curtain',
-    category: 'smoke-ventilation',
-    model: 'SV-SC',
-    shape: 'curtain',
-    tagline: 'Automatic smoke containment that disappears into the ceiling',
-    short:
-      'Automatic and static smoke curtains that form smoke reservoirs, close atrium voids and hold escape routes clear of smoke — concealed until the moment they are needed.',
-    long: [
-      'A smoke curtain is what makes an extraction strategy achievable. By bounding the smoke layer it keeps hot gases where they can be removed efficiently and holds the clear layer above head height while occupants leave.',
-      'The SV-SC uses a glass-fibre fabric with a heat-reflective coating running in a slim aluminium headbox. On alarm the curtain descends under gravity at a controlled speed — no power is required to deploy, so the system fails safe. Multi-panel and perimeter arrangements let a single control group close large or irregular openings.',
-    ],
-    quickStats: [
-      ['Classification', 'D120 / DH120 to EN 12101-1'],
-      ['Drop', 'Up to 8 m single panel'],
-      ['Deployment', 'Gravity fail-safe'],
-      ['Headbox', 'From 165 × 165 mm'],
-    ],
-    features: [
-      { icon: 'fire', title: 'D120 classification', text: 'Tested to EN 12101-1 for 120 minutes at elevated temperature.' },
-      { icon: 'shield', title: 'Gravity fail-safe', text: 'Descends under its own weight on power loss, at a controlled rate.' },
-      { icon: 'layers', title: 'Concealed headbox', text: 'Slim extrusion sits within the ceiling void — invisible in normal use.' },
-      { icon: 'target', title: 'Any geometry', text: 'Straight, curved, perimeter and multi-panel arrangements from one system.' },
-      { icon: 'control', title: 'Group control', text: 'Zoned deployment driven by the fire alarm cause-and-effect matrix.' },
-      { icon: 'wrench', title: 'Self-testing', text: 'Automatic weekly cycle with logged result and fault reporting.' },
-    ],
-    specs: [
-      {
-        group: 'Fabric & assembly',
-        rows: [
-          ['Fabric', 'Woven glass fibre, heat-reflective coated'],
-          ['Classification', 'D120 (smoke) / DH120 (smoke + heat)'],
-          ['Headbox', 'Extruded aluminium, 165 × 165 mm minimum'],
-          ['Bottom bar', 'Aluminium, 40 mm profile'],
-          ['Side guides', 'Optional, for high air-pressure locations'],
-          ['Finish', 'Powder coated to RAL or anodised'],
-        ],
-      },
-      {
-        group: 'Operation',
-        rows: [
-          ['Maximum drop', '8 m single panel, unlimited multi-panel'],
-          ['Maximum width', '5 m per panel, joined for longer runs'],
-          ['Descent speed', 'Controlled, typically 0.1 m/s'],
-          ['Motor supply', '24 V DC, UPS backed'],
-          ['Standby duration', '30 / 60 minutes to project requirement'],
-          ['Interfaces', 'Fire alarm volt-free, BMS monitoring'],
-        ],
-      },
-    ],
-    applications: [
-      'Shopping mall atria and voids',
-      'Airport terminals and concourses',
-      'Hotel and office atria',
-      'Hospital sub-compartments',
-      'Metro and rail stations',
-      'Escalator and lift void closure',
-    ],
-    benefits: [
-      { title: 'Longer safe egress time', text: 'Holds the smoke-free layer above head height while occupants evacuate.' },
-      { title: 'Smaller extract plant', text: 'Bounded reservoirs make the required extract rate achievable and economical.' },
-      { title: 'Architecture preserved', text: 'Open, connected spaces remain possible within a compliant fire strategy.' },
-      { title: 'Firefighter visibility', text: 'Maintains tenable conditions for search, rescue and firefighting.' },
-    ],
-    certifications: [CERT.en1, CERT.ce, CERT.scdf, CERT.nfpa92],
-    related: ['smoke-ventilator', 'smoke-control-panel', 'smoke-control-damper'],
-    seo: {
-      title: 'Smoke Curtain | EN 12101-1 Automatic Smoke Barrier | Sterling Ventilation',
-      description:
-        'SV-SC automatic and static smoke curtains classified D120 / DH120 to EN 12101-1. Gravity fail-safe descent, concealed headbox, drops to 8 m, perimeter and multi-panel arrangements.',
-      keywords: 'smoke curtain, smoke barrier, EN 12101-1, D120 smoke curtain, automatic smoke curtain, atrium smoke containment',
-    },
-  },
-  {
-    slug: 'smoke-ventilator',
-    name: 'Smoke Ventilator',
-    category: 'smoke-ventilation',
-    model: 'SV-SHEV',
-    shape: 'flap',
-    tagline: 'Certified natural smoke and heat exhaust',
-    short:
-      'Natural smoke and heat exhaust ventilators (SHEVS) selected on tested aerodynamic free area, opening on alarm to release buoyant hot gases from the reservoir.',
-    long: [
-      'Natural smoke ventilators exhaust hot gases by buoyancy alone. That makes them robust and independent of power at the moment it matters most — but it also means the installed aerodynamic area has to be real, not nominal.',
-      'The SV-SHEV range is tested to EN 12101-2 for aerodynamic coefficient, reliability, wind load, low temperature and heat exposure. Double-flap, single-flap and louvred configurations are available on a common insulated kerb, actuated electrically or by pneumatic CO2 cartridge.',
-    ],
-    quickStats: [
-      ['Standard', 'EN 12101-2'],
-      ['Heat exposure', 'B300 (30 min)'],
-      ['Reliability', 'Re 1000 / Re 50+1000'],
-      ['Opening time', '< 60 s to full open'],
-    ],
-    features: [
-      { icon: 'gauge', title: 'Certified Cv', text: 'Aerodynamic coefficient established by independent test at each size.' },
-      { icon: 'fire', title: 'B300 heat class', text: 'Verified operation after 30 minutes at 300 °C.' },
-      { icon: 'shield', title: 'WL 1500 wind load', text: 'Holds the open position under design wind uplift.' },
-      { icon: 'control', title: 'Dual actuation', text: 'Electric 24 V or pneumatic CO2 cartridge with manual release.' },
-      { icon: 'layers', title: 'Comfort duty', text: 'Optional intermediate positions for daily ventilation between fire events.' },
-      { icon: 'wrench', title: 'Insulated kerb', text: 'Thermally broken kerb limits condensation on conditioned buildings.' },
-    ],
-    specs: [
-      {
-        group: 'Classification (EN 12101-2)',
-        rows: [
-          ['Reliability', 'Re 1000 (Re 50+1000 with comfort duty)'],
-          ['Low temperature', 'T(-15)'],
-          ['Wind load', 'WL 1500'],
-          ['Snow load', 'SL 500 where applicable'],
-          ['Heat exposure', 'B300 (30 minutes at 300 °C)'],
-        ],
-      },
-      {
-        group: 'Configuration',
-        rows: [
-          ['Types', 'Single flap, double flap, louvred'],
-          ['Nominal sizes', '1000 × 1000 mm to 3000 × 2500 mm'],
-          ['Aerodynamic free area', '0.38 – 3.90 m² per unit'],
-          ['Cover', 'Insulated aluminium or polycarbonate glazed'],
-          ['Actuation', '24 V DC electric or pneumatic CO2'],
-          ['Opening angle', '140° double flap'],
-        ],
-      },
-    ],
-    applications: [
-      'Warehouses and high-bay storage',
-      'Industrial and process buildings',
-      'Shopping centre roofs and atria',
-      'Stairwell and lobby smoke vents',
-      'Sports and exhibition halls',
-      'Car park natural ventilation',
-    ],
-    benefits: [
-      { title: 'Power independent', text: 'Buoyancy-driven exhaust continues to work without electrical supply.' },
-      { title: 'Structural protection', text: 'Releasing hot gases limits heat load on the roof structure.' },
-      { title: 'Straightforward compliance', text: 'Certified classification data supports the submission directly.' },
-      { title: 'Low maintenance', text: 'Simple mechanism with a short, well-defined statutory test routine.' },
-    ],
-    certifications: [CERT.en2, CERT.ce, CERT.nfpa204, CERT.scdf],
-    related: ['smoke-curtain', 'smoke-extract-fan', 'dome-roof-ventilator'],
-    seo: {
-      title: 'Smoke Ventilator | EN 12101-2 SHEVS | Sterling Ventilation',
-      description:
-        'SV-SHEV natural smoke and heat exhaust ventilators certified to EN 12101-2 — B300 heat class, WL 1500 wind load, tested aerodynamic free area to 3.9 m².',
-      keywords: 'smoke ventilator, SHEVS, EN 12101-2, natural smoke exhaust, smoke and heat exhaust ventilator, aerodynamic free area',
-    },
-  },
   {
     slug: 'smoke-control-damper',
-    name: 'Smoke Control Damper',
-    category: 'smoke-ventilation',
+    name: 'Sterling SCD LDN',
+    category: 'natural-ventilation',
     model: 'SV-SCD',
     shape: 'damper',
     tagline: 'Zonal control of where smoke is extracted from',
@@ -640,7 +663,7 @@ export const products = [
       { title: 'Testable in service', text: 'Access and cycle rating designed around the statutory testing regime.' },
     ],
     certifications: [CERT.en8, CERT.ce, CERT.iso, CERT.scdf],
-    related: ['smoke-extract-fan', 'smoke-control-panel', 'smoke-curtain'],
+    related: ['smoke-control-panel'],
     seo: {
       title: 'Smoke Control Damper | EN 12101-8 | Sterling Ventilation',
       description:
@@ -649,82 +672,9 @@ export const products = [
     },
   },
   {
-    slug: 'smoke-extract-fan',
-    name: 'Smoke Extract Fan',
-    category: 'smoke-ventilation',
-    model: 'SV-F400',
-    shape: 'axial',
-    tagline: 'F300 and F400 rated extraction that keeps running in the fire',
-    short:
-      'High-temperature axial and box-type smoke extract fans certified to EN 12101-3, rated to move design airflow at 300 °C or 400 °C for two hours.',
-    long: [
-      'A smoke extract fan has one job that no other fan has: it must keep delivering its duty while hot smoke passes through it. That demands a motor, bearing and impeller specification that is verified by full-scale fire test, not calculated.',
-      'The SV-F400 range covers axial, box and roof-mounted units certified to EN 12101-3 at F300 (300 °C / 2 h) and F400 (400 °C / 2 h). Dual-duty variants run at reduced speed for daily ventilation and switch to full fire duty on alarm.',
-    ],
-    quickStats: [
-      ['Certification', 'EN 12101-3 F300 / F400'],
-      ['Airflow', 'To 40 m³/s per unit'],
-      ['Static pressure', 'To 1600 Pa'],
-      ['Dual duty', 'VSD comfort + fire mode'],
-    ],
-    features: [
-      { icon: 'fire', title: 'Fire-tested rating', text: 'F300 or F400 classification established by full-scale test, not calculation.' },
-      { icon: 'gauge', title: 'Duty accuracy', text: 'Selection from certified fan curves at the actual system resistance.' },
-      { icon: 'control', title: 'Dual-duty operation', text: 'Variable speed for daily ventilation, direct-on-line for fire mode.' },
-      { icon: 'shield', title: 'Motor out of airstream', text: 'Optional bifurcated construction isolates the motor from hot gases.' },
-      { icon: 'layers', title: 'Multiple orientations', text: 'In-line, roof-mounted, box and wall-mounted arrangements.' },
-      { icon: 'wrench', title: 'Maintainable', text: 'Access doors, slide rails and lifting points designed into the casing.' },
-    ],
-    specs: [
-      {
-        group: 'Fire performance',
-        rows: [
-          ['Standard', 'EN 12101-3'],
-          ['Classification', 'F300 (300 °C / 2 h) or F400 (400 °C / 2 h)'],
-          ['Ambient duty', 'Continuous, 40 °C'],
-          ['Motor', 'IE3 premium efficiency, thermistor protected'],
-          ['Wiring', 'Fire-rated cable to motor terminals'],
-        ],
-      },
-      {
-        group: 'Aerodynamic',
-        rows: [
-          ['Impeller diameter', '400 – 1600 mm'],
-          ['Airflow range', '1.0 – 40 m³/s'],
-          ['Static pressure', 'Up to 1600 Pa'],
-          ['Blade pitch', 'Adjustable at standstill'],
-          ['Sound data', 'Certified octave band levels'],
-          ['Casing', 'Galvanised or epoxy coated steel'],
-        ],
-      },
-    ],
-    applications: [
-      'Basement and enclosed car parks',
-      'Atrium and mall smoke extraction',
-      'Industrial process buildings',
-      'Metro platform and concourse extract',
-      'Hotel and residential corridor systems',
-      'Data centre smoke clearance',
-    ],
-    benefits: [
-      { title: 'Guaranteed clear layer', text: 'Certified duty at temperature means the design extract rate is genuinely delivered.' },
-      { title: 'Energy efficient day to day', text: 'Dual-duty operation avoids running fire-rated plant at full speed continuously.' },
-      { title: 'Predictable commissioning', text: 'Certified curves and sound data reduce surprises at witness testing.' },
-      { title: 'Long service life', text: 'Heavy-duty bearings and coatings specified for tropical plant rooms.' },
-    ],
-    certifications: [CERT.en3, CERT.ce, CERT.amca, CERT.scdf],
-    related: ['smoke-control-damper', 'car-park-jet-fan', 'smoke-control-panel'],
-    seo: {
-      title: 'Smoke Extract Fan | EN 12101-3 F300 F400 | Sterling Ventilation',
-      description:
-        'SV-F400 high-temperature smoke extract fans certified to EN 12101-3 at F300 and F400, airflow to 40 m³/s, dual-duty variable speed operation.',
-      keywords: 'smoke extract fan, F400 fan, F300 fan, EN 12101-3, high temperature fan, smoke extraction',
-    },
-  },
-  {
     slug: 'smoke-control-panel',
-    name: 'Smoke Control Panel',
-    category: 'smoke-ventilation',
+    name: 'Sterling 400 Series',
+    category: 'natural-ventilation',
     model: 'SV-SCP',
     shape: 'panel',
     tagline: 'The logic layer that makes the system a system',
@@ -786,86 +736,12 @@ export const products = [
       { title: 'Serviceable for decades', text: 'Standard industrial PLC hardware with long-term parts availability.' },
     ],
     certifications: [CERT.en9, CERT.ce, CERT.ip, CERT.scdf],
-    related: ['smoke-curtain', 'smoke-control-damper', 'stair-pressurisation-unit'],
+    related: ['smoke-control-damper'],
     seo: {
       title: 'Smoke Control Panel | EN 12101-9 PLC Control | Sterling Ventilation',
       description:
         'SV-SCP PLC smoke control and indicating panels to EN 12101-9 and EN 12101-10, with monitored outputs, firefighter override, BMS integration and IoT self-test logging.',
       keywords: 'smoke control panel, EN 12101-9, fire smoke control system, PLC smoke panel, firefighter override panel',
-    },
-  },
-  {
-    slug: 'stair-pressurisation-unit',
-    name: 'Stair Pressurisation Unit',
-    category: 'smoke-ventilation',
-    model: 'SV-SPU',
-    shape: 'pressurisation',
-    tagline: 'Positive pressure that keeps the escape route usable',
-    short:
-      'Packaged pressurisation units with modulating relief that hold escape stairs and firefighting shafts smoke-free without exceeding door opening force limits.',
-    long: [
-      'Pressurisation has to satisfy two requirements that pull against each other: enough differential to keep smoke out of the shaft, and low enough door force for occupants to actually open the door. Systems that pass the static test and fail the dynamic one are common.',
-      'The SV-SPU packages the supply fan, pressure sensing, modulating relief and control into one commissioned unit. Pressure is measured continuously and the fan modulates through the door-opening cycle, so the differential and velocity criteria are met with doors closed, with the design number of doors open, and in the transition between them.',
-    ],
-    quickStats: [
-      ['Differential', '50 Pa nominal, modulated'],
-      ['Door force', '≤ 100 N at handle'],
-      ['Door velocity', '≥ 0.75 – 2.0 m/s'],
-      ['Response', 'Full duty < 60 s'],
-    ],
-    features: [
-      { icon: 'gauge', title: 'Closed-loop control', text: 'Continuous pressure measurement with variable speed modulation.' },
-      { icon: 'shield', title: 'Door force compliance', text: 'Relief sized and controlled to hold opening force within code limits.' },
-      { icon: 'fire', title: 'Firefighting shafts', text: 'Configurable for firefighting lift lobby and shaft pressurisation.' },
-      { icon: 'layers', title: 'Multi-injection', text: 'Distributed injection points for tall shafts with stack pressure variation.' },
-      { icon: 'control', title: 'Duty / standby', text: 'Optional standby fan with automatic changeover and alternation.' },
-      { icon: 'wrench', title: 'Pre-commissioned', text: 'Factory-set and site-verified with a documented test record.' },
-    ],
-    specs: [
-      {
-        group: 'Performance',
-        rows: [
-          ['Standard', 'EN 12101-6 / EN 12101-13'],
-          ['Design differential', '50 Pa (doors closed)'],
-          ['Door opening force', '≤ 100 N measured at the handle'],
-          ['Door velocity', '0.75 – 2.0 m/s, class dependent'],
-          ['Airflow', '2 – 20 m³/s per unit'],
-          ['Response time', 'Full duty within 60 seconds'],
-        ],
-      },
-      {
-        group: 'Equipment',
-        rows: [
-          ['Fan', 'Axial or centrifugal, IE3 motor'],
-          ['Speed control', 'Variable speed drive, fire-mode bypass'],
-          ['Relief', 'Barometric or motorised modulating damper'],
-          ['Sensing', 'Differential pressure transmitters per zone'],
-          ['Control', 'Integral PLC, interfaced to smoke control panel'],
-          ['Enclosure', 'Weatherproof or plant room mounted'],
-        ],
-      },
-    ],
-    applications: [
-      'High-rise residential and commercial stairs',
-      'Firefighting lift lobbies and shafts',
-      'Hospital escape stairs',
-      'Hotel towers',
-      'Basement escape routes',
-      'Refuge floors and areas',
-    ],
-    benefits: [
-      { title: 'Escape routes stay clear', text: 'Positive differential keeps smoke out of the protected shaft.' },
-      { title: 'Doors remain usable', text: 'Modulating relief prevents the over-pressure that traps occupants.' },
-      { title: 'Firefighting bridgehead', text: 'Maintains tenable conditions for fire service operations.' },
-      { title: 'Evidence at handover', text: 'Documented differential, velocity and force readings for every door set.' },
-    ],
-    certifications: [CERT.en6, CERT.ce, CERT.scdf, CERT.nfpa92],
-    related: ['smoke-control-panel', 'centrifugal-fan', 'smoke-control-damper'],
-    seo: {
-      title: 'Stair Pressurisation Unit | EN 12101-6 | Sterling Ventilation',
-      description:
-        'SV-SPU packaged stair and firefighting shaft pressurisation units to EN 12101-6 with closed-loop modulation, compliant door opening force and documented commissioning.',
-      keywords: 'stair pressurisation, EN 12101-6, pressure differential system, firefighting shaft pressurisation, smoke free stairs',
     },
   },
 
@@ -936,307 +812,12 @@ export const products = [
       { title: 'Long bearing life', text: '100,000 hour bearing design life reduces intervention frequency.' },
     ],
     certifications: [CERT.amca, CERT.ce, CERT.eurovent, CERT.iso],
-    related: ['centrifugal-fan', 'smoke-extract-fan', 'air-handling-unit'],
+    related: ['smoke-control-damper', 'smoke-control-panel'],
     seo: {
       title: 'Axial Flow Fan | Adjustable Pitch Industrial Fans | Sterling Ventilation',
       description:
         'SV-AXL adjustable pitch axial flow fans, 0.5–45 m³/s to 1200 Pa, AMCA certified performance, IE3/IE4 motors and inverter-ready construction.',
       keywords: 'axial flow fan, industrial fan, adjustable pitch fan, AMCA certified fan, ventilation fan Singapore',
-    },
-  },
-  {
-    slug: 'centrifugal-fan',
-    name: 'Centrifugal Fan',
-    category: 'mechanical-ventilation',
-    model: 'SV-CFG',
-    shape: 'centrifugal',
-    tagline: 'High pressure duty with backward-curved efficiency',
-    short:
-      'Backward-curved and plug-fan centrifugal units for ducted systems where static pressure, not volume, is the governing requirement.',
-    long: [
-      'Where a system carries long duct runs, filtration or coils, an axial fan runs out of pressure long before it runs out of volume. Centrifugal fans take over — and backward-curved impellers give the best efficiency and the most stable curve for building services duty.',
-      'The SV-CFG range covers belt and direct-driven scroll fans as well as plug-fan arrays for AHU and pressurisation duty, with EC motor options for close speed control and low part-load power.',
-    ],
-    quickStats: [
-      ['Static pressure', 'To 3500 Pa'],
-      ['Airflow', '0.3 – 30 m³/s'],
-      ['Impeller', 'Backward-curved aerofoil'],
-      ['Drive', 'Belt, direct or EC'],
-    ],
-    features: [
-      { icon: 'gauge', title: 'High static capability', text: 'Stable pressure development for long, filtered or coil-loaded systems.' },
-      { icon: 'spark', title: 'Backward-curved efficiency', text: 'Non-overloading characteristic with peak efficiency above 80%.' },
-      { icon: 'control', title: 'EC motor option', text: 'Integrated electronic commutation for precise, efficient part-load control.' },
-      { icon: 'layers', title: 'Plug-fan arrays', text: 'Multiple smaller fans in parallel for redundancy and turndown.' },
-      { icon: 'shield', title: 'Low vibration', text: 'Dynamically balanced to ISO 14694 BV-4 as standard.' },
-      { icon: 'wrench', title: 'Access designed in', text: 'Inspection doors, drain points and removable drive guards.' },
-    ],
-    specs: [
-      {
-        group: 'Aerodynamic',
-        rows: [
-          ['Impeller type', 'Backward-curved aerofoil or plug fan'],
-          ['Impeller diameter', '250 – 1600 mm'],
-          ['Airflow range', '0.3 – 30 m³/s'],
-          ['Static pressure', 'Up to 3500 Pa'],
-          ['Peak total efficiency', '> 80%'],
-          ['Test standard', 'AMCA 210 / ISO 5801'],
-        ],
-      },
-      {
-        group: 'Mechanical & electrical',
-        rows: [
-          ['Housing', 'Galvanised steel scroll or open plug'],
-          ['Drive', 'Belt, direct coupled or EC'],
-          ['Balance grade', 'ISO 14694 BV-4'],
-          ['Motor', 'IE3 / IE4 or integrated EC'],
-          ['Bearings', 'L10 100,000 hours'],
-          ['Options', 'Inlet guide vanes, flexible connections, AV mounts'],
-        ],
-      },
-    ],
-    applications: [
-      'Ducted supply and extract systems',
-      'Air handling unit fan sections',
-      'Stair and lobby pressurisation',
-      'Laboratory and fume extract',
-      'Kitchen extract with filtration',
-      'Industrial dust and fume systems',
-    ],
-    benefits: [
-      { title: 'Efficient at real duty', text: 'Backward-curved impellers hold efficiency across the operating band.' },
-      { title: 'Motor protection', text: 'Non-overloading characteristic prevents motor overload if resistance falls.' },
-      { title: 'Redundancy option', text: 'Plug-fan arrays keep the system running through a single fan failure.' },
-      { title: 'Acoustically manageable', text: 'Lower tonal content than forward-curved alternatives.' },
-    ],
-    certifications: [CERT.amca, CERT.eurovent, CERT.ce, CERT.iso],
-    related: ['axial-flow-fan', 'air-handling-unit', 'stair-pressurisation-unit'],
-    seo: {
-      title: 'Centrifugal Fan | Backward Curved & Plug Fans | Sterling Ventilation',
-      description:
-        'SV-CFG backward-curved centrifugal and plug fans to 3500 Pa and 30 m³/s, AMCA and Eurovent certified performance, EC motor and fan array options.',
-      keywords: 'centrifugal fan, backward curved fan, plug fan, EC fan, high pressure fan, AHU fan',
-    },
-  },
-  {
-    slug: 'car-park-jet-fan',
-    name: 'Car Park Jet Fan',
-    category: 'mechanical-ventilation',
-    model: 'SV-JET',
-    shape: 'jet',
-    tagline: 'Ductless impulse ventilation that gives you back your headroom',
-    short:
-      'Unidirectional and reversible impulse fans that replace car park supply and extract ductwork with directed thrust, serving both pollutant control and fire mode.',
-    long: [
-      'Impulse ventilation removes the ductwork from a car park and replaces it with a designed flow field. The saving is not just cost — it is slab-to-soffit height, structural coordination and a far simpler installation.',
-      'The SV-JET range includes low-profile units for tight soffits and reversible units for zoned fire-mode control, all F300 rated so the same fans serve the daily CO/NO₂ duty and the smoke clearance strategy. Placement and thrust are always verified by CFD.',
-    ],
-    quickStats: [
-      ['Fire rating', 'F300 (300 °C / 2 h)'],
-      ['Thrust', '25 – 110 N'],
-      ['Profile', 'From 260 mm deep'],
-      ['Modes', 'Uni-directional / reversible'],
-    ],
-    features: [
-      { icon: 'layers', title: 'Low profile', text: 'Casings from 260 mm deep for car parks with tight structural zones.' },
-      { icon: 'fire', title: 'F300 rated', text: 'Certified to continue operating in fire mode at 300 °C for two hours.' },
-      { icon: 'control', title: 'Reversible option', text: 'Bi-directional thrust for zoned smoke control strategies.' },
-      { icon: 'gauge', title: 'CFD verified layout', text: 'Placement, thrust and stagnation zones proven by simulation before order.' },
-      { icon: 'spark', title: 'Demand control', text: 'CO and NO₂ sensor control runs fans only when air quality requires it.' },
-      { icon: 'shield', title: 'Two-speed operation', text: 'Quiet low-speed daily duty, full thrust in fire mode.' },
-    ],
-    specs: [
-      {
-        group: 'Performance',
-        rows: [
-          ['Fire classification', 'EN 12101-3 F300 (300 °C / 2 h)'],
-          ['Thrust range', '25 – 110 N per unit'],
-          ['Airflow', '0.9 – 4.2 m³/s per unit'],
-          ['Sound pressure at 3 m', 'From 52 dB(A) at low speed'],
-          ['Operation', 'Two speed or variable speed'],
-          ['Direction', 'Uni-directional or fully reversible'],
-        ],
-      },
-      {
-        group: 'Construction',
-        rows: [
-          ['Casing', 'Galvanised steel, powder coated'],
-          ['Casing depth', '260 – 400 mm'],
-          ['Impeller', 'Aluminium, high-temperature rated'],
-          ['Motor', 'IE3, thermistor protected'],
-          ['Mounting', 'Soffit brackets with anti-vibration isolation'],
-          ['Protection', 'IP 55'],
-        ],
-      },
-    ],
-    applications: [
-      'Basement car parks',
-      'Podium and multi-storey car parks',
-      'Mixed-use development parking',
-      'Hospital and airport parking',
-      'Logistics and fleet depots',
-      'Retail and hotel parking',
-    ],
-    benefits: [
-      { title: 'Headroom recovered', text: 'Removing ductwork frees slab-to-soffit height across the whole car park.' },
-      { title: 'Lower installed cost', text: 'Less ductwork, builders work and installation programme.' },
-      { title: 'Energy savings', text: 'Demand-controlled operation cuts fan hours dramatically versus fixed extract.' },
-      { title: 'Directed smoke clearance', text: 'Zoned thrust moves smoke away from escape routes and ramps.' },
-    ],
-    certifications: [CERT.en3, CERT.ce, CERT.scdf, CERT.iso],
-    related: ['smoke-extract-fan', 'tunnel-ventilation-fan', 'smoke-control-panel'],
-    seo: {
-      title: 'Car Park Jet Fan | Impulse Ventilation F300 | Sterling Ventilation',
-      description:
-        'SV-JET impulse jet fans for basement car park ventilation. F300 rated to EN 12101-3, 25–110 N thrust, low-profile and reversible options, CFD-verified layouts.',
-      keywords: 'car park jet fan, impulse ventilation, induction fan, F300 jet fan, basement car park ventilation, ductless car park',
-    },
-  },
-  {
-    slug: 'air-handling-unit',
-    name: 'Air Handling Unit',
-    category: 'mechanical-ventilation',
-    model: 'SV-AHU',
-    shape: 'ahu',
-    tagline: 'Modular air handling built for tropical duty',
-    short:
-      'Double-skin modular air handling units with high-efficiency plug-fan arrays, deep cooling coils and heat recovery, configured for humid tropical climates.',
-    long: [
-      'An air handling unit specified for a temperate climate performs poorly in the tropics — coil face velocities, condensate management and casing thermal performance all need different assumptions.',
-      'The SV-AHU is a double-skin modular unit built around those conditions: thermally broken frames to prevent surface condensation, deep cooling coils with generous drain arrangements, and plug-fan arrays that stay efficient at part load through the long shoulder seasons.',
-    ],
-    quickStats: [
-      ['Airflow', '0.3 – 30 m³/s'],
-      ['Casing', 'Double skin, thermally broken'],
-      ['Fans', 'EC plug-fan arrays'],
-      ['Recovery', 'Plate, wheel or run-around'],
-    ],
-    features: [
-      { icon: 'layers', title: 'Modular construction', text: 'Sections configured and split for site access and future extension.' },
-      { icon: 'shield', title: 'Thermally broken casing', text: 'Eliminates the cold bridging that causes surface condensation in the tropics.' },
-      { icon: 'spark', title: 'EC fan arrays', text: 'Multiple EC plug fans for efficiency, turndown and built-in redundancy.' },
-      { icon: 'gauge', title: 'Deep coils', text: 'Low face velocity coils with stainless drain trays and dual traps.' },
-      { icon: 'control', title: 'Integrated controls', text: 'Factory-fitted control panel with BACnet/Modbus interface.' },
-      { icon: 'wrench', title: 'Hygienic access', text: 'Full-height access doors, coated internals and cleanable surfaces.' },
-    ],
-    specs: [
-      {
-        group: 'Casing & sections',
-        rows: [
-          ['Casing', 'Double skin, 50 mm PIR or mineral wool'],
-          ['Frame', 'Thermally broken extruded aluminium'],
-          ['Casing classification', 'D1 / L1 / T2 / TB2 to EN 1886'],
-          ['Sections', 'Filter, coil, fan, recovery, attenuator, mixing'],
-          ['Filtration', 'ISO 16890 ePM1 / ePM10 stages'],
-        ],
-      },
-      {
-        group: 'Performance',
-        rows: [
-          ['Airflow range', '0.3 – 30 m³/s'],
-          ['External static', 'To 1500 Pa'],
-          ['Fan section', 'EC plug fan array, N+1 optional'],
-          ['Heat recovery', 'Plate, thermal wheel or run-around coil'],
-          ['Coil face velocity', '≤ 2.5 m/s tropical selection'],
-          ['Controls', 'Integral panel, BACnet/IP or Modbus'],
-        ],
-      },
-    ],
-    applications: [
-      'Commercial office buildings',
-      'Hotels and hospitality',
-      'Hospitals and clinical areas',
-      'Laboratories and cleanrooms',
-      'Data centre support spaces',
-      'Retail and mixed-use developments',
-    ],
-    benefits: [
-      { title: 'Condensation controlled', text: 'Thermally broken casing avoids the dripping panels common in humid climates.' },
-      { title: 'Efficient at part load', text: 'EC fan arrays hold efficiency well below design airflow.' },
-      { title: 'Built-in redundancy', text: 'Fan array continues to deliver reduced duty through a single failure.' },
-      { title: 'Maintainable in place', text: 'Full access sections make filter and coil service straightforward.' },
-    ],
-    certifications: [CERT.eurovent, CERT.ce, CERT.iso, CERT.amca],
-    related: ['centrifugal-fan', 'axial-flow-fan', 'facade-louvre-ventilator'],
-    seo: {
-      title: 'Air Handling Unit | Modular Double Skin AHU | Sterling Ventilation',
-      description:
-        'SV-AHU double-skin modular air handling units for tropical duty — EC plug-fan arrays, thermally broken casing, deep coils and integrated heat recovery.',
-      keywords: 'air handling unit, AHU, modular AHU, EC plug fan, double skin AHU, tropical air handling unit',
-    },
-  },
-  {
-    slug: 'tunnel-ventilation-fan',
-    name: 'Tunnel Ventilation Fan',
-    category: 'mechanical-ventilation',
-    model: 'SV-TVF',
-    shape: 'tunnel',
-    tagline: 'Reversible high-temperature fans for tunnels and metro systems',
-    short:
-      'Heavy-duty reversible axial fans for road tunnels, metro running tunnels and underground stations, rated for sustained operation at elevated temperature.',
-    long: [
-      'Tunnel ventilation is the most demanding smoke control duty there is. The fans have to establish critical velocity to prevent backlayering, reverse direction on command, and keep running while the fire develops — often for hours.',
-      'The SV-TVF range covers jet fans for longitudinal systems and large shaft and portal fans for transverse and semi-transverse schemes, rated from 250 °C/2 h to 400 °C/2 h with matched reverse-flow performance and full SCADA integration.',
-    ],
-    quickStats: [
-      ['Rating', '250 °C – 400 °C / 2 h'],
-      ['Reversibility', '≥ 90% reverse duty'],
-      ['Impeller', 'To 2500 mm'],
-      ['Control', 'TVCS / SCADA integrated'],
-    ],
-    features: [
-      { icon: 'fire', title: 'Sustained fire duty', text: 'Rated for continuous operation through the full design fire duration.' },
-      { icon: 'control', title: 'True reversibility', text: 'Symmetrical blade profiles retain at least 90% of duty in reverse.' },
-      { icon: 'gauge', title: 'Critical velocity', text: 'Selected against backlayering analysis for every defined fire location.' },
-      { icon: 'shield', title: 'Seismic and vibration', text: 'Mounting and bracing designed for tunnel dynamic loads.' },
-      { icon: 'layers', title: 'Redundancy', text: 'N+1 arrangements for availability during maintenance windows.' },
-      { icon: 'spark', title: 'SCADA integration', text: 'Full status, control and alarm reporting into the tunnel control system.' },
-    ],
-    specs: [
-      {
-        group: 'Fire & duty',
-        rows: [
-          ['Temperature rating', '250 °C / 400 °C for 2 hours'],
-          ['Standard', 'EN 12101-3, NFPA 130 / 502 basis'],
-          ['Reverse performance', '≥ 90% of forward duty'],
-          ['Impeller diameter', '630 – 2500 mm'],
-          ['Airflow', 'Up to 250 m³/s (shaft fans)'],
-          ['Motor rating', 'To 400 kW'],
-        ],
-      },
-      {
-        group: 'Construction',
-        rows: [
-          ['Casing', 'Heavy-gauge steel, epoxy or galvanised'],
-          ['Impeller', 'Cast aluminium or steel aerofoil'],
-          ['Bearings', 'Heavy duty, condition monitored'],
-          ['Silencers', 'Integral inlet and outlet attenuation'],
-          ['Mounting', 'Anti-vibration with seismic restraint'],
-          ['Monitoring', 'Vibration, temperature and current to SCADA'],
-        ],
-      },
-    ],
-    applications: [
-      'Road and highway tunnels',
-      'Metro running tunnels',
-      'Underground stations and concourses',
-      'Cross-passage and service tunnels',
-      'Utility and cable tunnels',
-      'Mine ventilation',
-    ],
-    benefits: [
-      { title: 'Backlayering controlled', text: 'Critical velocity established to hold smoke downstream of the incident.' },
-      { title: 'Self-rescue supported', text: 'Tenable conditions maintained on the evacuation side of the fire.' },
-      { title: 'Operational flexibility', text: 'Reversible duty allows the strategy to adapt to fire location.' },
-      { title: 'High availability', text: 'Condition monitoring and N+1 design protect operational uptime.' },
-    ],
-    certifications: [CERT.en3, CERT.nfpa130, CERT.ce, CERT.iso],
-    related: ['car-park-jet-fan', 'smoke-extract-fan', 'axial-flow-fan'],
-    seo: {
-      title: 'Tunnel Ventilation Fan | Reversible High Temperature | Sterling Ventilation',
-      description:
-        'SV-TVF reversible tunnel ventilation fans rated 250–400 °C for 2 hours to EN 12101-3 and NFPA 130/502, impellers to 2500 mm with SCADA integration.',
-      keywords: 'tunnel ventilation fan, reversible jet fan, metro ventilation, NFPA 130 fan, critical velocity, tunnel smoke control',
     },
   },
 ];

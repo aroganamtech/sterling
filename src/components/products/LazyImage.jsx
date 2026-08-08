@@ -34,7 +34,7 @@ export default function LazyImage({
           alt={alt}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
-          fetchPriority={eager ? 'high' : 'low'}
+          fetchpriority={eager ? 'high' : 'low'}
           draggable="false"
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}

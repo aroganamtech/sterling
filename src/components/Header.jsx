@@ -49,9 +49,11 @@ function MegaPanel({ item, onNavigate }) {
                 ? 'Certified equipment'
                 : item.label === 'Engineering'
                   ? 'Evidence-led design'
-                  : item.label === 'Resources'
-                    ? 'For design teams'
-                    : 'The practice'}
+                  : item.label === 'Services'
+                    ? 'Support for the whole asset life'
+                    : item.label === 'Resources'
+                      ? 'For design teams'
+                      : 'The practice'}
           </p>
           <p className="mt-3 text-[14px] leading-relaxed text-steel-500">{item.description}</p>
           <Link to={item.to} onClick={onNavigate} className="link-arrow mt-6">
@@ -60,9 +62,9 @@ function MegaPanel({ item, onNavigate }) {
           </Link>
         </div>
 
-        <div className={`grid gap-x-10 gap-y-7 ${item.columns.length >= 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : item.columns.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+        <div className="flex flex-wrap items-start gap-x-16 gap-y-7">
           {item.columns.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} className="w-full max-w-[260px] flex-1 sm:w-auto sm:flex-none">
               <p className="mb-4 text-[10.5px] font-bold uppercase tracking-widest2 text-steel-400">{col.title}</p>
               <ul className="space-y-1">
                 {col.items.map((sub) => (
@@ -160,7 +162,7 @@ export default function Header() {
             </a>
             <span className="flex items-center gap-2 text-navy-400">
               <Icon name="pin" className="h-3.5 w-3.5" />
-              Singapore · India
+              Singapore
             </span>
           </div>
         </div>
@@ -237,7 +239,7 @@ export default function Header() {
 
         {/* mega menu */}
         <div
-          className={`glass absolute inset-x-0 top-full hidden overflow-hidden rounded-b-2xl shadow-[0_40px_80px_-40px_rgba(10,19,39,.7)] transition-all duration-300 lg:block ${
+          className={`absolute inset-x-0 top-full hidden overflow-hidden rounded-b-2xl border-t border-steel-100 bg-white shadow-[0_40px_80px_-40px_rgba(10,19,39,.7)] backdrop-blur-2xl transition-all duration-300 lg:block ${
             open ? 'pointer-events-auto max-h-[560px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
           onMouseEnter={() => clearTimeout(closeTimer.current)}

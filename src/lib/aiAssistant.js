@@ -125,10 +125,7 @@ const KB = [
     keywords: ['car park', 'carpark', 'jet fan', 'impulse', 'basement', 'parking', 'co sensor'],
     answer: () =>
       `Impulse (jet fan) ventilation replaces car park supply and extract ductwork with directed thrust. The gains are real: slab-to-soffit height recovered, less builders work, and demand-controlled running on CO/NO₂ sensors instead of fixed extract.\n\nThe engineering that matters is the flow field — beam downstands, ramps and column grids create stagnation zones that only show up in CFD. We model every layout before we quote it.\n\nJet fans for fire duty must be F300 rated; ours are, and reversible versions are available for zoned smoke control.`,
-    links: [
-      { label: 'Car park jet fan', to: '/products/car-park-jet-fan' },
-      { label: 'Car park ventilation', to: '/solutions/car-park-ventilation' },
-    ],
+    links: [{ label: 'Car park jet fan', to: '/products/car-park-jet-fan' }],
   },
   {
     id: 'maintenance',

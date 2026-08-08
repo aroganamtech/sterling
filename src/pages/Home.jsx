@@ -8,7 +8,6 @@ import Reveal from '../components/Reveal';
 import Counter from '../components/Counter';
 import ProcessFlow from '../components/ProcessFlow';
 import SolutionFinder from '../components/SolutionFinder';
-import ComplianceMatrix from '../components/ComplianceMatrix';
 import SystemDiagram from '../components/SystemDiagram';
 import CFDCompare from '../components/CFDCompare';
 import CoverageMap from '../components/CoverageMap';
@@ -110,9 +109,9 @@ export default function Home() {
 
       {/* ================= METRICS ================= */}
       <section className="relative z-10 border-b border-steel-200 bg-white">
-        <div className="shell grid divide-y divide-steel-200 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+        <div className="shell flex justify-center">
           {metrics.map((m, i) => (
-            <Reveal key={m.label} delay={i * 90} className="px-2 py-8 lg:px-8">
+            <Reveal key={m.label} delay={i * 90} className="px-2 py-8 text-center lg:px-8">
               <p className="font-display text-[clamp(2.2rem,3.6vw,3rem)] font-semibold leading-none text-navy-900">
                 <Counter value={m.value} suffix={m.suffix} />
               </p>
@@ -200,7 +199,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Core solutions"
               title="Systems we engineer"
-              lede="Eight system families, designed to work as one integrated smoke management strategy."
+              lede="Four system families, designed to work as one integrated smoke management strategy."
             />
             <Reveal delay={120}>
               <Link to="/solutions" className="btn-outline">
@@ -264,9 +263,9 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-12 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
+          <div className="mt-12 flex flex-wrap gap-px border border-white/10 bg-white/10">
             {productCategories.map((c, i) => (
-              <Reveal key={c.id} delay={i * 90}>
+              <Reveal key={c.id} delay={i * 90} className="min-w-[260px] flex-1">
                 <ProductCategoryCard category={c} items={productsByCategory(c.id)} />
               </Reveal>
             ))}
@@ -472,15 +471,6 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={180}>
-            <div className="mt-14">
-              <p className="mb-6 text-[10.5px] font-bold uppercase tracking-widest2 text-steel-400">
-                Interactive compliance matrix
-              </p>
-              <ComplianceMatrix />
-            </div>
-          </Reveal>
-
-          <Reveal delay={220}>
             <Link to="/resources/standards" className="link-arrow mt-10">
               Full standards reference
               <Icon name="arrow" className="h-4 w-4" />

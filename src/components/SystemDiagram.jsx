@@ -58,7 +58,7 @@ const nodes = [
     x: 360,
     y: 392,
     label: 'Car Park Ventilation',
-    solution: 'car-park-ventilation',
+    solution: null,
     text: 'Impulse fans direct smoke away from escape routes toward the extract shaft, zoned to the level of the incident.',
   },
   {
@@ -66,7 +66,7 @@ const nodes = [
     x: 880,
     y: 300,
     label: 'Control & Automation',
-    solution: 'control-automation',
+    solution: null,
     text: 'The PLC smoke control panel executes the cause-and-effect sequence, monitors every device and presents firefighter override.',
   },
 ];
