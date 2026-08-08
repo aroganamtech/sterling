@@ -136,7 +136,7 @@ export default function SolutionDetail() {
                   <span className="font-display text-[13px] font-semibold text-signal-600">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="mt-4 font-display text-[18px] font-semibold uppercase leading-tight text-navy-900">
+                  <h3 className="mt-4 font-display text-[18px] font-semibold leading-tight text-navy-900">
                     {b.title}
                   </h3>
                   <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500">{b.text}</p>
@@ -210,7 +210,7 @@ export default function SolutionDetail() {
             {related.map((r) => (
               <Link key={r.slug} to={`/solutions/${r.slug}`} className="group bg-white p-7 transition-colors hover:bg-navy-950">
                 <Icon name={r.icon} className="h-7 w-7 text-navy-700 transition-colors group-hover:text-signal-400" />
-                <h3 className="mt-5 font-display text-[18px] font-semibold uppercase text-navy-900 transition-colors group-hover:text-white">
+                <h3 className="mt-5 font-display text-[18px] font-semibold text-navy-900 transition-colors group-hover:text-white">
                   {r.title}
                 </h3>
                 <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500 transition-colors group-hover:text-navy-300">

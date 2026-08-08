@@ -95,7 +95,7 @@ export default function ProductsIndex() {
                   <Icon name={c.icon} className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="font-display text-[16px] font-semibold uppercase leading-tight text-white">
+                  <p className="font-display text-[16px] font-semibold leading-tight text-white">
                     {c.name}
                   </p>
                   <p className="mt-0.5 text-[11.5px] uppercase tracking-[0.1em] text-navy-300">
@@ -175,7 +175,7 @@ export default function ProductsIndex() {
             ].map((c) => (
               <Link key={c.t} to={c.to} className="group flex h-full flex-col bg-white p-7 transition-colors hover:bg-steel-50">
                 <Icon name={c.icon} className="h-7 w-7 text-navy-700 transition-colors group-hover:text-signal-600" />
-                <p className="mt-5 font-display text-[17px] font-semibold uppercase text-navy-900">{c.t}</p>
+                <p className="mt-5 font-display text-[17px] font-semibold text-navy-900">{c.t}</p>
                 <p className="mt-2 flex-1 text-[13px] leading-relaxed text-steel-500">{c.s}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-signal-600">
                   Learn more

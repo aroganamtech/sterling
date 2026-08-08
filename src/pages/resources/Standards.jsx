@@ -59,7 +59,7 @@ export default function Standards() {
                       className="flex flex-wrap items-baseline gap-x-5 gap-y-1 py-3.5"
                       style={{ animation: `floatUp .45s cubic-bezier(.22,1,.36,1) ${i * 45}ms both` }}
                     >
-                      <span className="min-w-[140px] font-display text-[15px] font-semibold uppercase text-navy-900">
+                      <span className="min-w-[140px] font-display text-[15px] font-semibold text-navy-900">
                         {code}
                       </span>
                       <span className="text-[14px] text-steel-600">{title}</span>

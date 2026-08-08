@@ -66,10 +66,10 @@ export default function Footer() {
             <div className="flex items-center gap-3.5">
               <img src={logoLight} alt="" className="h-12 w-auto" />
               <span className="leading-none">
-                <span className="block font-display text-[22px] font-semibold uppercase tracking-[0.13em] text-white">
+                <span className="block font-display text-[22px] font-semibold tracking-[0.13em] text-white">
                   Sterling
                 </span>
-                <span className="block font-display text-[13px] font-medium uppercase tracking-[0.24em] text-signal-400">
+                <span className="block font-display text-[13px] font-medium tracking-[0.24em] text-signal-400">
                   Ventilation
                 </span>
               </span>

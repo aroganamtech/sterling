@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/30" />
       <div className="shell relative py-24">
         <span className="eyebrow-light">Error 404</span>
-        <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,5rem)] font-semibold uppercase leading-none text-white">
+        <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-none text-white">
           This page has cleared the building
         </h1>
         <p className="mt-6 max-w-xl text-[16.5px] leading-relaxed text-navy-200">

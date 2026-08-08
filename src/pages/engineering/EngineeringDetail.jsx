@@ -109,7 +109,7 @@ export default function EngineeringDetail() {
             {others.map((o) => (
               <Link key={o.slug} to={`/engineering/${o.slug}`} className="group h-full bg-white p-6 transition-colors hover:bg-navy-950">
                 <Icon name={o.icon} className="h-6 w-6 text-navy-700 transition-colors group-hover:text-signal-400" />
-                <p className="mt-5 font-display text-[16px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-white">
+                <p className="mt-5 font-display text-[16px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-white">
                   {o.title}
                 </p>
                 <p className="mt-2 text-[12.5px] leading-snug text-steel-500 transition-colors group-hover:text-navy-300">

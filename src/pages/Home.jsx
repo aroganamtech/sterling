@@ -55,11 +55,11 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={90}>
-                <h1 className="text-cine mt-6 font-display text-[clamp(2.6rem,6.6vw,5.4rem)] font-semibold uppercase leading-[0.98] text-white">
+                <h1 className="text-cine mt-6 font-display text-[clamp(2.6rem,6.6vw,5.4rem)] font-semibold leading-[0.98] text-white">
                   Protecting lives
                   <span className="block text-white/70">through intelligent</span>
                   <span className="block">
-                    smoke <span className="text-cine-warm text-ember-500">management</span>
+                    smoke <span className="text-cine-warm text-signal-300">management</span>
                   </span>
                 </h1>
               </Reveal>
@@ -166,7 +166,7 @@ export default function Home() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-transparent" />
               <div className="relative">
                 <span className="eyebrow-light">Design intent</span>
-                <p className="mt-6 font-display text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold uppercase leading-tight text-white">
+                <p className="mt-6 font-display text-[clamp(1.6rem,2.4vw,2.1rem)] font-semibold leading-tight text-white">
                   “{company.positioning}”
                 </p>
                 <p className="mt-5 text-[15px] leading-relaxed text-navy-200">
@@ -219,7 +219,7 @@ export default function Home() {
                   <span className="flex h-12 w-12 items-center justify-center bg-navy-50 text-navy-800 transition-colors duration-300 group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name={s.icon} className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-6 font-display text-[19px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-white">
+                  <h3 className="mt-6 font-display text-[19px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-white">
                     {s.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500 transition-colors group-hover:text-navy-300">
@@ -337,7 +337,7 @@ export default function Home() {
                     <Icon name={e.icon} className="h-5 w-5" />
                   </span>
                   <span>
-                    <span className="block font-display text-[17px] font-semibold uppercase text-navy-900">{e.title}</span>
+                    <span className="block font-display text-[17px] font-semibold text-navy-900">{e.title}</span>
                     <span className="mt-2 block text-[13.5px] leading-relaxed text-steel-500">{e.menuBlurb}</span>
                   </span>
                 </Link>
@@ -391,7 +391,7 @@ export default function Home() {
                     className="h-7 w-7 text-navy-700 transition-colors group-hover:text-signal-400"
                   />
                   <span>
-                    <span className="block font-display text-[15.5px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-white">
+                    <span className="block font-display text-[15.5px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-white">
                       {ind.title}
                     </span>
                     <span className="mt-1.5 block text-[12.5px] leading-snug text-steel-500 transition-colors group-hover:text-navy-300">
@@ -421,7 +421,7 @@ export default function Home() {
                   <span className="flex h-11 w-11 items-center justify-center bg-navy-900 text-signal-400 transition-colors group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name={w.icon} className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 font-display text-[16.5px] font-semibold uppercase leading-tight text-navy-900">
+                  <h3 className="mt-6 font-display text-[16.5px] font-semibold leading-tight text-navy-900">
                     {w.title}
                   </h3>
                   <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500">{w.text}</p>
@@ -512,7 +512,7 @@ export default function Home() {
                     <span className="absolute right-5 top-4 text-[11px] font-semibold text-white/60">{p.year}</span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-[18px] font-semibold uppercase leading-tight text-navy-900 group-hover:text-signal-700">
+                    <h3 className="font-display text-[18px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                       {p.title}
                     </h3>
                     <p className="mt-1.5 text-[12px] uppercase tracking-[0.13em] text-steel-400">{p.location}</p>

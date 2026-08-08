@@ -21,7 +21,7 @@ function Wordmark({ light = false }) {
         >
           Sterling
         </span>
-        <span className="block font-display text-[11.5px] font-medium uppercase tracking-[0.235em] text-signal-600 xl:text-[13px]">
+        <span className="block font-display text-[11.5px] font-medium tracking-[0.235em] text-signal-600 xl:text-[13px]">
           Ventilation
         </span>
         <span
@@ -42,7 +42,7 @@ function MegaPanel({ item, onNavigate }) {
       <div className="grid gap-10 border-t border-white/50 py-10 lg:grid-cols-[minmax(0,1fr)_2.1fr]">
         <div className="pr-6">
           <span className="eyebrow">{item.label}</span>
-          <p className="mt-5 font-display text-[26px] font-semibold uppercase leading-[1.1] text-navy-900">
+          <p className="mt-5 font-display text-[26px] font-semibold leading-[1.1] text-navy-900">
             {item.label === 'Solutions'
               ? 'Systems, not products'
               : item.label === 'Products'
@@ -271,7 +271,7 @@ export default function Header() {
                   <div className="flex items-center justify-between">
                     <Link
                       to={item.to}
-                      className="flex-1 py-4 font-display text-[19px] font-semibold uppercase tracking-wide text-navy-900"
+                      className="flex-1 py-4 font-display text-[19px] font-semibold tracking-wide text-navy-900"
                     >
                       {item.label}
                     </Link>

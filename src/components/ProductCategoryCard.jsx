@@ -18,7 +18,7 @@ export default function ProductCategoryCard({ category, items = [] }) {
       <span className="flex h-12 w-12 items-center justify-center border border-white/15 text-signal-400 transition-all group-hover:border-signal-500 group-hover:bg-signal-600 group-hover:text-white">
         <Icon name={category.icon} className="h-5 w-5" />
       </span>
-      <h3 className="mt-6 font-display text-[19px] font-semibold uppercase leading-tight text-white">
+      <h3 className="mt-6 font-display text-[19px] font-semibold leading-tight text-white">
         {category.name}
       </h3>
       <p className="mt-2.5 flex-1 text-[13.5px] leading-relaxed text-navy-300">{category.blurb}</p>

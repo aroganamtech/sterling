@@ -248,7 +248,7 @@ export default function Contact() {
               {offices.map((o) => (
                 <div key={o.id} className="bg-white p-7">
                   <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-600">{o.country}</p>
-                  <h3 className="mt-2 font-display text-[19px] font-semibold uppercase text-navy-900">{o.label}</h3>
+                  <h3 className="mt-2 font-display text-[19px] font-semibold text-navy-900">{o.label}</h3>
                   <p className="mt-1.5 text-[13px] text-steel-500">{o.role}</p>
                   <address className="mt-5 space-y-1 text-[14px] not-italic leading-relaxed text-steel-600">
                     {o.lines.map((l) => (

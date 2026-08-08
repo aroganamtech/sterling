@@ -95,12 +95,12 @@ export default function SystemDiagram() {
         <svg viewBox="0 0 960 460" className="relative w-full" role="img" aria-label="Smoke control system architecture">
           <defs>
             <linearGradient id="sd-smoke" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#e2405d" stopOpacity="0.42" />
-              <stop offset="100%" stopColor="#e2405d" stopOpacity="0" />
+              <stop offset="0%" stopColor="#2e52db" stopOpacity="0.42" />
+              <stop offset="100%" stopColor="#2e52db" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="sd-struct" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#5d7cae" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#5d7cae" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#8593ac" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#8593ac" stopOpacity="0.15" />
             </linearGradient>
           </defs>
 
@@ -122,7 +122,7 @@ export default function SystemDiagram() {
           <g transform="translate(520 330)">
             <path
               d="M0 0 c-10 -16 4 -24 2 -38 8 8 20 14 20 26 0 8 -6 12 -12 12"
-              fill="#e2405d"
+              fill="#2e52db"
               opacity="0.85"
             >
               <animateTransform
@@ -138,7 +138,7 @@ export default function SystemDiagram() {
           {/* plume */}
           <path
             d="M524 322 C518 262 540 210 548 130"
-            stroke="#e2405d"
+            stroke="#2e52db"
             strokeWidth="1.2"
             fill="none"
             strokeDasharray="5 9"
@@ -148,13 +148,13 @@ export default function SystemDiagram() {
           </path>
 
           {/* stair shaft */}
-          <g stroke="#93a9cd" fill="none" strokeWidth="1.2" opacity="0.65">
+          <g stroke="#b9c3d5" fill="none" strokeWidth="1.2" opacity="0.65">
             <path d="M96 340 v-8 h26 v-16 h26 v-16 h26 v-16" />
             <path d="M96 268 v-8 h26 v-16 h26 v-16 h26 v-16" />
           </g>
 
           {/* control links */}
-          <g fill="none" stroke="#c8102e" strokeWidth="1.1" opacity="0.55">
+          <g fill="none" stroke="#092ba6" strokeWidth="1.1" opacity="0.55">
             {links.map(([a, b]) => {
               const A = byId[a];
               const B = byId[b];
@@ -189,9 +189,9 @@ export default function SystemDiagram() {
                   transition: `opacity .5s ease ${i * 90}ms`,
                 }}
               >
-                {on ? <circle r="22" fill="#c8102e" opacity="0.16" /> : null}
-                <circle r="13" fill={on ? '#c8102e' : '#111d38'} stroke={on ? '#f07084' : '#5d7cae'} strokeWidth="1.4" />
-                <circle r="4" fill={on ? '#fff' : '#93a9cd'} />
+                {on ? <circle r="22" fill="#092ba6" opacity="0.16" /> : null}
+                <circle r="13" fill={on ? '#092ba6' : '#0b1e36'} stroke={on ? '#5c7ef7' : '#8593ac'} strokeWidth="1.4" />
+                <circle r="4" fill={on ? '#fff' : '#b9c3d5'} />
                 <text
                   x="0"
                   y="-24"
@@ -199,7 +199,7 @@ export default function SystemDiagram() {
                   fontSize="11.5"
                   fontWeight="600"
                   letterSpacing="0.06em"
-                  fill={on ? '#ffffff' : '#93a9cd'}
+                  fill={on ? '#ffffff' : '#b9c3d5'}
                   style={{ textTransform: 'uppercase' }}
                 >
                   {n.label}

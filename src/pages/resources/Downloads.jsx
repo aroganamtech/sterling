@@ -29,7 +29,7 @@ export default function Downloads() {
                   <span className="flex h-12 w-12 items-center justify-center bg-navy-900 text-signal-400 transition-colors group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name="download" className="h-5 w-5" />
                   </span>
-                  <span className="font-display text-[17px] font-semibold uppercase leading-tight text-navy-900">
+                  <span className="font-display text-[17px] font-semibold leading-tight text-navy-900">
                     {d.title}
                   </span>
                   <span className="text-[13.5px] leading-relaxed text-steel-500">{d.desc}</span>

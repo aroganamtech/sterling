@@ -72,7 +72,7 @@ export default function About() {
             <div className="mt-12 grid gap-px border border-steel-200 bg-steel-200 sm:grid-cols-2">
               {differentiators.map(([t, s]) => (
                 <Reveal key={t} className="bg-white p-6">
-                  <p className="font-display text-[16px] font-semibold uppercase text-navy-900">{t}</p>
+                  <p className="font-display text-[16px] font-semibold text-navy-900">{t}</p>
                   <p className="mt-2 text-[13.5px] leading-relaxed text-steel-500">{s}</p>
                 </Reveal>
               ))}
@@ -123,7 +123,7 @@ export default function About() {
 
           <Reveal delay={200}>
             <div className="mt-14 flex flex-wrap items-center justify-center gap-4 border-t border-steel-200 pt-10 text-center">
-              <p className="font-display text-[clamp(1.4rem,2.4vw,2rem)] font-semibold uppercase tracking-wide text-navy-900">
+              <p className="font-display text-[clamp(1.4rem,2.4vw,2rem)] font-semibold tracking-wide text-navy-900">
                 {company.promise.split('.')[0]}.
                 <span className="text-signal-600">{company.promise.split('.')[1]}.</span>
               </p>
@@ -140,7 +140,7 @@ export default function About() {
             { to: '/about/global-presence', label: 'Global Presence', text: 'Where we operate' },
           ].map((l) => (
             <Link key={l.to} to={l.to} className="group bg-white px-7 py-10 transition-colors hover:bg-navy-50">
-              <p className="font-display text-[19px] font-semibold uppercase text-navy-900">{l.label}</p>
+              <p className="font-display text-[19px] font-semibold text-navy-900">{l.label}</p>
               <p className="mt-2 text-[13.5px] text-steel-500">{l.text}</p>
               <span className="link-arrow mt-5">
                 Read more

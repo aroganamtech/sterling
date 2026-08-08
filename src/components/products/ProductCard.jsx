@@ -33,7 +33,7 @@ export default function ProductCard({ product, index = 0, compact = false }) {
         </div>
 
         <div className="flex flex-1 flex-col p-6">
-          <h3 className="font-display text-[19px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-signal-700">
+          <h3 className="font-display text-[19px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-signal-700">
             {product.name}
           </h3>
           <p className="mt-2 text-[12.5px] uppercase tracking-[0.1em] text-signal-600">{product.tagline}</p>

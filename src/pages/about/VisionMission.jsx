@@ -26,7 +26,7 @@ export default function VisionMission() {
           <Reveal>
             <div className="flex h-full flex-col border border-steel-200 p-9 md:p-11">
               <span className="eyebrow">Vision</span>
-              <p className="mt-8 font-display text-[clamp(1.6rem,2.8vw,2.4rem)] font-semibold uppercase leading-[1.15] text-navy-900">
+              <p className="mt-8 font-display text-[clamp(1.6rem,2.8vw,2.4rem)] font-semibold leading-[1.15] text-navy-900">
                 To become Asia-Pacific’s trusted engineering partner for life safety smoke management systems.
               </p>
               <p className="mt-8 text-[15.5px] leading-relaxed text-steel-600">
@@ -49,7 +49,7 @@ export default function VisionMission() {
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <span>
-                        <span className="block font-display text-[17px] font-semibold uppercase leading-tight">{t}</span>
+                        <span className="block font-display text-[17px] font-semibold leading-tight">{t}</span>
                         <span className="mt-1.5 block text-[13.5px] leading-relaxed text-navy-300">{s}</span>
                       </span>
                     </li>
@@ -78,7 +78,7 @@ export default function VisionMission() {
               <Reveal key={c.t} delay={i * 80}>
                 <div className="h-full bg-white p-7">
                   <Icon name={c.icon} className="h-7 w-7 text-signal-600" />
-                  <p className="mt-5 font-display text-[17px] font-semibold uppercase text-navy-900">{c.t}</p>
+                  <p className="mt-5 font-display text-[17px] font-semibold text-navy-900">{c.t}</p>
                   <p className="mt-2 text-[13.5px] leading-relaxed text-steel-500">{c.s}</p>
                 </div>
               </Reveal>

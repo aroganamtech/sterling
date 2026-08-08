@@ -46,7 +46,7 @@ export default function EngineeringIndex() {
                   <span className="flex h-12 w-12 items-center justify-center bg-navy-50 text-navy-800 transition-colors group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name={s.icon} className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-6 font-display text-[19px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-white">
+                  <h3 className="mt-6 font-display text-[19px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-white">
                     {s.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500 transition-colors group-hover:text-navy-300">

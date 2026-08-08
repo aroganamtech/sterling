@@ -14,7 +14,7 @@ export default function SolutionFinder() {
       <div className="bg-white">
         <div className="border-b border-steel-200 px-6 py-5">
           <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-steel-400">Step 1</p>
-          <p className="mt-1.5 font-display text-[18px] font-semibold uppercase text-navy-900">Select building type</p>
+          <p className="mt-1.5 font-display text-[18px] font-semibold text-navy-900">Select building type</p>
         </div>
         <div className="max-h-[430px] overflow-y-auto">
           {industries.map((i) => {

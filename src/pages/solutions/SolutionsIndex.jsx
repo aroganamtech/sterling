@@ -47,7 +47,7 @@ export default function SolutionsIndex() {
                   </span>
 
                   <span>
-                    <span className="block font-display text-[21px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-white">
+                    <span className="block font-display text-[21px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-white">
                       {s.title}
                     </span>
                     <span className="mt-1.5 block text-[12.5px] uppercase tracking-[0.12em] text-signal-600">

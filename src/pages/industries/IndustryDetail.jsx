@@ -77,7 +77,7 @@ export default function IndustryDetail() {
                         <Icon name={sol.icon} className="h-5 w-5" />
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block font-display text-[17px] font-semibold uppercase text-navy-900">
+                        <span className="block font-display text-[17px] font-semibold text-navy-900">
                           {sol.title}
                         </span>
                         <span className="mt-0.5 block text-[13px] text-steel-500">{sol.menuBlurb}</span>
@@ -123,7 +123,7 @@ export default function IndustryDetail() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-[18px] font-semibold uppercase leading-tight text-navy-900 group-hover:text-signal-700">
+                    <h3 className="font-display text-[18px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                       {p.title}
                     </h3>
                     <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500">{p.overview}</p>
@@ -147,7 +147,7 @@ export default function IndustryDetail() {
               <Link key={o.slug} to={`/industries/${o.slug}`} className="group flex items-center gap-4 bg-white p-6 transition-colors hover:bg-navy-50">
                 <Icon name={o.icon} className="h-6 w-6 shrink-0 text-navy-700 group-hover:text-signal-600" />
                 <span>
-                  <span className="block font-display text-[16px] font-semibold uppercase text-navy-900">{o.title}</span>
+                  <span className="block font-display text-[16px] font-semibold text-navy-900">{o.title}</span>
                   <span className="mt-0.5 block text-[12.5px] text-steel-500">{o.blurb}</span>
                 </span>
               </Link>

@@ -43,7 +43,7 @@ export default function Careers() {
                   <span className="flex h-11 w-11 items-center justify-center bg-navy-900 text-signal-400">
                     <Icon name={b.icon} className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 font-display text-[17px] font-semibold uppercase leading-tight text-navy-900">
+                  <h3 className="mt-6 font-display text-[17px] font-semibold leading-tight text-navy-900">
                     {b.title}
                   </h3>
                   <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500">{b.text}</p>
@@ -67,7 +67,7 @@ export default function Careers() {
               <Reveal key={v.role} delay={(i % 5) * 55}>
                 <article className="grid gap-6 bg-white p-7 md:grid-cols-[1.1fr_1.6fr_auto] md:items-center md:gap-10 md:p-8">
                   <div>
-                    <h3 className="font-display text-[20px] font-semibold uppercase leading-tight text-navy-900">
+                    <h3 className="font-display text-[20px] font-semibold leading-tight text-navy-900">
                       {v.role}
                     </h3>
                     <div className="mt-3 flex flex-wrap gap-2">

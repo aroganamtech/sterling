@@ -67,7 +67,7 @@ export default function ResourcesIndex() {
                   <span className="flex h-12 w-12 items-center justify-center bg-navy-50 text-navy-800 transition-colors group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name={h.icon} className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-6 font-display text-[20px] font-semibold uppercase text-navy-900 transition-colors group-hover:text-white">
+                  <h3 className="mt-6 font-display text-[20px] font-semibold text-navy-900 transition-colors group-hover:text-white">
                     {h.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500 transition-colors group-hover:text-navy-300">
@@ -97,7 +97,7 @@ export default function ResourcesIndex() {
             {news.slice(0, 3).map((n) => (
               <article key={n.slug} className="flex h-full flex-col bg-white p-7">
                 <span className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-600">{n.category}</span>
-                <h3 className="mt-4 font-display text-[19px] font-semibold uppercase leading-tight text-navy-900">
+                <h3 className="mt-4 font-display text-[19px] font-semibold leading-tight text-navy-900">
                   {n.title}
                 </h3>
                 <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500">{n.excerpt}</p>

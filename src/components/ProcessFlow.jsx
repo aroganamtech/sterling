@@ -39,7 +39,7 @@ export default function ProcessFlow() {
             </span>
 
             <div className="lg:mt-6 lg:pr-4">
-              <p className="font-display text-[17px] font-semibold uppercase tracking-wide text-white">{s.step}</p>
+              <p className="font-display text-[17px] font-semibold tracking-wide text-white">{s.step}</p>
               <p className="mt-2 text-[13.5px] leading-relaxed text-navy-300">{s.text}</p>
             </div>
           </li>

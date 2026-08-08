@@ -124,7 +124,7 @@ export default function ProductDetail() {
               </Reveal>
 
               <Reveal delay={70}>
-                <h1 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.4rem)] font-semibold uppercase leading-[1.03] text-navy-900">
+                <h1 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.4rem)] font-semibold leading-[1.03] text-navy-900">
                   {product.name}
                 </h1>
               </Reveal>

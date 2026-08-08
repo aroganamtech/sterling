@@ -33,7 +33,7 @@ export default function GlobalPresence() {
               <Reveal key={p.region} delay={(i % 5) * 60}>
                 <div className="h-full bg-white px-6 py-7">
                   <Icon name="pin" className="h-5 w-5 text-signal-600" />
-                  <p className="mt-4 font-display text-[16px] font-semibold uppercase text-navy-900">{p.region}</p>
+                  <p className="mt-4 font-display text-[16px] font-semibold text-navy-900">{p.region}</p>
                   <p className="mt-1.5 text-[12.5px] text-steel-500">{p.status}</p>
                 </div>
               </Reveal>

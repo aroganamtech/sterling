@@ -77,7 +77,7 @@ export default function Leadership() {
                       {l.initials}
                     </span>
                   </div>
-                  <h3 className="mt-7 font-display text-[21px] font-semibold uppercase text-navy-900">{l.name}</h3>
+                  <h3 className="mt-7 font-display text-[21px] font-semibold text-navy-900">{l.name}</h3>
                   <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-signal-600">{l.role}</p>
                   <p className="mt-5 flex-1 text-[14px] leading-relaxed text-steel-600">{l.bio}</p>
                   <p className="mt-6 border-t border-steel-200 pt-5 text-[12.5px] text-steel-500">

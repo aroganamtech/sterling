@@ -24,7 +24,7 @@ export default function TechnicalLibrary() {
                   <Reveal key={item.title} delay={i * 70}>
                     <article className="group flex h-full flex-col bg-white p-7">
                       <Icon name="drawing" className="h-7 w-7 text-navy-700 transition-colors group-hover:text-signal-600" />
-                      <h3 className="mt-6 font-display text-[18px] font-semibold uppercase leading-tight text-navy-900">
+                      <h3 className="mt-6 font-display text-[18px] font-semibold leading-tight text-navy-900">
                         {item.title}
                       </h3>
                       <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500">{item.note}</p>
