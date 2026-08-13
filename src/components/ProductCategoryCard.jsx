@@ -13,16 +13,16 @@ export default function ProductCategoryCard({ category, items = [] }) {
   return (
     <Link
       to={`/products#${category.id}`}
-      className="group flex h-full cursor-pointer flex-col bg-navy-950 p-7 transition-colors hover:bg-navy-900"
+      className="group flex h-full cursor-pointer flex-col bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
     >
-      <span className="flex h-12 w-12 items-center justify-center border border-white/15 text-signal-400 transition-all group-hover:border-signal-500 group-hover:bg-signal-600 group-hover:text-white">
+      <span className="flex h-12 w-12 items-center justify-center border border-steel-200 text-signal-600 transition-all group-hover:border-signal-600 group-hover:bg-signal-600 group-hover:text-white">
         <Icon name={category.icon} className="h-5 w-5" />
       </span>
-      <h3 className="mt-6 font-display text-[19px] font-semibold leading-tight text-white">
+      <h3 className="mt-6 font-display text-[19px] font-semibold leading-tight text-navy-900">
         {category.name}
       </h3>
-      <p className="mt-2.5 flex-1 text-[13.5px] leading-relaxed text-navy-300">{category.blurb}</p>
-      <span className="mt-6 inline-flex cursor-pointer items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.13em] text-signal-400">
+      <p className="mt-2.5 flex-1 text-[13.5px] leading-relaxed text-steel-500">{category.blurb}</p>
+      <span className="mt-6 inline-flex cursor-pointer items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.13em] text-signal-600">
         {items.length} products
         <Icon name="arrow" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
       </span>

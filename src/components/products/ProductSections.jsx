@@ -9,9 +9,9 @@ import { EASE, fadeUp, inView, stagger } from '../../lib/motion';
 export function PSection({ children, id, className = '', tone = 'light' }) {
   const tones = {
     light: 'bg-white',
-    tint: 'bg-navy-50',
-    steel: 'bg-steel-50',
-    dark: 'bg-navy-900 text-white',
+    tint: 'bg-steel-100',
+    steel: 'bg-steel-200',
+    dark: 'bg-navy-950 text-white',
     deep: 'bg-navy-950 text-white',
   };
   return (
@@ -51,13 +51,13 @@ export function FeatureCards({ features = [] }) {
           transition={{ duration: 0.3, ease: EASE }}
           className="group relative h-full bg-white p-7"
         >
-          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-300 transition-colors group-hover:text-signal-600">
+          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-500 transition-colors group-hover:text-signal-600">
             {String(i + 1).padStart(2, '0')}
           </span>
           <span className="flex h-12 w-12 items-center justify-center border border-steel-200 text-signal-600 transition-all duration-300 group-hover:border-signal-600 group-hover:bg-signal-600 group-hover:text-white">
             <Icon name={f.icon} className="h-5 w-5" />
           </span>
-          <h3 className="mt-6 font-display text-[18px] font-semibold leading-tight text-white">
+          <h3 className="mt-6 font-display text-[18px] font-semibold leading-tight text-navy-900">
             {f.title}
           </h3>
           <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500">{f.text}</p>
@@ -121,7 +121,7 @@ export function CertificationStrip({ certifications = [] }) {
           <span className="flex h-11 w-11 items-center justify-center border border-signal-200 text-signal-600 transition-colors group-hover:bg-signal-600 group-hover:text-white">
             <Icon name="shield" className="h-5 w-5" />
           </span>
-          <p className="mt-5 font-display text-[17px] font-semibold text-white">{c.code}</p>
+          <p className="mt-5 font-display text-[17px] font-semibold text-navy-900">{c.code}</p>
           <p className="mt-1 text-[11.5px] uppercase tracking-[0.1em] text-signal-600/80">{c.body}</p>
           <p className="mt-3 text-[12.5px] leading-relaxed text-steel-500">{c.note}</p>
         </motion.div>

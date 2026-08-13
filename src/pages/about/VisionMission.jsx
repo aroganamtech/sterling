@@ -27,12 +27,19 @@ export default function VisionMission() {
             <div className="flex h-full flex-col border border-steel-200 p-9 md:p-11">
               <span className="eyebrow">Vision</span>
               <p className="mt-8 font-display text-[clamp(1.6rem,2.8vw,2.4rem)] font-semibold leading-[1.15] text-navy-900">
-                To become Asia-Pacific’s trusted engineering partner for life safety smoke management systems.
+                To be the trusted engineering partner for smoke control and ventilation, recognised for sound
+                engineering, honest advice, and solutions that perform when they matter most.
               </p>
               <p className="mt-8 text-[15.5px] leading-relaxed text-steel-600">
-                Trusted is a deliberate word. It is earned by being the specialist a consultant calls before the design
-                is fixed, by producing analysis that authorities accept without argument, and by still answering the
-                phone eight years after handover when the annual test throws up a fault.
+                We aim to raise the standard of smoke control engineering by combining rigorous analysis, practical
+                design, quality execution, and long-term accountability. We believe the best solution is not always
+                the most familiar or the largest, but the one that is technically justified, properly tested, and fit
+                for purpose.
+              </p>
+              <p className="mt-4 text-[15.5px] leading-relaxed text-steel-600">
+                As we grow, our goal is to build lasting relationships with clients, consultants, contractors, and
+                building owners by consistently delivering solutions they can rely on — from initial design through
+                commissioning, handover, testing, and ongoing service.
               </p>
             </div>
           </Reveal>
@@ -70,10 +77,10 @@ export default function VisionMission() {
           />
           <div className="mt-14 grid gap-px bg-steel-200 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: 'clock', t: 'Respond fast', s: 'Technical queries answered by an engineer, usually the same working day.' },
-              { icon: 'target', t: 'Right-size', s: 'We will recommend a smaller system when the analysis supports it.' },
-              { icon: 'compliance', t: 'Document fully', s: 'Every project handed over with traceable certification and test records.' },
-              { icon: 'wrench', t: 'Stay accountable', s: 'The same organisation designs, installs, commissions and services.' },
+              { icon: 'clock', t: 'Fast responses', s: 'Technical queries answered by an engineer, usually on the same working day.' },
+              { icon: 'target', t: 'Right-sized systems', s: 'We recommend smaller systems when supported by analysis.' },
+              { icon: 'compliance', t: 'Full documentation', s: 'Every project handed over with traceable certification and test records.' },
+              { icon: 'wrench', t: 'Accountability', s: 'The same organisation designs, installs, commissions and services.' },
             ].map((c, i) => (
               <Reveal key={c.t} delay={i * 80}>
                 <div className="h-full bg-white p-7">

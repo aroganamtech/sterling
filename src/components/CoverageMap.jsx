@@ -21,15 +21,15 @@ export default function CoverageMap() {
       <svg viewBox={`0 0 ${W} ${H}`} className="relative w-full" role="img" aria-label="Regional coverage map">
         <defs>
           <radialGradient id="cov-glow" cx="50%" cy="50%">
-            <stop offset="0%" stopColor="#092ba6" stopOpacity="0.34" />
-            <stop offset="100%" stopColor="#092ba6" stopOpacity="0" />
+            <stop offset="0%" stopColor="#c8102e" stopOpacity="0.34" />
+            <stop offset="100%" stopColor="#c8102e" stopOpacity="0" />
           </radialGradient>
         </defs>
 
         <circle cx={px(hub.x)} cy={py(hub.y)} r="230" fill="url(#cov-glow)" />
 
         {/* graticule */}
-        <g stroke="#8593ac" strokeOpacity="0.16" strokeWidth="1">
+        <g stroke="#8c8c8c" strokeOpacity="0.16" strokeWidth="1">
           {Array.from({ length: 9 }, (_, i) => (
             <path key={`h${i}`} d={`M0 ${(i + 1) * (H / 10)} H${W}`} />
           ))}
@@ -39,7 +39,7 @@ export default function CoverageMap() {
         </g>
 
         {/* connection arcs from the hub */}
-        <g fill="none" stroke="#2e52db" strokeWidth="1.2" strokeOpacity="0.5">
+        <g fill="none" stroke="#c8102e" strokeWidth="1.2" strokeOpacity="0.5">
           {presence.slice(1).map((p, i) => {
             const x1 = px(hub.x);
             const y1 = py(hub.y);
@@ -75,17 +75,17 @@ export default function CoverageMap() {
             >
               {isHub ? (
                 <>
-                  <circle r="18" fill="none" stroke="#092ba6" strokeWidth="1.2" opacity="0.7">
+                  <circle r="18" fill="none" stroke="#c8102e" strokeWidth="1.2" opacity="0.7">
                     <animate attributeName="r" values="10;30" dur="2.6s" repeatCount="indefinite" />
                     <animate attributeName="opacity" values="0.75;0" dur="2.6s" repeatCount="indefinite" />
                   </circle>
-                  <circle r="8" fill="#092ba6" />
+                  <circle r="8" fill="#c8102e" />
                   <circle r="3.4" fill="#fff" />
                 </>
               ) : (
                 <>
-                  <circle r={on ? 11 : 8} fill="#0b1e36" stroke="#b9c3d5" strokeWidth="1.3" />
-                  <circle r="3" fill={on ? '#5c7ef7' : '#8593ac'} />
+                  <circle r={on ? 11 : 8} fill="#111111" stroke="#bfbfbf" strokeWidth="1.3" />
+                  <circle r="3" fill={on ? '#ff3b52' : '#8c8c8c'} />
                 </>
               )}
               <text
@@ -94,12 +94,12 @@ export default function CoverageMap() {
                 fontSize="15"
                 fontWeight="600"
                 letterSpacing="0.05em"
-                fill={on || isHub ? '#ffffff' : '#b9c3d5'}
+                fill={on || isHub ? '#ffffff' : '#bfbfbf'}
               >
                 {p.region}
               </text>
               {on ? (
-                <text y={isHub ? 54 : 48} textAnchor="middle" fontSize="13" fill="#5c7ef7">
+                <text y={isHub ? 54 : 48} textAnchor="middle" fontSize="13" fill="#ff3b52">
                   {p.status}
                 </text>
               ) : null}
@@ -113,8 +113,8 @@ export default function CoverageMap() {
           <span className="h-2.5 w-2.5 rounded-full bg-signal-600" /> Head office
         </span>
         <span className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full border border-steel-400 bg-navy-900" /> Projects, service &
-          partner network
+          <span className="h-2.5 w-2.5 rounded-full border border-steel-400 bg-navy-900" /> Authorised distribution
+          territory
         </span>
         <span className="ml-auto hidden text-navy-500 sm:block">Hover a territory for detail</span>
       </div>

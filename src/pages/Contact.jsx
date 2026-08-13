@@ -3,21 +3,18 @@ import PageHero from '../components/PageHero';
 import Section, { SectionHead } from '../components/Section';
 import Reveal from '../components/Reveal';
 import Icon from '../components/Icon';
-import { contactChannels, offices } from '../data/company';
+import { company, offices } from '../data/company';
 import { enquiryRouting, projectTypes } from '../data/resources';
 
 const countries = [
   'Singapore',
   'Malaysia',
   'Indonesia',
-  'India',
   'Thailand',
   'Vietnam',
   'Philippines',
+  'India',
   'Australia',
-  'United Arab Emirates',
-  'Saudi Arabia',
-  'Sri Lanka',
   'Other',
 ];
 
@@ -39,7 +36,7 @@ export default function Contact() {
 
   const routing = useMemo(() => {
     if (!form.projectType) return null;
-    return enquiryRouting[form.projectType] || { team: 'Engineering & Commercial', channel: 'general' };
+    return enquiryRouting[form.projectType] || { team: 'Engineering & Commercial' };
   }, [form.projectType]);
 
   const set = (key) => (e) => {
@@ -73,7 +70,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Talk to our engineers"
-        lede="Technical enquiries reach an engineer, not a call centre. Tell us the building, the strategy or the constraint and we will come back with an engineering view."
+        lede={`Technical enquiries reach an engineer. Tell us the building, the fire strategy or the constraint you are working around and ${company.shortName} will come back with an engineering view.`}
         breadcrumbs={[{ label: 'Contact' }]}
         compact
       />
@@ -205,13 +202,7 @@ export default function Contact() {
                       style={{ animation: 'floatUp .4s cubic-bezier(.22,1,.36,1) both' }}
                     >
                       <Icon name="target" className="h-4 w-4 shrink-0 text-signal-600" />
-                      Routing to <span className="font-semibold text-navy-900">{routing.team}</span> ·{' '}
-                      <a
-                        href={`mailto:${contactChannels[routing.channel]}`}
-                        className="underline underline-offset-4 hover:text-navy-900"
-                      >
-                        {contactChannels[routing.channel]}
-                      </a>
+                      Routing to <span className="font-semibold text-navy-900">{routing.team}</span>
                     </p>
                   ) : null}
                 </div>
@@ -236,7 +227,7 @@ export default function Contact() {
                     Send enquiry
                     <Icon name="arrow" className="h-4 w-4" />
                   </button>
-                  <p className="text-[12.5px] text-steel-400">We reply to technical enquiries within one working day.</p>
+                  <p className="text-[12.5px] text-steel-500">We reply to technical enquiries within one working day.</p>
                 </div>
               </form>
             )}
@@ -257,39 +248,21 @@ export default function Contact() {
                       </span>
                     ))}
                   </address>
-                  <div className="mt-4 space-y-2 text-[14px]">
-                    <a
-                      href={`tel:${o.phone.replace(/\s/g, '')}`}
-                      className="flex items-center gap-2.5 text-navy-900 hover:text-signal-600"
-                    >
-                      <Icon name="phone" className="h-4 w-4 text-steel-400" />
-                      {o.phone}
-                    </a>
-                    <a
-                      href={`mailto:${o.email}`}
-                      className="flex items-center gap-2.5 break-all text-navy-900 hover:text-signal-600"
-                    >
-                      <Icon name="mail" className="h-4 w-4 shrink-0 text-steel-400" />
-                      {o.email}
-                    </a>
-                  </div>
                 </div>
               ))}
 
               <div className="bg-navy-950 p-7 text-white">
-                <span className="eyebrow-light">Direct channels</span>
+                <span className="eyebrow-light">What we can help with</span>
                 <ul className="mt-5 space-y-3 text-[14px]">
                   {[
-                    ['General enquiries', contactChannels.general],
-                    ['Engineering & modelling', contactChannels.engineering],
-                    ['Service & maintenance', contactChannels.service],
-                    ['Careers', contactChannels.careers],
-                  ].map(([label, email]) => (
-                    <li key={email} className="flex flex-col border-b border-white/10 pb-3 last:border-0 last:pb-0">
+                    ['System design & engineering', 'Calculations, drawings, specifications and QP submission support'],
+                    ['Supply & installation', 'Smoke curtains, ventilators, AOVs, fans, dampers and controls'],
+                    ['Testing & commissioning', 'Functional verification, test records and handover documentation'],
+                    ['Service, maintenance & training', 'Periodic testing, servicing and training for building teams'],
+                  ].map(([label, text]) => (
+                    <li key={label} className="flex flex-col border-b border-white/10 pb-3 last:border-0 last:pb-0">
                       <span className="text-[11px] uppercase tracking-[0.14em] text-navy-400">{label}</span>
-                      <a href={`mailto:${email}`} className="mt-1 break-all text-navy-100 hover:text-white">
-                        {email}
-                      </a>
+                      <span className="mt-1 text-navy-100">{text}</span>
                     </li>
                   ))}
                 </ul>

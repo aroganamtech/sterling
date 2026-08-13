@@ -1,116 +1,104 @@
 /** @type {import('tailwindcss').Config} */
 
 /* ===========================================================================
-   STERLING DESIGN SYSTEM
-   White + Charcoal + Sterling Blue — modern premium industrial engineering.
+   STERLING DESIGN SYSTEM  —  Black + Fire Red + White + Grey
 
-   Sterling Blue   #092BA6   primary brand, buttons, section labels
-   Charcoal/Navy   #06162A   headings, navigation, dark CTAs
-   White           #FFFFFF   main background
-   Blue Grey       #EEF1F7   subtle sections, background shapes
-   Grey            #7F838A   paragraphs, secondary information
-   Red             #E52B32   small accent lines and highlights only
+     Primary Black      #050505   dark surfaces, hero, technical sections
+     Navigation Black   #000000   header, footer base
+     Fire Red           #C8102E   CTAs, accents, active states, section labels
+     Red Hover          #E0002A   hover / active interaction only
+     White              #FFFFFF   main content areas
+     Light Grey         #F2F2F2   secondary / alternating sections
+     Border Grey        #D9D9D9   dividers and hairlines
+     Primary Text       #222222
+     Secondary Text     #666666
 
-   Token names are retained from the previous system so existing markup keeps
-   working; only the values behind them have been remapped.
-     navy   -> charcoal / dark surfaces
-     signal -> sterling blue (primary brand)
-     steel  -> neutral grey (body text, borders)
-     ember  -> sterling blue (former product accent)
-     ink    -> charcoal neutral (product surfaces)
-     accent -> red, sparing use only
+   SINGLE SOURCE OF TRUTH
+   Every value below is read from a CSS custom property declared in
+   src/index.css under "STERLING COLOUR SYSTEM". Change the channel triplet
+   there and the whole site — Tailwind classes included — follows. Nothing in
+   this file hardcodes a colour.
+
+   Token names are inherited from the previous system so existing markup keeps
+   working; only the values behind them changed:
+     navy / ink  -> carbon (black surfaces + dark text)
+     signal      -> fire red (primary brand accent)
+     ember       -> fire red (products module accent)
+     steel       -> neutral grey (body text, borders, light sections)
+     accent      -> fire red
    =========================================================================== */
+
+const c = (name) => `rgb(var(--sv-${name}) / <alpha-value>)`;
+
+/* carbon — black surfaces at the dark end, readable text at the mid/dark end */
+const carbon = {
+  50: c('carbon-50'),
+  100: c('carbon-100'),
+  200: c('carbon-200'),
+  300: c('carbon-300'),
+  400: c('carbon-400'),
+  500: c('carbon-500'),
+  600: c('carbon-600'),
+  700: c('carbon-700'),
+  800: c('carbon-800'),
+  900: c('carbon-900'),
+  950: c('carbon-950'),
+  1000: c('carbon-1000'),
+};
+
+/* fire red — the single Sterling accent */
+const fire = {
+  50: c('red-50'),
+  100: c('red-100'),
+  200: c('red-200'),
+  300: c('red-300'),
+  400: c('red-400'), // lightened brand red — AA-safe for small text on black
+  500: c('red-500'), // #E0002A hover / highlight
+  600: c('red-600'), // #C8102E primary
+  700: c('red-700'),
+  800: c('red-800'),
+  900: c('red-900'),
+};
 
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        /* Charcoal / navy — headings, navigation, dark CTA surfaces */
-        navy: {
-          50: '#f5f7fb',
-          100: '#eef1f7',
-          200: '#dce2ed',
-          300: '#b9c3d5',
-          400: '#8593ac',
-          500: '#5a6a85',
-          600: '#3c4c67',
-          700: '#27364e',
-          800: '#142338',
-          900: '#0b1e36',
-          950: '#06162a',
-        },
+        /* dark surfaces, headings and navigation */
+        navy: carbon,
 
-        /* Sterling blue — primary brand colour */
-        signal: {
-          50: '#eff3ff',
-          100: '#dde5ff',
-          200: '#bfceff',
-          300: '#94adff',
-          400: '#5c7ef7',
-          500: '#2e52db',
-          600: '#092ba6',
-          700: '#0a2489',
-          800: '#0c2170',
-          900: '#0e1f5c',
-        },
+        /* product-module surfaces — same carbon ramp */
+        ink: carbon,
 
-        /* Sterling blue (products module accent — formerly ember orange) */
-        ember: {
-          50: '#eff3ff',
-          100: '#dde5ff',
-          200: '#bfceff',
-          300: '#94adff',
-          400: '#2e52db',
-          500: '#092ba6',
-          600: '#0a2489',
-          700: '#0c2170',
-          800: '#0e1f5c',
-          900: '#0f1c4a',
-        },
+        /* primary brand accent */
+        signal: fire,
 
-        /* Charcoal neutral — product surfaces, light by default */
-        ink: {
-          50: '#f7f8fa',
-          100: '#eef1f7',
-          200: '#dde2eb',
-          300: '#bcc3d0',
-          400: '#8b94a5',
-          500: '#626c7e',
-          600: '#45505f',
-          700: '#2c3646',
-          800: '#142338',
-          900: '#0b1e36',
-          950: '#06162a',
-        },
+        /* products module accent — same fire red */
+        ember: fire,
 
-        /* Neutral grey — paragraphs, borders, secondary information */
+        /* small accent rules and highlights */
+        accent: fire,
+
+        /* neutral grey — paragraphs, borders, light sections */
         steel: {
-          50: '#f7f8f9',
-          100: '#eef1f7',
-          200: '#dfe3ea',
-          300: '#c4c9d1',
-          400: '#9da2aa',
-          500: '#7f838a',
-          600: '#656970',
-          700: '#4e5158',
-          800: '#3a3d43',
-          900: '#2a2c31',
+          50: c('grey-50'),
+          100: c('grey-100'),
+          200: c('grey-200'),
+          300: c('grey-300'),
+          400: c('grey-400'),
+          500: c('grey-500'),
+          600: c('grey-600'),
+          700: c('grey-700'),
+          800: c('grey-800'),
+          900: c('grey-900'),
         },
+      },
 
-        /* Red — small accent lines and highlights only */
-        accent: {
-          50: '#fef3f3',
-          100: '#fde4e5',
-          200: '#fbcccd',
-          300: '#f7a5a7',
-          400: '#f06e72',
-          500: '#e52b32',
-          600: '#ce1f26',
-          700: '#ab1a20',
-          800: '#8d1a1f',
-          900: '#761b20',
-        },
+      /* Tailwind's preflight default is gray-200 — pin it to Sterling border grey
+         so a bare `border` class can never introduce an off-palette colour. */
+      borderColor: {
+        DEFAULT: c('grey-200'),
       },
 
       fontFamily: {
@@ -133,10 +121,10 @@ export default {
       },
 
       boxShadow: {
-        /* soft, diffuse — the theme leans on shadow rather than borders */
-        card: '0 1px 2px rgba(6,22,42,.04), 0 10px 30px -14px rgba(6,22,42,.16)',
-        lift: '0 2px 6px rgba(6,22,42,.06), 0 30px 60px -24px rgba(6,22,42,.24)',
-        float: '0 2px 8px rgba(6,22,42,.05), 0 20px 48px -22px rgba(6,22,42,.22)',
+        /* neutral black shadows — no colour cast */
+        card: '0 1px 2px rgba(5,5,5,.05), 0 10px 30px -14px rgba(5,5,5,.18)',
+        lift: '0 2px 6px rgba(5,5,5,.07), 0 30px 60px -24px rgba(5,5,5,.26)',
+        float: '0 2px 8px rgba(5,5,5,.06), 0 20px 48px -22px rgba(5,5,5,.24)',
       },
 
       keyframes: {

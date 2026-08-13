@@ -11,7 +11,7 @@ export default function GlobalPresence() {
       <PageHero
         eyebrow="Global presence"
         title="Where we operate"
-        lede="A Singapore headquarters for commercial and engineering leadership, an engineering and operations centre in India, and project delivery across Asia-Pacific and the Middle East."
+        lede="Operating from Singapore, we are authorised by our manufacturing partners to market and distribute their ventilation products across Asia and Australia — supporting projects across the region while maintaining a strong engineering and technical base in Singapore."
         breadcrumbs={[{ label: 'About Us', to: '/about' }, { label: 'Global Presence' }]}
       />
 
@@ -26,7 +26,7 @@ export default function GlobalPresence() {
           <SectionHead
             eyebrow="Territories"
             title="Regional coverage"
-            lede="Direct delivery in our core markets, supported by a partner network elsewhere in the region."
+            lede="Our combination of internationally established products, local manufacturing, engineering capability, and regional distribution enables us to provide reliable, application-specific smoke control and ventilation solutions across Asia and Australia."
           />
           <div className="mt-12 grid gap-px border border-steel-200 bg-steel-200 sm:grid-cols-2 lg:grid-cols-5">
             {presence.map((p, i) => (
@@ -44,8 +44,8 @@ export default function GlobalPresence() {
 
       <Section tone="tint">
         <div className="shell">
-          <SectionHead eyebrow="Offices" title="Talk to the right office" />
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <SectionHead eyebrow="Office" title="Talk to our engineers" />
+          <div className="mt-12 grid gap-8 lg:mx-auto lg:max-w-xl">
             {offices.map((o, i) => (
               <Reveal key={o.id} delay={i * 110}>
                 <div className="flex h-full flex-col border border-steel-200 bg-white">

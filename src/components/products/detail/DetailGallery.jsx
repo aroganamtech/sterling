@@ -43,7 +43,7 @@ export default function DetailGallery({ images = [], name = '', model }) {
   if (!count) {
     return (
       <div className="flex aspect-[4/3] w-full items-center justify-center border border-steel-200 bg-steel-50">
-        <span className="text-[11px] uppercase tracking-widest2 text-steel-400">Image unavailable</span>
+        <span className="text-[11px] uppercase tracking-widest2 text-steel-500">Image unavailable</span>
       </div>
     );
   }
@@ -80,7 +80,6 @@ export default function DetailGallery({ images = [], name = '', model }) {
               transition={{ duration: 0.4, ease: EASE }}
               className="flex h-full w-full items-center justify-center"
             >
-              {!loaded ? <div className="absolute inset-8 animate-pulse bg-steel-100" /> : null}
               <img
                 src={current.src}
                 alt={current.alt || `${name} ${current.label}`}

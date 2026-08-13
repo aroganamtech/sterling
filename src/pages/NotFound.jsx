@@ -1,18 +1,16 @@
 import { Link } from 'react-router-dom';
 import Icon from '../components/Icon';
-import SmokeCanvas from '../components/SmokeCanvas';
 
 export default function NotFound() {
   return (
-    <section className="relative isolate flex min-h-[70vh] items-center overflow-hidden bg-navy-950">
-      <SmokeCanvas className="absolute inset-0 h-full w-full opacity-70" density={0.8} speed={0.85} />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/30" />
+    <section className="relative isolate flex min-h-[70vh] items-center overflow-hidden bg-white">
+      <div className="pointer-events-none absolute inset-0 grid-lines-dark opacity-40" />
       <div className="shell relative py-24">
-        <span className="eyebrow-light">Error 404</span>
-        <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-none text-white">
+        <span className="eyebrow">Error 404</span>
+        <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-none text-navy-900">
           This page has cleared the building
         </h1>
-        <p className="mt-6 max-w-xl text-[16.5px] leading-relaxed text-navy-200">
+        <p className="mt-6 max-w-xl text-[16.5px] leading-relaxed text-steel-600">
           The page you were looking for is not here. Try the solutions index, or tell us what you were trying to find
           and we will point you to it.
         </p>

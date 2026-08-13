@@ -4,16 +4,18 @@ import Section, { SectionHead } from '../../components/Section';
 import Reveal from '../../components/Reveal';
 import Icon from '../../components/Icon';
 import { getSolution, solutions } from '../../data/solutions';
-import { industries } from '../../data/industries';
-import { serviceCapabilities } from '../../data/engineering';
+import { services } from '../../data/services';
+import { productCategories, productsByCategory } from '../../data/products';
 
-const relatedServices = [
-  { label: 'Smoke Modelling (CFD)', to: '/engineering/smoke-modelling-cfd' },
-  { label: 'Fire Engineering Support', to: '/engineering/fire-engineering-support' },
-  { label: 'BIM & Revit Coordination', to: '/engineering/bim-revit' },
-  { label: 'Shop Drawings', to: '/engineering/shop-drawings' },
-  { label: 'Compliance Consulting', to: '/engineering/compliance-consulting' },
-];
+/* Product categories most closely associated with each solution family. */
+const SOLUTION_PRODUCTS = {
+  'smoke-curtains': ['smoke-containment'],
+  'natural-ventilation': ['natural-ventilation'],
+  'smoke-ventilation': ['smoke-ventilation'],
+  'mechanical-ventilation': ['smoke-extraction'],
+  'engineering-system-integration': [],
+  'testing-lifecycle-support': [],
+};
 
 export default function SolutionDetail() {
   const { slug } = useParams();
@@ -21,7 +23,9 @@ export default function SolutionDetail() {
   if (!solution) return <Navigate to="/solutions" replace />;
 
   const related = solution.related.map(getSolution).filter(Boolean);
-  const servingIndustries = industries.filter((i) => i.solutions.includes(solution.slug)).slice(0, 8);
+  const linkedCategories = (SOLUTION_PRODUCTS[solution.slug] || [])
+    .map((id) => productCategories.find((c) => c.id === id))
+    .filter(Boolean);
 
   return (
     <>
@@ -37,7 +41,7 @@ export default function SolutionDetail() {
               <Icon name="arrow" className="h-4 w-4" />
             </Link>
             <Link to="/resources/downloads" className="btn-ghost">
-              Download datasheet
+              Downloads
             </Link>
           </>
         }
@@ -147,57 +151,70 @@ export default function SolutionDetail() {
         </div>
       </Section>
 
-      {/* services + industries */}
-      <section className="relative overflow-hidden bg-navy-950 py-20 md:py-24">
-        <div className="pointer-events-none absolute inset-0 grid-lines opacity-50" />
+      {/* services + products */}
+      <section className="relative overflow-hidden bg-steel-100 py-20 md:py-24">
+        <div className="pointer-events-none absolute inset-0 grid-lines-dark opacity-40" />
         <div className="shell relative grid gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
-            <span className="eyebrow-light">Related services</span>
-            <h2 className="h2 mt-5 text-white">Delivered with the engineering behind it</h2>
-            <p className="mt-5 text-[15.5px] leading-relaxed text-navy-200">
-              This system is never supplied in isolation. Every installation is backed by the analysis, drawings and
-              commissioning evidence that make it defensible.
+            <span className="eyebrow">Related services</span>
+            <h2 className="h2 mt-5 text-navy-900">Delivered with the engineering behind it</h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-steel-600">
+              This system is never supplied in isolation. Design, installation, testing, commissioning, service and
+              maintenance are delivered by the same organisation.
             </p>
-            <ul className="mt-9 space-y-px bg-white/10">
-              {relatedServices.map((r) => (
-                <li key={r.to}>
+            <ul className="mt-9 space-y-px bg-steel-200">
+              {services.map((r) => (
+                <li key={r.slug}>
                   <Link
-                    to={r.to}
-                    className="flex items-center justify-between gap-4 bg-navy-950 px-5 py-4 text-[14.5px] text-navy-200 transition-colors hover:bg-navy-900 hover:text-white"
+                    to={`/services/${r.slug}`}
+                    className="flex items-center justify-between gap-4 bg-white px-5 py-4 text-[14.5px] text-navy-800 transition-colors hover:bg-signal-600 hover:text-white"
                   >
-                    {r.label}
-                    <Icon name="arrow" className="h-4 w-4 text-signal-500" />
+                    {r.title}
+                    <Icon name="arrow" className="h-4 w-4 text-signal-600 group-hover:text-white" />
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {serviceCapabilities.slice(6).map((c) => (
-                <span
-                  key={c}
-                  className="border border-white/15 px-3 py-1.5 text-[11px] uppercase tracking-[0.12em] text-navy-300"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div>
-            <span className="eyebrow-light">Industries</span>
-            <h2 className="h2 mt-5 text-white">Sectors that use this system</h2>
-            <div className="mt-9 grid gap-px bg-white/10 sm:grid-cols-2">
-              {servingIndustries.map((ind) => (
-                <Link
-                  key={ind.slug}
-                  to={`/industries/${ind.slug}`}
-                  className="group flex items-center gap-4 bg-navy-950 px-5 py-5 transition-colors hover:bg-navy-900"
-                >
-                  <Icon name={ind.icon} className="h-5 w-5 shrink-0 text-signal-400" />
-                  <span className="text-[14px] text-navy-200 transition-colors group-hover:text-white">{ind.title}</span>
+            <span className="eyebrow">Products</span>
+            <h2 className="h2 mt-5 text-navy-900">
+              {linkedCategories.length ? 'Equipment used in this system' : 'Across the whole equipment range'}
+            </h2>
+            {linkedCategories.length ? (
+              <div className="mt-9 space-y-8">
+                {linkedCategories.map((cat) => (
+                  <div key={cat.id}>
+                    <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-600">{cat.name}</p>
+                    <div className="mt-3 grid gap-px bg-steel-200 sm:grid-cols-2">
+                      {productsByCategory(cat.id).map((p) => (
+                        <Link
+                          key={p.slug}
+                          to={`/products/${p.slug}`}
+                          className="group flex items-center justify-between gap-4 bg-white px-5 py-4 transition-colors hover:bg-signal-600"
+                        >
+                          <span className="text-[14px] text-navy-800 transition-colors group-hover:text-white">
+                            {p.name}
+                          </span>
+                          <span className="text-[10.5px] uppercase tracking-[0.12em] text-steel-500 group-hover:text-white/80">{p.model}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <>
+                <p className="mt-5 text-[15.5px] leading-relaxed text-steel-600">
+                  This part of our scope applies across every system we deliver, whatever equipment it is built from.
+                </p>
+                <Link to="/products" className="link-arrow mt-7">
+                  Browse the product range
+                  <Icon name="arrow" className="h-4 w-4" />
                 </Link>
-              ))}
-            </div>
+              </>
+            )}
           </div>
         </div>
       </section>

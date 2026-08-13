@@ -59,7 +59,7 @@ export default function Careers() {
           <SectionHead
             eyebrow="Open roles"
             title="Where we are hiring"
-            lede="Roles across engineering, delivery and service in Singapore and India."
+            lede="Roles across engineering, delivery and service in Singapore."
           />
 
           <div className="mt-12 space-y-px bg-steel-200">

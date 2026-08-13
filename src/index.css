@@ -2,6 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===========================================================================
+   STERLING COLOUR SYSTEM — single source of truth
+   ---------------------------------------------------------------------------
+   Premium light engineering theme. The site is predominantly white / light
+   grey; dark navy is reserved for the footer and the one closing CTA band on
+   each page; fire red is the strategic accent (CTAs, active states, labels).
+
+   Channel triplets so both plain CSS and Tailwind can consume them:
+       colour:  rgb(var(--sv-red-600))
+       tint:    rgb(var(--sv-red-600) / 0.4)
+   tailwind.config.js maps every colour token to these variables, so changing
+   a value here changes the entire site.
+
+     White              #FFFFFF   carbon-50    primary background
+     Light Grey         #F7F8FA   carbon-100   secondary background
+     Soft Technical Grey #EEF0F2  carbon-200   card / panel fill
+     Border              #E2E5E8  carbon-300   hairlines
+     Secondary Text      #5F6368  carbon-500
+     Primary Text        #171717  carbon-900   near-black
+     Deep Navy           #0B1724  carbon-950   footer + closing CTA only
+     Fire Red            #C8102E  red-600      buttons, accents, active states
+     Red Hover           #A80D25  red-500      hover / active only
+   =========================================================================== */
+
+:root {
+  /* carbon — light neutral surfaces through near-black text, deep navy only
+     at the very end of the ramp for the footer and closing CTA bands */
+  --sv-carbon-50: 255 255 255;   /* #FFFFFF  primary background */
+  --sv-carbon-100: 247 248 250;  /* #F7F8FA  secondary background */
+  --sv-carbon-200: 238 240 242;  /* #EEF0F2  soft technical grey */
+  --sv-carbon-300: 226 229 232;  /* #E2E5E8  border */
+  --sv-carbon-400: 176 181 186;  /* #B0B5BA */
+  --sv-carbon-500: 95 99 104;    /* #5F6368  secondary text */
+  --sv-carbon-600: 71 75 79;     /* #474B4F */
+  --sv-carbon-700: 52 55 58;     /* #34373A */
+  --sv-carbon-800: 35 37 39;     /* #232527 */
+  --sv-carbon-900: 23 23 23;     /* #171717  primary text, near-black */
+  --sv-carbon-950: 11 23 36;     /* #0B1724  deep navy — footer + closing CTA */
+  --sv-carbon-1000: 6 13 21;     /* #060D15  deep navy hover / pressed */
+
+  /* fire red — the one Sterling accent */
+  --sv-red-50: 253 235 237;      /* #FDEBED */
+  --sv-red-100: 250 214 218;     /* #FAD6DA */
+  --sv-red-200: 240 174 182;     /* #F0AEB6 */
+  --sv-red-300: 224 122 133;     /* #E07A85 */
+  --sv-red-400: 255 59 82;       /* #FF3B52  brand red lightened for AA on navy */
+  --sv-red-500: 168 13 37;       /* #A80D25  hover / active only */
+  --sv-red-600: 200 16 46;       /* #C8102E  primary fire red */
+  --sv-red-700: 150 10 28;       /* #960A1C */
+  --sv-red-800: 110 8 20;        /* #6E0814 */
+  --sv-red-900: 80 6 15;         /* #50060F */
+
+  /* neutral grey — body text, borders, supporting sections */
+  --sv-grey-50: 255 255 255;     /* #FFFFFF */
+  --sv-grey-100: 247 248 250;    /* #F7F8FA  light grey background */
+  --sv-grey-200: 238 240 242;    /* #EEF0F2  soft technical grey */
+  --sv-grey-300: 226 229 232;    /* #E2E5E8  border grey */
+  --sv-grey-400: 176 181 186;    /* #B0B5BA */
+  --sv-grey-500: 95 99 104;      /* #5F6368  secondary text */
+  --sv-grey-600: 71 75 79;       /* #474B4F  body copy */
+  --sv-grey-700: 52 55 58;       /* #34373A */
+  --sv-grey-800: 35 37 39;       /* #232527 */
+  --sv-grey-900: 23 23 23;       /* #171717  primary text */
+
+  /* aliases used directly in plain CSS below */
+  --ember: var(--sv-red-600);
+  --glow-warm: var(--sv-red-500);
+}
+
+
 @layer base {
   :root {
     --nav-h: 92px;
@@ -12,7 +82,7 @@
   }
 
   body {
-    @apply bg-white font-sans text-navy-950 antialiased;
+    @apply bg-white font-sans text-navy-900 antialiased;
     overflow-x: hidden;
   }
 
@@ -24,7 +94,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-bold tracking-[-0.02em] text-navy-950;
+    @apply font-display font-bold tracking-[-0.02em] text-navy-900;
   }
 
   p {
@@ -48,7 +118,7 @@
   }
 
   .eyebrow-light {
-    @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-widest2 text-signal-200;
+    @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-widest2 text-signal-400;
   }
 
   .eyebrow-light::before {
@@ -114,59 +184,54 @@
   }
 
   .btn-primary {
-    @apply btn bg-signal-600 text-white hover:bg-signal-700;
-    box-shadow: 0 12px 28px -14px rgba(9, 43, 166, 0.75);
+    @apply btn bg-signal-600 text-white hover:bg-signal-500;
+    box-shadow: 0 12px 28px -14px rgb(var(--sv-red-600) / 0.55);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 18px 40px -16px rgba(9, 43, 166, 0.85);
+    box-shadow: 0 18px 40px -16px rgb(var(--sv-red-500) / 0.6);
   }
 
   .btn-navy {
-    @apply btn bg-navy-950 text-white hover:bg-navy-900;
-    box-shadow: 0 12px 28px -16px rgba(6, 22, 42, 0.8);
+    @apply btn bg-navy-950 text-white hover:bg-navy-1000;
+    box-shadow: 0 12px 28px -16px rgb(var(--sv-carbon-950) / 0.55);
   }
 
   .btn-navy:hover {
-    box-shadow: 0 18px 40px -18px rgba(6, 22, 42, 0.9);
+    box-shadow: 0 18px 40px -18px rgb(var(--sv-carbon-950) / 0.65);
   }
 
-  /* animated gradient border, used on dark cinematic surfaces */
+  /* secondary/outline button for light surfaces — hairline border, fire red on hover */
   .btn-ghost {
-    @apply btn text-white;
-    border: 1px solid transparent;
-    /* guaranteed hairline even where the gradient border is not supported */
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045)) padding-box,
-      linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.6),
-          rgba(var(--ember), 1),
-          rgba(255, 255, 255, 0.6),
-          rgba(var(--ember), 1)
-        )
-        border-box;
-    background-size:
-      100% 100%,
-      200% 100%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    @apply btn border border-steel-300 bg-white text-navy-900;
   }
 
   .btn-ghost:hover {
-    animation: borderRun 2.4s linear infinite;
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.5),
-      0 18px 40px -20px rgba(0, 0, 0, 0.9);
+    background: rgb(var(--sv-red-600));
+    border-color: rgb(var(--sv-red-600));
+    color: #fff;
+    box-shadow: 0 18px 40px -20px rgb(var(--sv-red-600) / 0.45);
+  }
+
+  /* secondary button for use on dark navy surfaces (footer, closing CTA) */
+  .btn-ghost-dark {
+    @apply btn text-white;
+    background: rgb(255 255 255 / 0.06);
+    border: 1px solid rgb(255 255 255 / 0.28);
+  }
+
+  .btn-ghost-dark:hover {
+    background: rgb(var(--sv-red-600));
+    border-color: rgb(var(--sv-red-600));
+    box-shadow: 0 18px 40px -20px rgb(var(--sv-red-600) / 0.65);
   }
 
   .btn-outline {
-    @apply btn border border-steel-200 bg-white text-navy-950 hover:border-signal-600 hover:bg-signal-600 hover:text-white;
+    @apply btn border border-steel-200 bg-white text-navy-900 hover:border-signal-600 hover:bg-signal-600 hover:text-white;
   }
 
   .btn-outline:hover {
-    box-shadow: 0 18px 40px -20px rgba(9, 43, 166, 0.6);
+    box-shadow: 0 18px 40px -20px rgb(var(--sv-red-600) / 0.45);
   }
 
   /* Cards: white, large radius, soft shadow — not borders */
@@ -175,7 +240,7 @@
   }
 
   .card-hover {
-    @apply card hover:-translate-y-1.5 hover:shadow-lift hover:ring-signal-200;
+    @apply card hover:-translate-y-1.5 hover:shadow-lift hover:ring-signal-600/40;
   }
 
   .rule {
@@ -183,11 +248,11 @@
   }
 
   .link-arrow {
-    @apply inline-flex items-center gap-2 text-[12.5px] font-semibold uppercase tracking-[0.1em] text-signal-600 transition-colors hover:text-signal-700;
+    @apply inline-flex items-center gap-2 text-[12.5px] font-semibold uppercase tracking-[0.1em] text-signal-600 transition-colors hover:text-signal-500;
   }
 
   .field {
-    @apply w-full rounded-btn border border-steel-200 bg-white px-4 py-3 text-[15px] text-navy-950 outline-none transition placeholder:text-steel-400 focus:border-signal-600 focus:ring-2 focus:ring-signal-600/10;
+    @apply w-full rounded-btn border border-steel-200 bg-white px-4 py-3 text-[15px] text-navy-900 outline-none transition placeholder:text-steel-400 focus:border-signal-600 focus:ring-2 focus:ring-signal-600/10;
   }
 
   .label {
@@ -209,21 +274,21 @@
   }
 
   .btn-ember {
-    @apply btn bg-signal-600 text-white hover:bg-signal-700;
-    box-shadow: 0 12px 28px -14px rgba(9, 43, 166, 0.75);
+    @apply btn bg-signal-600 text-white hover:bg-signal-500;
+    box-shadow: 0 12px 28px -14px rgb(var(--sv-red-600) / 0.55);
   }
 
   .btn-ember:hover {
-    box-shadow: 0 18px 40px -16px rgba(9, 43, 166, 0.85);
+    box-shadow: 0 18px 40px -16px rgb(var(--sv-red-500) / 0.6);
   }
 
   .btn-ink {
-    @apply btn bg-navy-950 text-white hover:bg-navy-900;
-    box-shadow: 0 12px 28px -16px rgba(6, 22, 42, 0.8);
+    @apply btn bg-navy-950 text-white hover:bg-navy-1000;
+    box-shadow: 0 12px 28px -16px rgb(var(--sv-carbon-950) / 0.55);
   }
 
   .btn-ink:hover {
-    box-shadow: 0 18px 40px -18px rgba(6, 22, 42, 0.9);
+    box-shadow: 0 18px 40px -18px rgb(var(--sv-carbon-950) / 0.65);
   }
 
   .btn-ember-outline {
@@ -231,7 +296,7 @@
   }
 
   .btn-ember-outline:hover {
-    box-shadow: 0 18px 40px -20px rgba(9, 43, 166, 0.6);
+    box-shadow: 0 18px 40px -20px rgb(var(--sv-red-600) / 0.45);
   }
 
   .p-card {
@@ -252,9 +317,6 @@
   --mx: 0;
   --my: 0;
   --hero-progress: 0;
-  /* Sterling blue — retained variable names, remapped values */
-  --ember: 9 43 166;
-  --glow-warm: 92 126 247;
 }
 
 @layer components {
@@ -307,39 +369,34 @@
 
   .hero-embers {
     background-image:
-      radial-gradient(1.6px 1.6px at 12% 82%, rgba(120, 152, 255, 0.95), transparent 60%),
-      radial-gradient(1.2px 1.2px at 27% 64%, rgba(92, 126, 247, 0.8), transparent 60%),
-      radial-gradient(2px 2px at 41% 88%, rgba(150, 176, 255, 0.9), transparent 60%),
-      radial-gradient(1.3px 1.3px at 58% 70%, rgba(104, 137, 250, 0.85), transparent 60%),
-      radial-gradient(1.8px 1.8px at 73% 84%, rgba(132, 162, 255, 0.9), transparent 60%),
-      radial-gradient(1.1px 1.1px at 86% 60%, rgba(92, 126, 247, 0.8), transparent 60%),
-      radial-gradient(1.5px 1.5px at 94% 78%, rgba(140, 168, 255, 0.85), transparent 60%);
+      radial-gradient(1.6px 1.6px at 12% 82%, rgb(var(--sv-red-400) / 0.95), transparent 60%),
+      radial-gradient(1.2px 1.2px at 27% 64%, rgb(var(--sv-red-500) / 0.8), transparent 60%),
+      radial-gradient(2px 2px at 41% 88%, rgb(var(--sv-red-400) / 0.9), transparent 60%),
+      radial-gradient(1.3px 1.3px at 58% 70%, rgb(var(--sv-red-500) / 0.85), transparent 60%),
+      radial-gradient(1.8px 1.8px at 73% 84%, rgb(var(--sv-red-400) / 0.9), transparent 60%),
+      radial-gradient(1.1px 1.1px at 86% 60%, rgb(var(--sv-red-500) / 0.8), transparent 60%),
+      radial-gradient(1.5px 1.5px at 94% 78%, rgb(var(--sv-red-400) / 0.85), transparent 60%);
     background-size: 100% 220%;
     animation: emberRise 26s linear infinite;
     will-change: transform;
   }
 
   /* ------------------------------------------------------------ glass chrome */
+  /* main navigation bar — clean white, subtle bottom border */
   .glass {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.92) 100%
-    );
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.85),
-      0 12px 40px -26px rgba(6, 22, 42, 0.55);
+    background: rgb(255 255 255 / 0.94);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border-bottom: 1px solid rgb(var(--sv-carbon-300));
+    box-shadow: 0 1px 0 rgb(var(--sv-carbon-300)), 0 12px 32px -28px rgb(var(--sv-carbon-900) / 0.35);
   }
 
+  /* utility strip above the navigation */
   .glass-dark {
-    background: linear-gradient(180deg, rgba(6, 22, 42, 0.9) 0%, rgba(6, 22, 42, 0.8) 100%);
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: rgb(var(--sv-carbon-100) / 0.98);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid rgb(var(--sv-carbon-300));
   }
 
   /* a thin specular highlight that sweeps the glass edge */
@@ -352,8 +409,8 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(var(--ember), 0.55),
-      rgba(255, 255, 255, 0.75),
+      rgb(var(--ember) / 0.85),
+      rgb(255 255 255 / 0.4),
       transparent
     );
     opacity: 0.7;
@@ -365,13 +422,13 @@
     text-shadow:
       0 1px 0 rgba(0, 0, 0, 0.35),
       0 0 34px rgba(255, 255, 255, 0.14),
-      0 0 90px rgba(var(--glow-warm), 0.16);
+      0 0 90px rgb(var(--glow-warm) / 0.16);
   }
 
   .text-cine-warm {
     text-shadow:
-      0 0 26px rgba(var(--ember), 0.5),
-      0 0 72px rgba(var(--ember), 0.28);
+      0 0 26px rgb(var(--ember) / 0.5),
+      0 0 72px rgb(var(--ember) / 0.28);
   }
 }
 
@@ -383,8 +440,8 @@
   }
 
   .grid-lines-dark {
-    background-image: linear-gradient(to right, rgba(6, 22, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(6, 22, 42, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgb(var(--sv-carbon-950) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--sv-carbon-950) / 0.06) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 
@@ -473,13 +530,13 @@
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f7fb;
+  background: rgb(var(--sv-grey-100));
 }
 ::-webkit-scrollbar-thumb {
-  background: #b9c3d5;
+  background: rgb(var(--sv-grey-300));
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3c4c67;
+  background: rgb(var(--sv-red-600));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -491,4 +548,13 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.aboutus_p_change{
+  position: relative;
+  top: -125px;
+}
+.aboutus_p_change_section{
+  position: relative;
+  top: -170px;
 }

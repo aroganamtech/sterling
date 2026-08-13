@@ -3,7 +3,6 @@ import PageHero, { CTASection } from '../../components/PageHero';
 import Section, { SectionHead } from '../../components/Section';
 import Reveal from '../../components/Reveal';
 import Icon from '../../components/Icon';
-import SolutionFinder from '../../components/SolutionFinder';
 import { solutions } from '../../data/solutions';
 
 export default function SolutionsIndex() {
@@ -12,7 +11,7 @@ export default function SolutionsIndex() {
       <PageHero
         eyebrow="Solutions"
         title="Engineered smoke management systems"
-        lede="Four system families that combine into one life safety strategy. Each is engineered from the design fire and the building — never selected from a catalogue."
+        lede="Six solution families that combine into one smoke control strategy, each engineered from the building configuration, the fire strategy and the applicable Singapore requirements."
         breadcrumbs={[{ label: 'Solutions' }]}
         actions={
           <>
@@ -20,8 +19,8 @@ export default function SolutionsIndex() {
               Request Consultation
               <Icon name="arrow" className="h-4 w-4" />
             </Link>
-            <Link to="/engineering" className="btn-ghost">
-              Engineering capability
+            <Link to="/services" className="btn-ghost">
+              Our services
             </Link>
           </>
         }
@@ -32,7 +31,7 @@ export default function SolutionsIndex() {
           <SectionHead
             eyebrow="System families"
             title="What we design, supply and commission"
-            lede="Every system below is delivered with the analysis that justifies it, the certification that proves it and the maintenance regime that keeps it compliant."
+            lede="Every solution below is delivered with the engineering that justifies it, the certification that supports it and the testing and maintenance that keep it performing."
           />
 
           <div className="mt-14 space-y-px bg-steel-200">
@@ -66,20 +65,6 @@ export default function SolutionsIndex() {
                 </Link>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section tone="tint">
-        <div className="shell">
-          <SectionHead
-            eyebrow="Solution finder"
-            title="Not sure which systems apply?"
-            lede="Select your building type to see the systems typically required and the standards that usually govern them."
-            align="center"
-          />
-          <div className="mt-14">
-            <SolutionFinder />
           </div>
         </div>
       </Section>

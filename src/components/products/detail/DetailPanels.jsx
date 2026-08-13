@@ -90,7 +90,7 @@ export function DetailFeatures({ features = [] }) {
     <RevealGroup className="grid gap-px bg-steel-200 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
       {features.map((f, i) => (
         <article key={f.title} className="group relative h-full bg-white p-7">
-          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-300 transition-colors group-hover:text-signal-500">
+          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-500 transition-colors group-hover:text-signal-600">
             {String(i + 1).padStart(2, '0')}
           </span>
           <span className="flex h-12 w-12 items-center justify-center bg-navy-50 text-navy-700 transition-colors duration-300 group-hover:bg-signal-600 group-hover:text-white">
@@ -237,7 +237,7 @@ export function DetailRelated({ items = [] }) {
                 <h3 className="font-display text-[18px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                   {p.name}
                 </h3>
-                <p className="mt-1.5 text-[12px] uppercase tracking-[0.1em] text-steel-400">{p.tagline}</p>
+                <p className="mt-1.5 text-[12px] uppercase tracking-[0.1em] text-steel-500">{p.tagline}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.13em] text-navy-800 group-hover:text-signal-600">
                   View product
                   <Icon name="arrow" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />

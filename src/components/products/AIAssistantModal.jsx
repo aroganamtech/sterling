@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon';
-import logoMark from '../../assets/logo-mark-light.png';
+import logoMark from '../../assets/logo-mark.png';
 import { ASSISTANT_ENDPOINT, askAssistant, suggestedPrompts } from '../../lib/aiAssistant';
 import { EASE, modalBackdrop, modalPanel } from '../../lib/motion';
 
@@ -235,7 +235,7 @@ export default function AIAssistantModal({ open, onClose, product }) {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about specifications, standards, lead times…"
                 aria-label="Message"
-                className="min-w-0 flex-1 border border-steel-200 bg-white px-4 py-3 text-[14px] text-navy-950 outline-none transition placeholder:text-steel-400 focus:border-signal-600"
+                className="min-w-0 flex-1 border border-steel-200 bg-white px-4 py-3 text-[14px] text-navy-950 outline-none transition placeholder:text-steel-500 focus:border-signal-600"
               />
               <button
                 type="submit"

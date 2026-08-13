@@ -1,8 +1,12 @@
 /* -------------------------------------------------------------------------
    COMPANY MASTER DATA  —  EDIT THIS FILE FIRST
-   Every figure, address and contact detail used across the site is read from
-   here. Placeholder values are marked with  // TODO  — replace them with the
-   verified company information before the site goes live.
+   Every address and contact detail used across the site is read from here.
+
+   NOTE — no telephone number or email address has been supplied in the
+   approved content. Rather than publish placeholders, the site routes all
+   enquiries through the contact form. Add the verified details to
+   `offices[0].phone` / `offices[0].email` and the UI will surface them
+   automatically (see Header, Footer, Contact and Global Coverage).
    ------------------------------------------------------------------------- */
 
 export const company = {
@@ -12,55 +16,37 @@ export const company = {
   strapline: 'Engineered Smoke Control Systems',
   promise: 'Protecting People. Preserving Life.',
   positioning: 'We Engineer Life Safety Smoke Management Systems.',
-  values: ['Engineered', 'Reliable', 'Innovative', 'Life Safety'],
+  values: ['Innovation', 'Integrity', 'Engineering Excellence', 'Quality', 'Customer Commitment'],
 };
 
-// TODO — confirm all counters with management before publishing.
+// Founder / Managing Director experience — see src/pages/about/Leadership.jsx.
 export const metrics = [
-  { value: 20, suffix: '+', label: 'Years of engineering experience' },
+  { value: 10, suffix: '+', label: 'Years of smoke control engineering experience' },
 ];
 
-// TODO — replace with the registered office details.
 export const offices = [
   {
     id: 'singapore',
     country: 'Singapore',
     label: 'Singapore — Head Office',
-    role: 'Regional headquarters, engineering & commercial',
-    lines: ['Sterling Ventilation Asia Pacific Pte Ltd', '[Street address]', 'Singapore [postal code]'],
-    phone: '+65 0000 0000',
-    email: 'enquiry@sterlingventilation.com',
-    map: 'https://www.google.com/maps?q=Singapore&output=embed',
-  },
-  {
-    id: 'india',
-    country: 'India',
-    label: 'India — Engineering & Operations',
-    role: 'Design office, project delivery & service',
-    lines: ['Sterling Ventilation India', '[Street address]', '[City] [PIN]'],
-    phone: '+91 00000 00000',
-    email: 'india@sterlingventilation.com',
-    map: 'https://www.google.com/maps?q=Chennai&output=embed',
+    role: 'Engineering, manufacturing and regional distribution base',
+    lines: ['Sterling Ventilation Asia Pacific Pte Ltd', 'No. 6, Tuas Basin Close', 'Singapore 638799'],
+    phone: '',
+    email: '',
+    map: 'https://www.google.com/maps?q=No.+6+Tuas+Basin+Close+Singapore+638799&output=embed',
   },
 ];
 
-export const contactChannels = {
-  general: 'enquiry@sterlingventilation.com',
-  engineering: 'engineering@sterlingventilation.com',
-  service: 'service@sterlingventilation.com',
-  careers: 'careers@sterlingventilation.com',
-};
-
-// Territories where the business is active / actively developing.
+/* Distribution and support territory. Sterling operates from Singapore and is
+   authorised by its manufacturing partners to market and distribute their
+   ventilation products across Asia and Australia. */
 export const presence = [
-  { region: 'Singapore', status: 'Head office', x: 71.5, y: 62 },
-  { region: 'Malaysia', status: 'Projects & service', x: 69.5, y: 58.5 },
-  { region: 'Indonesia', status: 'Projects', x: 74, y: 66 },
-  { region: 'India', status: 'Engineering centre', x: 63, y: 47 },
-  { region: 'UAE & Middle East', status: 'Projects', x: 56, y: 44 },
-  { region: 'Vietnam', status: 'Projects', x: 73, y: 47 },
-  { region: 'Thailand', status: 'Projects', x: 70.5, y: 47 },
-  { region: 'Philippines', status: 'Projects', x: 78, y: 48 },
-  { region: 'Australia', status: 'Partner network', x: 82, y: 78 },
-  { region: 'Sri Lanka', status: 'Projects', x: 64.5, y: 54 },
+  { region: 'Singapore', status: 'Head office, engineering & manufacturing', x: 71.5, y: 62 },
+  { region: 'Malaysia', status: 'Authorised distribution territory', x: 69.5, y: 58.5 },
+  { region: 'Indonesia', status: 'Authorised distribution territory', x: 74, y: 66 },
+  { region: 'Vietnam', status: 'Authorised distribution territory', x: 73, y: 47 },
+  { region: 'Thailand', status: 'Authorised distribution territory', x: 70.5, y: 47 },
+  { region: 'Philippines', status: 'Authorised distribution territory', x: 78, y: 48 },
+  { region: 'India', status: 'Authorised distribution territory', x: 63, y: 47 },
+  { region: 'Australia', status: 'Authorised distribution territory', x: 82, y: 78 },
 ];

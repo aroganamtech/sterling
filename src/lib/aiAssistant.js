@@ -12,7 +12,7 @@
    request through your own endpoint and keep the key server-side.
    --------------------------------------------------------------------------- */
 
-import { products, getProduct, productCategories } from '../data/products';
+import { products, productCategories } from '../data/products';
 
 export const ASSISTANT_ENDPOINT = import.meta.env?.VITE_ASSISTANT_ENDPOINT || '';
 
@@ -69,113 +69,114 @@ const KB = [
     id: 'selection',
     keywords: ['which', 'recommend', 'select', 'choose', 'suitable', 'what product', 'need for'],
     answer: (p) =>
-      `System selection starts with three questions: the building volume and clear height you need to protect, the design fire agreed with the fire engineer, and whether buoyancy alone can carry the smoke out.\n\nIf the roof geometry supports it, natural ventilation (SV-SHEV) is simpler and cheaper to run. Where it does not — basements, deep plan, tall atria — mechanical extraction (SV-F400) takes over, almost always with smoke curtains (SV-SC) forming the reservoir.\n\nTell me the building type and approximate volume and I will narrow it down.${
+      `System selection follows the building, not the catalogue. We start from the building configuration, the fire strategy, the smoke control objectives and the applicable Singapore requirements, then work out which combination of containment, ventilation and extraction meets them.\n\nOur solutions cover smoke curtains, natural ventilation, smoke ventilation, mechanical ventilation, engineering and system integration, and testing and lifecycle support.\n\nTell me the building type and roughly how large it is and I will narrow it down.${
         p ? `\n\nYou are currently looking at the ${p.name} (${p.model}).` : ''
       }`,
     links: [
-      { label: 'Solution finder', to: '/solutions' },
+      { label: 'All solutions', to: '/solutions' },
       { label: 'All products', to: '/products' },
     ],
   },
   {
     id: 'standards',
-    keywords: ['standard', 'certif', 'en 12101', 'nfpa', 'compliance', 'code', 'approval', 'scdf', 'bs '],
+    keywords: ['standard', 'certif', 'en 12101', 'compliance', 'code', 'approval', 'scdf', 'fire code'],
     answer: (p) =>
-      `Our equipment is certified to the EN 12101 series, which most Asia-Pacific authorities accept directly:\n\n• EN 12101-1 — smoke barriers and curtains\n• EN 12101-2 — natural smoke and heat exhaust ventilators\n• EN 12101-3 — powered smoke exhaust (F300 / F400)\n• EN 12101-6 — pressure differential systems\n• EN 12101-8 — smoke control dampers\n• EN 12101-9 / -10 — control panels and power supplies\n\nNFPA 92, NFPA 204 and NFPA 130 are commonly referenced for design methodology, and SCDF governs Singapore projects.${
+      `Singapore's Fire Code establishes the minimum fire-safety requirements and requires the applicable current referenced codes and standards to be used. The EN 12101 series is the product standard family we work to:\n\n• EN 12101-1 — smoke barriers and curtains\n• EN 12101-2 — natural smoke and heat exhaust ventilators\n• EN 12101-3 — powered smoke and heat exhaust ventilators\n• EN 12101-8 — smoke control dampers\n\nOur Prime Curtain is manufactured and tested in Singapore to comply with EN 12101-1.${
         p ? `\n\nThe ${p.name} carries: ${p.certifications.map((c) => c.code).join(', ')}.` : ''
       }`,
     links: [
       { label: 'Standards reference', to: '/resources/standards' },
-      { label: 'Compliance consulting', to: '/engineering/compliance-consulting' },
+      { label: 'Engineering & System Integration', to: '/solutions/engineering-system-integration' },
     ],
   },
   {
-    id: 'f300',
-    keywords: ['f300', 'f400', 'high temperature', 'temperature rating', '300', '400'],
+    id: 'curtain',
+    keywords: ['curtain', 'drop', 'reservoir', 'atrium', 'containment', 'barrier', 'prime'],
     answer: () =>
-      `F300 and F400 are the EN 12101-3 classifications for smoke extract fans.\n\n• F300 — the fan is proven to deliver its duty at 300 °C for 2 hours\n• F400 — same, at 400 °C for 2 hours\n\nThe rating comes from a full-scale fire test of the complete fan, motor and bearing assembly — it cannot be calculated or inferred from component ratings. F300 is typical for car parks; F400 is usually specified where the design fire is larger or the fan sits closer to the reservoir.`,
-    links: [{ label: 'Smoke extract fan', to: '/products/smoke-extract-fan' }],
-  },
-  {
-    id: 'aerodynamic',
-    keywords: ['aerodynamic', 'free area', 'cv', 'geometric', 'vent area'],
-    answer: () =>
-      `Aerodynamic free area is the figure your ventilation calculation actually needs — geometric area will over-state performance by a wide margin.\n\nAerodynamic area = geometric area × Cv, where Cv is the discharge coefficient measured by test. A ventilator with 2.0 m² of geometric opening and a Cv of 0.62 gives 1.24 m² of aerodynamic area.\n\nWe only publish tested aerodynamic values. If a competing datasheet quotes geometric area, the two numbers are not comparable.`,
-    links: [{ label: 'Smoke ventilator', to: '/products/smoke-ventilator' }],
-  },
-  {
-    id: 'curtain-drop',
-    keywords: ['curtain', 'drop', 'reservoir', 'atrium', 'headbox', 'barrier'],
-    answer: () =>
-      `Smoke curtains form the reservoir that makes extraction achievable. Practical guidance:\n\n• Reservoir depth is typically 10–20% of the ceiling height, and the smoke layer base must stay above head height plus a margin\n• Our SV-SC handles single-panel drops to 8 m and unlimited multi-panel runs\n• Descent is gravity fail-safe at roughly 0.1 m/s — no power needed to deploy\n• The headbox is 165 × 165 mm minimum, which is what you need to reserve in the ceiling void\n\nDeep reservoirs above about 4 m usually need CFD verification rather than the standard calculation.`,
+      `Smoke curtains control the movement and spread of smoke within a building. They form smoke reservoirs, restrict smoke migration and support the effective operation of smoke exhaust systems.\n\nOur Prime Curtain is manufactured and tested in Singapore:\n\n• Typical classification — DH120, complying with EN 12101-1 and EN 13501-1\n• Fabric — fibreglass, double-coated with polyurethane polymer, 0.4 mm\n• Drop — part drop and full drop with controlled speed\n• Fail-safe — gravity to descend, power to hold\n• Interfaces — fire alarm and battery back-up control\n\nSystems are designed around the building geometry and smoke control strategy, considering curtain deployment, smoke layer height, reservoir dimensions, exhaust airflow, replacement air and system activation.`,
     links: [
-      { label: 'Smoke curtain', to: '/products/smoke-curtain' },
-      { label: 'CFD modelling', to: '/engineering/smoke-modelling-cfd' },
+      { label: 'Prime Curtain', to: '/products/smoke-curtain' },
+      { label: 'Smoke Curtains solution', to: '/solutions/smoke-curtains' },
     ],
   },
   {
-    id: 'pressurisation',
-    keywords: ['pressuris', 'pressuriz', 'stair', 'door force', 'differential', '50 pa'],
+    id: 'natural',
+    keywords: ['natural ventilation', 'louvre', 'actuator', 'window', 'fresh air', 'air quality', 'comfort'],
     answer: () =>
-      `Pressurisation has to satisfy two criteria at once:\n\n• 50 Pa differential with all doors closed\n• Door opening force ≤ 100 N measured at the handle\n• 0.75–2.0 m/s through the open door, depending on the system class\n\nMost failures happen at the second criterion — a system that holds 50 Pa statically pushes the door force over limit unless the relief modulates. The SV-SPU measures pressure continuously and varies fan speed through the door-opening cycle, so it passes the dynamic test as well as the static one.`,
-    links: [{ label: 'Stair pressurisation unit', to: '/products/stair-pressurisation-unit' }],
-  },
-  {
-    id: 'carpark',
-    keywords: ['car park', 'carpark', 'jet fan', 'impulse', 'basement', 'parking', 'co sensor'],
-    answer: () =>
-      `Impulse (jet fan) ventilation replaces car park supply and extract ductwork with directed thrust. The gains are real: slab-to-soffit height recovered, less builders work, and demand-controlled running on CO/NO₂ sensors instead of fixed extract.\n\nThe engineering that matters is the flow field — beam downstands, ramps and column grids create stagnation zones that only show up in CFD. We model every layout before we quote it.\n\nJet fans for fire duty must be F300 rated; ours are, and reversible versions are available for zoned smoke control.`,
-    links: [{ label: 'Car park jet fan', to: '/products/car-park-jet-fan' }],
-  },
-  {
-    id: 'maintenance',
-    keywords: ['maintenance', 'testing', 'service', 'weekly', 'annual', 'inspect'],
-    answer: () =>
-      `Typical statutory regime for smoke control equipment:\n\n• Weekly — functional test of each device, logged\n• Monthly — more detailed operational check\n• Annually — full test including cause-and-effect re-verification, with a written report\n\nThe governing requirement is set by the local code and your fire strategy. Our SV-SCP control panel runs the weekly cycle automatically and logs the result, which turns the record-keeping from a clipboard exercise into a data trail an auditor can accept.`,
+      `Natural ventilation uses wind pressure and temperature differences to introduce fresh outdoor air and remove stale or warm air from occupied spaces.\n\nOur solutions include automated window actuators, natural ventilation louvres, roof ventilators and intelligent control systems. Where appropriate, sensors can be integrated to control ventilation openings based on indoor and outdoor conditions.\n\nEach system is designed around the building layout, ventilation requirements, environmental conditions, control strategy and applicable Singapore codes and regulatory requirements.`,
     links: [
-      { label: 'Smoke control panel', to: '/products/smoke-control-panel' },
-      { label: 'FAQ', to: '/resources/faq' },
+      { label: 'Natural Ventilation solution', to: '/solutions/natural-ventilation' },
+      { label: 'Natural ventilation products', to: '/products#natural-ventilation' },
     ],
   },
   {
-    id: 'cfd',
-    keywords: ['cfd', 'model', 'simulation', 'fds', 'tenability', 'aset', 'rset'],
+    id: 'smoke-vent',
+    keywords: ['smoke ventilation', 'aov', 'ventilator', 'smoke shaft', 'smoke clearance', 'shev'],
     answer: () =>
-      `We run CFD when the geometry falls outside the assumptions of the standard calculation methods — large or interconnected volumes, unusual roof forms, transport interchanges — or where an authority requires a performance-based demonstration.\n\nThe output is a documented scenario matrix with visibility, temperature, CO and radiant flux assessed against the tenability criteria in the fire strategy. It regularly reduces installed extract capacity, so it often pays for itself before procurement.`,
-    links: [{ label: 'Smoke modelling (CFD)', to: '/engineering/smoke-modelling-cfd' }],
-  },
-  {
-    id: 'lead-time',
-    keywords: ['lead time', 'delivery', 'how long', 'programme', 'schedule', 'when can'],
-    answer: () =>
-      `Indicative lead times, from approved shop drawings:\n\n• Smoke curtains — 8 to 10 weeks\n• Natural ventilators and louvres — 8 to 12 weeks\n• F300 / F400 fans — 10 to 14 weeks\n• Control panels — 6 to 8 weeks\n\nThese move with project size and specification. For a firm programme commitment, send us the schedule and we will confirm against current production.`,
-    links: [{ label: 'Contact the team', to: '/contact' }],
-  },
-  {
-    id: 'price',
-    keywords: ['price', 'cost', 'quote', 'budget', 'how much', 'rate'],
-    answer: (p) =>
-      `We do not publish list pricing — smoke control equipment is engineered to the project, so a number without the design behind it would be misleading.\n\nFor a budget figure we need the building type, approximate area or volume, the fire strategy if one exists, and the programme. That is usually enough for a ±15% budget estimate within a few days.${
-        p ? `\n\nI can route a request for the ${p.name} straight to the engineering team.` : ''
-      }`,
-    links: [{ label: 'Request a quotation', to: '/contact' }],
-  },
-  {
-    id: 'bim',
-    keywords: ['bim', 'revit', 'cad', 'drawing', 'dwg', 'model file', 'family'],
-    answer: () =>
-      `Native Revit families with performance parameters are available for every product in the range, along with 2D CAD blocks and installation details.\n\nWe issue them at LOD 300 for coordination and LOD 400 where fabrication-level detail is needed, with access and maintenance zones modelled so the equipment can actually be serviced after handover.`,
+      `Smoke ventilation supports safe evacuation and effective fire-fighting operations during a fire.\n\nOur solutions include natural smoke ventilators, mechanical smoke exhaust systems, smoke extraction fans, replacement air systems, smoke control ductwork, smoke reservoirs, smoke shafts and associated control systems.\n\nSystems are engineered for reliable operation during fire conditions, with consideration given to smoke movement, system activation, airflow requirements, discharge arrangements, fire-rated construction, emergency power supply, controls and integration with other fire protection systems.`,
     links: [
-      { label: 'BIM & Revit', to: '/engineering/bim-revit' },
-      { label: 'Downloads', to: '/resources/downloads' },
+      { label: 'Smoke Ventilation solution', to: '/solutions/smoke-ventilation' },
+      { label: 'Smoke ventilation products', to: '/products#smoke-ventilation' },
+    ],
+  },
+  {
+    id: 'extraction',
+    keywords: ['extract', 'extraction', 'fan', 'damper', 'car park', 'basement', 'mechanical'],
+    answer: () =>
+      `Mechanical smoke control systems use dedicated fans, ductwork, dampers and air supply arrangements to extract smoke from designated areas and provide replacement air where required. They can be applied to corridors, lobbies, staircases, smoke shafts, car parks and other areas in accordance with the building's fire safety strategy.\n\nTypical technical basis:\n\n• Fan certification — EN 12101-3\n• Damper certification — EN 12101-8\n• Duct classification — 1.2 mm thick, fire resistant\n• Control — fire-rated cabling and battery back-up\n• Verification — engineering calculation / CFD\n\nEach system is engineered from the building configuration, smoke control objectives, required airflow and applicable Singapore Fire Code and relevant standards.`,
+    links: [
+      { label: 'Smoke extraction products', to: '/products#smoke-extraction' },
+      { label: 'Mechanical Ventilation solution', to: '/solutions/mechanical-ventilation' },
+    ],
+  },
+  {
+    id: 'design',
+    keywords: ['design', 'calculation', 'cfd', 'model', 'simulation', 'qp', 'submission', 'drawing'],
+    answer: () =>
+      `We provide the engineering behind the system — design calculations, smoke control analysis, system layouts, schematics, technical drawings, specifications, equipment selection and control philosophy.\n\nEvery building behaves differently, so our engineers assess the key factors affecting ventilation and smoke movement and use appropriate engineering calculations, modelling and analysis tools to evaluate system performance. For smoke control this may include smoke movement, airflow paths, smoke layer development, extraction rates, replacement air and system interaction.\n\nDesigns are developed to support Qualified Person (QP) submissions and regulatory review where applicable.`,
+    links: [
+      { label: 'System Design service', to: '/services/system-design' },
+      { label: 'Engineering & System Integration', to: '/solutions/engineering-system-integration' },
     ],
   },
   {
     id: 'install',
-    keywords: ['install', 'commission', 'site', 'supervision', 'handover', 'testing regime'],
+    keywords: ['install', 'commission', 'site', 'handover', 'coordination'],
     answer: () =>
-      `We supervise installation against approved shop drawings and carry out pre-commissioning, airflow verification and full cause-and-effect testing before the witnessed integrated systems test.\n\nHandover includes as-built drawings, O&M documentation, certification traceable to each installed asset, and the statutory testing schedule set up for the facilities team.`,
-    links: [{ label: 'Engineering process', to: '/engineering' }],
+      `We install engineered smoke control systems, translating approved designs into fully coordinated installations. Our scope covers smoke curtains, smoke ventilation systems, system controls and integration, site coordination, testing and commissioning, and handover and support.\n\nFunctional testing covers equipment, controls, interfaces, activation sequences and system performance prior to handover, and we provide test records, commissioning documentation and technical information at completion.`,
+    links: [
+      { label: 'Installation service', to: '/services/installation' },
+      { label: 'Testing & Lifecycle Support', to: '/solutions/testing-lifecycle-support' },
+    ],
+  },
+  {
+    id: 'maintenance',
+    keywords: ['maintenance', 'testing', 'service', 'inspect', 'periodic', 'fault', 'training'],
+    answer: () =>
+      `We provide inspection, testing, servicing and maintenance across the complete system — smoke curtains, smoke ventilators, AOVs, smoke extraction fans, ductwork, dampers, louvres, control panels, sensors and the associated electrical and control interfaces.\n\nOur maintenance services cover routine inspection, functional testing, performance verification, preventive maintenance, fault diagnosis and rectification, and documentation and records.\n\nWe also provide practical training for building owners, facility managers and maintenance teams on the installed system.`,
+    links: [
+      { label: 'Maintenance service', to: '/services/maintenance' },
+      { label: 'Training', to: '/services/training' },
+    ],
+  },
+  {
+    id: 'company',
+    keywords: ['who are you', 'about', 'company', 'sterling', 'vent engineering', 'distributor', 'coverage', 'where'],
+    answer: () =>
+      `Sterling Ventilation Asia Pacific Pte Ltd is a Singapore-based specialist in engineered smoke control and ventilation solutions, established in 2026.\n\nWe are the exclusive distributor in Singapore covering Asia and Australia for Vent Engineering, UK, a specialist manufacturer of ventilation products in the industry since 1988. We also manufacture and test our Prime Curtain smoke curtain system in Singapore, designed and tested to comply with EN 12101-1.\n\nWe provide end-to-end services: design and engineering, supply, installation, testing, commissioning, system communication, service and maintenance.`,
+    links: [
+      { label: 'About us', to: '/about' },
+      { label: 'Global coverage', to: '/about/global-coverage' },
+    ],
+  },
+  {
+    id: 'price',
+    keywords: ['price', 'cost', 'quote', 'budget', 'how much', 'rate', 'lead time', 'delivery', 'how long'],
+    answer: (p) =>
+      `We do not publish list pricing or standard lead times — smoke control equipment is engineered to the project, so a figure without the design behind it would be misleading.\n\nSend us the building type, approximate area or volume, the fire strategy if one exists, and the programme, and an engineer will come back to you.${
+        p ? `\n\nI can route a request for the ${p.name} straight to the engineering team.` : ''
+      }`,
+    links: [{ label: 'Request a quotation', to: '/contact' }],
   },
 ];
 
@@ -191,7 +192,7 @@ export function localAnswer(message, product) {
 
   if (GREETING.test(text)) {
     return {
-      text: `Hello — I am Sterling's engineering assistant.\n\nI can help with product selection, standards and certification, performance data, lead times and how our systems are commissioned and maintained.${
+      text: `Hello — I am Sterling's engineering assistant.\n\nI can help with solution and product selection, standards and certification, system design, and how our systems are installed, commissioned and maintained.${
         product ? `\n\nYou are viewing the ${product.name} (${product.model}). Ask me anything about it.` : ''
       }`,
       links: [{ label: 'Browse products', to: '/products' }],
@@ -223,7 +224,7 @@ export function localAnswer(message, product) {
   }
 
   return {
-    text: `I do not have a prepared answer for that one.\n\nI am strongest on product selection, EN 12101 and NFPA requirements, performance data, CFD, lead times, installation and maintenance. If your question is project-specific, the fastest route is our engineering team — technical enquiries are usually answered the same working day.`,
+    text: `I do not have a prepared answer for that one.\n\nI am strongest on solution and product selection, EN 12101 and Singapore Fire Code requirements, system design, installation, testing and maintenance. If your question is project-specific, the fastest route is our engineering team — technical enquiries are usually answered by an engineer the same working day.`,
     links: [
       { label: 'Send it to an engineer', to: '/contact' },
       { label: 'Technical FAQ', to: '/resources/faq' },
@@ -251,15 +252,15 @@ export function suggestedPrompts(product) {
   if (!product) {
     return [
       'Which system suits a basement car park?',
-      'What is the difference between F300 and F400?',
+      'What does the Prime Curtain comply with?',
       'Which standards apply in Singapore?',
-      'Do you provide Revit families?',
+      'What does your maintenance service cover?',
     ];
   }
   return [
     `What are the key specifications of the ${product.name}?`,
     `Which certifications does the ${product.model} carry?`,
-    'What is the typical lead time?',
+    'Which solution does this belong to?',
     'How is it tested and maintained?',
   ];
 }

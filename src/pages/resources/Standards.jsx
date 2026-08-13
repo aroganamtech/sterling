@@ -90,7 +90,7 @@ export default function Standards() {
       <CTASection
         title="Unsure which code governs your project?"
         text="Send us the location, the occupancy and the client standard. We will map the applicable requirements and tell you where they conflict."
-        secondary={{ label: 'Compliance consulting', to: '/engineering/compliance-consulting' }}
+        secondary={{ label: 'System design', to: '/services/system-design' }}
       />
     </>
   );

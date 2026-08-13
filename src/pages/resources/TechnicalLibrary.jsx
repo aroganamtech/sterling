@@ -10,7 +10,7 @@ export default function TechnicalLibrary() {
       <PageHero
         eyebrow="Resources"
         title="Technical library"
-        lede="Engineering literature written for design teams: white papers, technical guides, case studies and the installation and maintenance documents that follow a system into service."
+        lede="Engineering literature written for design teams: technical guides, design and compliance notes, and the installation and maintenance documents that follow a system into service."
         breadcrumbs={[{ label: 'Resources', to: '/resources' }, { label: 'Technical Library' }]}
       />
 
@@ -29,7 +29,7 @@ export default function TechnicalLibrary() {
                       </h3>
                       <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500">{item.note}</p>
                       <div className="mt-6 flex items-center justify-between border-t border-steel-200 pt-5">
-                        <span className="text-[11.5px] uppercase tracking-[0.12em] text-steel-400">{item.meta}</span>
+                        <span className="text-[11.5px] uppercase tracking-[0.12em] text-steel-500">{item.meta}</span>
                         <button type="button" className="link-arrow">
                           Request
                           <Icon name="arrow" className="h-3.5 w-3.5" />
