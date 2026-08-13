@@ -13,21 +13,123 @@
 
 export const productCategories = [
   {
-    id: 'natural-ventilation',
-    name: 'Smoke Ventilator',
-    icon: 'vent',
-    tagline: 'Buoyancy and wind-driven ventilation',
+    id: 'smoke-containment',
+    name: 'Smoke Containment',
+    icon: 'curtain',
+    tagline: 'Controlling the movement and spread of smoke',
+    subtitle: 'Containing Smoke Where It Matters',
     blurb:
-      'Roof, ridge and facade ventilators plus the actuators that drive them — daily comfort ventilation and heat relief without fan energy.',
+      'Smoke curtains that form smoke reservoirs, restrict smoke migration and support the effective operation of smoke exhaust systems.',
+    intro: [
+      'Smoke curtains are an important component of smoke containment, helping to control the movement and spread of smoke within a building. They can be used to form smoke reservoirs, restrict smoke migration and support the effective operation of smoke exhaust systems.',
+      'Our systems are designed around the specific building geometry and smoke control strategy, with consideration given to curtain deployment, smoke layer height, reservoir dimensions, exhaust airflow, replacement air and system activation.',
+    ],
+    capabilities: [
+      'Fixed and automatic smoke curtains',
+      'Smoke reservoir formation',
+      'Smoke compartmentation',
+      'Atrium and large open-space smoke control',
+      'Escalator and void smoke containment',
+      'Integration with natural and mechanical smoke exhaust systems',
+      'Fire alarm and building management system (BMS) interfaces',
+    ],
+    keyBenefits: [
+      'Effective smoke containment',
+      'Smoke reservoir formation',
+      'Supports smoke extraction',
+      'Flexible application',
+      'Automatic deployment',
+    ],
+    image: 'smoke-curtain-section',
     accent: 'ember',
   },
   {
-    id: 'mechanical-ventilation',
-    name: 'Mechanical Ventilation',
-    icon: 'extract',
-    tagline: 'Powered air movement and extraction',
+    id: 'natural-ventilation',
+    name: 'Natural Ventilation',
+    icon: 'vent',
+    tagline: 'Wind pressure and temperature difference, put to work',
+    subtitle: 'Enhancing Indoor Air Quality Through Natural Airflow',
     blurb:
-      'Adjustable-pitch axial flow fans for general ventilation, process extraction and heat relief, selected from certified curves at the real system resistance.',
+      'Automated window actuators, natural ventilation louvres, roof ventilators and intelligent control systems that introduce fresh outdoor air and remove stale or warm air.',
+    intro: [
+      'Sterling provides natural ventilation solutions that utilise wind pressure and temperature differences to introduce fresh outdoor air and remove stale or warm air from occupied spaces.',
+      'Our solutions include automated window actuators, natural ventilation louvres, roof ventilators and intelligent control systems. Where appropriate, sensors can be integrated to automatically control ventilation openings based on indoor and outdoor conditions.',
+      'Properly designed and controlled natural ventilation can support good indoor air quality, thermal comfort and occupant well-being, while reducing the reliance on mechanical ventilation.',
+      'Our systems are designed with consideration of the building layout, ventilation requirements, environmental conditions, control strategy and applicable Singapore codes, standards and regulatory requirements.',
+    ],
+    capabilities: [
+      'Automated window actuators',
+      'Natural ventilation louvres',
+      'Roof ventilators',
+      'Intelligent control systems',
+      'Sensor-driven opening control',
+    ],
+    keyBenefits: [
+      'Enhanced life safety',
+      'Effective air replacement',
+      'Reliable system operation',
+      'Regulatory compliance',
+    ],
+    image: 'louvred-roof-ventilator-section',
+    accent: 'ember',
+  },
+  {
+    id: 'smoke-ventilation',
+    name: 'Smoke Ventilation',
+    icon: 'vent',
+    tagline: 'Natural and mechanical smoke ventilation',
+    subtitle: 'Protecting Occupants Through Effective Smoke Management',
+    blurb:
+      'Natural and mechanical smoke ventilation systems developed to support the building fire safety strategy and meet applicable Singapore regulatory requirements.',
+    intro: [
+      'Sterling’s experienced ventilation engineers provide the design and installation of natural and mechanical smoke ventilation systems for a wide range of building applications. Our solutions are developed to support the building’s fire safety strategy, improve smoke management and meet applicable Singapore regulatory requirements.',
+      'Our smoke ventilation systems are engineered to provide reliable operation during fire conditions, with consideration given to smoke movement, ventilation openings, airflow, system activation, controls, fire-rated construction and integration with other fire protection systems.',
+    ],
+    capabilities: [
+      'Natural smoke ventilators',
+      'Automatic opening vents (AOVs)',
+      'Mechanical smoke ventilation',
+      'Ventilation openings and louvres',
+      'Smoke control panels and interfaces',
+    ],
+    keyBenefits: [
+      'Enhanced life safety',
+      'Effective smoke clearance',
+      'Reliable system operation',
+      'Regulatory compliance',
+    ],
+    image: 'smoke-ventilator-section',
+    accent: 'ember',
+  },
+  {
+    id: 'smoke-extraction',
+    name: 'Mechanical Smoke Extraction Systems',
+    icon: 'extract',
+    tagline: 'Engineered smoke control for reliable performance',
+    subtitle: 'Engineered Smoke Control for Reliable Performance',
+    blurb:
+      'Dedicated fans, ductwork, dampers and air supply arrangements that extract smoke from designated areas and provide replacement air where required.',
+    intro: [
+      'Sterling designs and provides mechanical smoke extraction systems to manage smoke movement and support safe evacuation and fire-fighting operations.',
+      'Mechanical smoke control systems use dedicated fans, ductwork, dampers and air supply arrangements to extract smoke from designated areas and provide replacement air where required. Systems can be applied to corridors, lobbies, staircases, smoke shafts, car parks and other areas in accordance with the building’s fire safety strategy.',
+      'Each system is engineered based on the building configuration, smoke control objectives, required airflow, fire strategy and applicable Singapore Fire Code and relevant standards.',
+    ],
+    capabilities: [
+      'Dedicated smoke extraction fans',
+      'Smoke control ductwork',
+      'Smoke control dampers',
+      'Replacement air arrangements',
+      'Corridor, lobby, staircase and car park systems',
+    ],
+    keyBenefits: [
+      'Effective smoke extraction',
+      'Controlled airflow',
+      'Multi-level applications',
+      'Integrated operation',
+      'Automatic and manual control',
+      'Reliable fire performance',
+    ],
+    image: 'smoke-extract-fan-section',
     accent: 'ember',
   },
 ];
@@ -53,11 +155,153 @@ const CERT = {
 };
 
 export const products = [
+  /* ========================= SMOKE CONTAINMENT ========================= */
+  {
+    slug: 'smoke-curtain',
+    name: 'Prime Curtain',
+    categories: ['smoke-containment'],
+    model: 'PRIME DH120',
+    shape: 'curtain',
+    tagline: 'Engineered smoke containment, manufactured and tested in Singapore',
+    short:
+      'Sterling’s own smoke curtain system for smoke containment, channelling and reservoir formation — manufactured and tested in Singapore to comply with EN 12101-1.',
+    long: [
+      'We provide engineered smoke curtain solutions for smoke containment, channelling, and smoke reservoir formation. The Prime Curtain is manufactured and tested in Singapore and is designed around project-specific requirements and applicable standards.',
+      'Smoke curtains are engineered to provide effective smoke control without unnecessarily compromising the building’s means of escape. Where required, automatically deployed curtains are designed to achieve the required smoke-tightness and effective depth in accordance with the applicable requirements.',
+      'Smoke curtains are an important component of smoke containment, helping to control the movement and spread of smoke within a building. They can be used to form smoke reservoirs, restrict smoke migration and support the effective operation of smoke exhaust systems. Systems are designed around the specific building geometry and smoke control strategy, with consideration given to curtain deployment, smoke layer height, reservoir dimensions, exhaust airflow, replacement air and system activation.',
+    ],
+    quickStats: [
+      ['Classification', 'DH120 to EN 12101-1'],
+      ['Fabric', 'Fibreglass, 0.4 mm'],
+      ['Drop', 'Part or full drop'],
+      ['Fail-safe', 'Gravity descent'],
+    ],
+    features: [
+      { icon: 'shield', title: 'Certified classification', text: 'DH120, complying with EN 12101-1 for smoke barrier assemblies.' },
+      { icon: 'layers', title: 'Durable fabric', text: 'Fibreglass, double-coated with polyurethane polymer, 0.4 mm thickness.' },
+      { icon: 'gauge', title: 'Controlled descent', text: 'Part-drop and full-drop configurations with controlled descent speed.' },
+      { icon: 'fire', title: 'Fail-safe operation', text: 'Gravity descent on power loss; powered to hold in the raised position.' },
+      { icon: 'control', title: 'Fire alarm interface', text: 'Fire alarm interface with battery back-up control.' },
+      { icon: 'wrench', title: 'Made in Singapore', text: 'Manufactured and tested locally, with engineering support close to the project.' },
+    ],
+    specs: [
+      {
+        group: 'Classification',
+        rows: [
+          ['Typical classification', 'DH120, complying with EN 12101-1'],
+          ['Fabric', 'Fibreglass, double-coated with polyurethane polymer, 0.4 mm thickness'],
+        ],
+      },
+      {
+        group: 'Operation',
+        rows: [
+          ['Drop', 'Part-drop and full-drop, with controlled descent speed'],
+          ['Fail-safe', 'Gravity descent on power loss; powered to hold in position'],
+          ['Interfaces', 'Fire alarm interface with battery back-up control'],
+        ],
+      },
+    ],
+    applications: [
+      'Shopping malls and retail atria',
+      'Airport terminals and concourses',
+      'Hospitals and healthcare',
+      'Metro and rail stations',
+      'Office and mixed-use towers',
+      'Warehouses and logistics hubs',
+      'Hotels and convention centres',
+    ],
+    benefits: [
+      { title: 'Effective smoke containment', text: 'Controls the movement and spread of smoke within a building.' },
+      { title: 'Smoke reservoir formation', text: 'Forms smoke reservoirs and restricts smoke migration across openings and voids.' },
+      { title: 'Supports smoke extraction', text: 'Works with natural and mechanical smoke exhaust systems for effective removal.' },
+      { title: 'Flexible application', text: 'Designed around the specific building geometry and smoke control strategy.' },
+      { title: 'Automatic deployment', text: 'Fire alarm and BMS interfaces trigger deployment when required.' },
+    ],
+    certifications: [CERT.en1, CERT.ce],
+    related: ['smoke-control-panel', 'smoke-control-damper'],
+    seo: {
+      title: 'Prime Curtain | Smoke Curtain | Sterling Ventilation',
+      description:
+        'Prime Curtain smoke curtain system, manufactured and tested in Singapore to DH120 classification under EN 12101-1, for smoke containment, channelling and reservoir formation.',
+      keywords: 'smoke curtain, Prime Curtain, EN 12101-1, smoke containment, smoke reservoir, DH120, Sterling Ventilation Singapore',
+    },
+  },
+
+  {
+    slug: 'curtain-control-panel',
+    name: 'Curtain Control Panel',
+    categories: ['smoke-containment'],
+    model: 'SV-CCP',
+    shape: 'panel',
+    tagline: 'Deployment control for smoke curtain systems',
+    short:
+      'Control and indicating panel for smoke curtain systems, managing deployment, fail-safe descent and the fire alarm interface with battery back-up.',
+    long: [
+      'A smoke curtain only contributes to the strategy if it deploys to the right depth, at the right moment, on the right signal. The curtain control panel holds that logic: it takes the fire alarm input, drives the curtains to their designed position and maintains power to hold them in the raised position under normal conditions.',
+      'Curtains are engineered to fail safe — gravity to descend and power to hold — so the panel is supported by battery back-up and monitored so that loss of supply results in the designed deployment rather than an undetected fault.',
+      'Panel configuration follows the smoke control strategy for the project, including curtain deployment, part-drop and full-drop positions, activation sequences and interfaces with the fire alarm system and building management system.',
+    ],
+    quickStats: [
+      ['Duty', 'Smoke curtain deployment control'],
+      ['Fail-safe', 'Gravity to descend, power to hold'],
+      ['Back-up', 'Battery back-up control'],
+      ['Interfaces', 'Fire alarm and BMS'],
+    ],
+    features: [
+      { icon: 'control', title: 'Deployment logic', text: 'Drives part-drop and full-drop positions with controlled descent speed.' },
+      { icon: 'fire', title: 'Fire alarm interface', text: 'Deploys on the agreed cause-and-effect from the fire alarm system.' },
+      { icon: 'shield', title: 'Fail-safe by design', text: 'Gravity descent on power loss, with power required to hold the curtain up.' },
+      { icon: 'gauge', title: 'Battery back-up', text: 'Standby supply keeps the control function available when mains power is lost.' },
+      { icon: 'layers', title: 'BMS integration', text: 'Interfaced with the building management system where the design requires it.' },
+      { icon: 'wrench', title: 'Testable in service', text: 'Supports the periodic testing and functional verification regime.' },
+    ],
+    specs: [
+      {
+        group: 'Operation',
+        rows: [
+          ['Drop', 'Part drop and full drop with controlled speed'],
+          ['Fail-safe', 'Gravity to descend, power to hold'],
+          ['Interfaces', 'Fire alarm and battery back-up control'],
+        ],
+      },
+      {
+        group: 'System',
+        rows: [
+          ['Duty', 'Smoke curtain deployment control'],
+          ['Integration', 'Fire alarm system and BMS'],
+          ['Configuration', 'Set from the project smoke control strategy'],
+        ],
+      },
+    ],
+    applications: [
+      'Atrium and large open-space smoke control',
+      'Escalator and void smoke containment',
+      'Smoke reservoir formation',
+      'Smoke compartmentation',
+      'Retail, transport and mixed-use developments',
+    ],
+    benefits: [
+      { title: 'Effective smoke containment', text: 'Deploys the curtains that control the movement and spread of smoke.' },
+      { title: 'Smoke reservoir formation', text: 'Drives curtains to the depth the reservoir design requires.' },
+      { title: 'Supports smoke extraction', text: 'Sequenced so containment and exhaust operate together.' },
+      { title: 'Automatic deployment', text: 'Fire alarm interface with battery back-up control.' },
+      { title: 'Flexible application', text: 'Configured around the building geometry and smoke control strategy.' },
+    ],
+    certifications: [CERT.ce],
+    related: ['smoke-curtain', 'smoke-control-panel'],
+    seo: {
+      title: 'Curtain Control Panel | Smoke Curtain Deployment Control | Sterling Ventilation',
+      description:
+        'Control and indicating panel for smoke curtain systems — part-drop and full-drop deployment, gravity fail-safe descent, fire alarm interface and battery back-up control.',
+      keywords: 'curtain control panel, smoke curtain control, smoke curtain deployment, fire alarm interface, Sterling Ventilation Singapore',
+    },
+  },
+
   /* ======================= NATURAL VENTILATION ======================= */
   {
     slug: 'louvred-roof-ventilator',
-    name: 'Sterling Ostro',
-    category: 'natural-ventilation',
+    name: 'Ventec Ostro',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
     model: 'SV-LRV',
     shape: 'louvre',
     tagline: 'Weather-tight louvred ventilation with certified aerodynamic free area',
@@ -129,8 +373,8 @@ export const products = [
   },
   {
     slug: 'window-actuator',
-    name: 'Sterling Elite',
-    category: 'natural-ventilation',
+    name: 'Ventec Elite',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
     model: 'SV-WA',
     shape: 'actuator',
     tagline: 'Chain and spindle actuators for controlled natural ventilation',
@@ -202,8 +446,8 @@ export const products = [
   },
   {
     slug: 'dome-roof-ventilator',
-    name: 'Sterling Access',
-    category: 'natural-ventilation',
+    name: 'Ventec Access',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
     model: 'SV-DRV',
     shape: 'dome',
     tagline: 'Daylight and ventilation from a single roof opening',
@@ -275,8 +519,8 @@ export const products = [
   },
   {
     slug: 'ridge-ventilator',
-    name: 'Sterling LAM',
-    category: 'natural-ventilation',
+    name: 'Ventec LAM',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
     model: 'SV-RV',
     shape: 'ridge',
     tagline: 'Continuous high-level relief along the building ridge',
@@ -347,8 +591,8 @@ export const products = [
   },
   {
     slug: 'facade-louvre-ventilator',
-    name: 'Sterling Blade',
-    category: 'natural-ventilation',
+    name: 'Ventec Blade',
+    categories: ['smoke-ventilation'],
     model: 'SV-FLV',
     shape: 'facade',
     tagline: 'Architectural inlet louvres engineered for real free area',
@@ -418,198 +662,174 @@ export const products = [
     },
   },
   {
-    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
-    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
     slug: 'sterling-velo',
-    name: 'Sterling Velo',
-    category: 'natural-ventilation',
-    model: 'SV-VELO',
+    name: 'Ventec Velo',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
+    model: 'VELO',
     shape: 'actuator',
-    tagline: 'Louvre window actuation for controlled natural ventilation',
+    tagline: 'Louvre window actuation for natural and smoke ventilation',
     short:
-      'PLACEHOLDER SPEC — replace with verified data. Motorised louvre window drive for daily comfort ventilation, sized and controlled to match the opening.',
+      'Motorised louvre window drive from the Ventec range, used for daily natural ventilation and, where the design requires it, for smoke ventilation duty.',
     long: [
-      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
-      'Intended as a louvre-window drive covering the same mixed-mode comfort and life-safety duty as the rest of the Sterling actuator range.',
+      'Ventec Velo drives louvre windows used as natural ventilation openings. Opening area, control strategy and interfaces are set by the ventilation design rather than by the actuator alone, so the unit is selected against the opening it has to move and the duty it has to serve.',
+      'Where the same opening also forms part of the smoke ventilation strategy, the drive is interfaced to the smoke control panel so the window is driven to its designed position on activation, in accordance with the building fire strategy and applicable Singapore requirements.',
     ],
     quickStats: [
-      ['Stroke', 'TBC'],
-      ['Thrust / pull', 'TBC'],
-      ['Supply', '24 V DC'],
-      ['Protection', 'IP 55 (TBC)'],
+      ['Range', 'Ventec'],
+      ['Duty', 'Natural and smoke ventilation'],
+      ['Opening type', 'Louvre windows'],
+      ['Interfaces', 'Control system / smoke control panel'],
     ],
     features: [
-      { icon: 'target', title: 'Adjustable stroke', text: 'Placeholder — confirm actual travel range.' },
-      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
-      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm fire-mode behaviour.' },
+      { icon: 'vent', title: 'Louvre window drive', text: 'Drives louvre ventilation openings to the position the design requires.' },
+      { icon: 'control', title: 'Control system interface', text: 'Operates from the ventilation control system or the smoke control panel.' },
+      { icon: 'fire', title: 'Smoke ventilation duty', text: 'Driven to the designed position on activation where the opening serves the smoke strategy.' },
+      { icon: 'target', title: 'Selected to the opening', text: 'Specified against the actual window geometry, weight and required travel.' },
     ],
     specs: [
       {
-        group: 'Electrical',
+        group: 'Selection',
         rows: [
-          ['Supply voltage', '24 V DC (TBC)'],
-          ['Control', 'TBC'],
+          ['Opening type', 'Louvre windows'],
+          ['Duty', 'Natural ventilation; smoke ventilation where designed'],
+          ['Control', 'Ventilation control system or smoke control panel interface'],
+          ['Performance data', 'Confirmed at selection against the project opening schedule'],
         ],
       },
     ],
-    applications: ['Louvre windows', 'Facade ventilation'],
-    benefits: [{ title: 'Mixed-mode operation', text: 'Placeholder benefit text — confirm before publishing.' }],
+    applications: ['Louvre windows', 'Facade ventilation openings', 'Atrium and high-level ventilation'],
+    benefits: [
+      { title: 'Enhanced life safety', text: 'Supports the smoke ventilation strategy where the opening forms part of it.' },
+      { title: 'Effective air replacement', text: 'Provides controlled ventilation openings for fresh air supply and air movement.' },
+      { title: 'Reliable system operation', text: 'Driven and monitored from the ventilation or smoke control system.' },
+      { title: 'Regulatory compliance', text: 'Applied in line with applicable Singapore codes, standards and requirements.' },
+    ],
     certifications: [CERT.ce],
-    related: ['window-actuator', 'sterling-centro', 'sterling-kas-s6a'],
+    related: ['window-actuator', 'sterling-kas-s6a', 'smoke-control-panel'],
     seo: {
-      title: 'Sterling Velo | Louvre Window Actuator | Sterling Ventilation (Draft)',
-      description: 'Placeholder listing — content pending verification.',
-      keywords: 'sterling velo, louvre window actuator',
+      title: 'Ventec Velo | Louvre Window Actuator | Sterling Ventilation',
+      description:
+        'Ventec Velo louvre window actuator for natural ventilation and smoke ventilation openings, interfaced to the ventilation control system or smoke control panel.',
+      keywords: 'Ventec Velo, louvre window actuator, natural ventilation, smoke ventilation, Sterling Ventilation Singapore',
     },
   },
   {
-    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
-    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
-    slug: 'sterling-centro',
-    name: 'Sterling Centro',
-    category: 'natural-ventilation',
-    model: 'SV-CENTRO',
-    shape: 'actuator',
-    tagline: 'Central pivot window actuation',
-    short:
-      'PLACEHOLDER SPEC — replace with verified data. Motorised drive for central pivot windows used in natural ventilation schemes.',
-    long: [
-      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
-      'Intended for centre-pivot sashes where a balanced, synchronised drive is needed to keep the window square through its travel.',
-    ],
-    quickStats: [
-      ['Stroke', 'TBC'],
-      ['Thrust / pull', 'TBC'],
-      ['Supply', '24 V DC'],
-      ['Protection', 'IP 55 (TBC)'],
-    ],
-    features: [
-      { icon: 'layers', title: 'Synchronised drives', text: 'Placeholder — confirm actual sync arrangement.' },
-      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
-      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm fire-mode behaviour.' },
-    ],
-    specs: [
-      {
-        group: 'Electrical',
-        rows: [
-          ['Supply voltage', '24 V DC (TBC)'],
-          ['Control', 'TBC'],
-        ],
-      },
-    ],
-    applications: ['Central pivot windows', 'Atrium high-level ventilation'],
-    benefits: [{ title: 'Balanced actuation', text: 'Placeholder benefit text — confirm before publishing.' }],
-    certifications: [CERT.ce],
-    related: ['window-actuator', 'sterling-velo', 'sterling-kas-s6a'],
-    seo: {
-      title: 'Sterling Centro | Central Pivot Window Actuator | Sterling Ventilation (Draft)',
-      description: 'Placeholder listing — content pending verification.',
-      keywords: 'sterling centro, central pivot window actuator',
-    },
-  },
-  {
-    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
-    // Structure and copy cloned from 'window-actuator'. Replace before publishing.
     slug: 'sterling-kas-s6a',
-    name: 'Sterling KAS S6A',
-    category: 'natural-ventilation',
+    name: 'Ventec KAS S6A',
+    categories: ['smoke-ventilation'],
     model: 'KAS S6A',
     shape: 'actuator',
-    tagline: 'Pivot AOV window actuation',
+    tagline: 'Pivot AOV actuation for smoke ventilation openings',
     short:
-      'PLACEHOLDER SPEC — replace with verified data. Automatic opening vent (AOV) drive for pivot windows, serving both comfort ventilation and smoke vent duty.',
+      'Automatic opening vent (AOV) drive from the Ventec range for pivot windows and vents forming part of the smoke ventilation strategy.',
     long: [
-      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
-      'Positioned as an AOV-duty pivot window actuator — daily ventilation with a fire-alarm-driven override to the vent position.',
+      'Ventec KAS S6A operates pivot windows and vents used as automatic opening vents. The unit is selected against the vent it has to drive and the position that vent must reach when the system operates.',
+      'Openings are engineered to provide reliable operation during fire conditions, with consideration given to smoke movement, ventilation openings, airflow, system activation, controls, fire-rated construction and integration with other fire protection systems.',
     ],
     quickStats: [
-      ['Stroke', 'TBC'],
-      ['Thrust / pull', 'TBC'],
-      ['Supply', '24 V DC'],
-      ['Protection', 'IP 55 (TBC)'],
+      ['Range', 'Ventec'],
+      ['Duty', 'Automatic opening vent (AOV)'],
+      ['Opening type', 'Pivot windows and vents'],
+      ['Interfaces', 'Smoke control panel'],
     ],
     features: [
-      { icon: 'fire', title: 'Fire override', text: 'Placeholder — confirm AOV fire-mode behaviour.' },
-      { icon: 'gauge', title: 'Position feedback', text: 'Placeholder — confirm actual signal type.' },
-      { icon: 'shield', title: 'Obstruction detection', text: 'Placeholder — confirm before publishing.' },
+      { icon: 'fire', title: 'AOV duty', text: 'Drives the vent to its designed smoke ventilation position on activation.' },
+      { icon: 'control', title: 'Panel controlled', text: 'Operated and monitored from the smoke control panel.' },
+      { icon: 'vent', title: 'Pivot vent drive', text: 'Suited to pivot windows and vents used as smoke ventilation openings.' },
+      { icon: 'target', title: 'Selected to the vent', text: 'Specified against the actual vent geometry, weight and required travel.' },
     ],
     specs: [
       {
-        group: 'Electrical',
+        group: 'Selection',
         rows: [
-          ['Supply voltage', '24 V DC (TBC)'],
-          ['Control', 'TBC'],
+          ['Opening type', 'Pivot windows and vents'],
+          ['Duty', 'Automatic opening vent, smoke ventilation'],
+          ['Control', 'Smoke control panel interface'],
+          ['Performance data', 'Confirmed at selection against the project vent schedule'],
         ],
       },
     ],
-    applications: ['Pivot AOV windows', 'Stairwell smoke vents (AOV)'],
-    benefits: [{ title: 'Dual comfort / life-safety duty', text: 'Placeholder benefit text — confirm before publishing.' }],
+    applications: ['Pivot AOV windows', 'Stairwell smoke vents', 'Lobby and corridor vents'],
+    benefits: [
+      { title: 'Enhanced life safety', text: 'Opens the designed smoke ventilation area when the system operates.' },
+      { title: 'Effective smoke clearance', text: 'Provides the ventilation opening the smoke strategy relies on.' },
+      { title: 'Reliable system operation', text: 'Engineered for reliable operation during fire conditions.' },
+      { title: 'Regulatory compliance', text: 'Applied in line with applicable Singapore fire safety requirements.' },
+    ],
     certifications: [CERT.ce, CERT.en2],
-    related: ['window-actuator', 'sterling-velo', 'sterling-centro'],
+    related: ['window-actuator', 'sterling-velo', 'smoke-control-panel'],
     seo: {
-      title: 'Sterling KAS S6A | Pivot AOV Window Actuator | Sterling Ventilation (Draft)',
-      description: 'Placeholder listing — content pending verification.',
-      keywords: 'sterling kas s6a, pivot AOV window actuator',
+      title: 'Ventec KAS S6A | Pivot AOV Actuator | Sterling Ventilation',
+      description:
+        'Ventec KAS S6A automatic opening vent actuator for pivot windows and smoke ventilation openings, controlled from the smoke control panel.',
+      keywords: 'Ventec KAS S6A, AOV actuator, automatic opening vent, smoke ventilation, Sterling Ventilation Singapore',
     },
   },
   {
-    // PLACEHOLDER — added at client request, no verified specs/photos supplied yet.
-    // Structure and copy cloned from 'smoke-control-panel'. Replace before publishing.
     slug: 'sterling-500-cb',
-    name: 'Sterling 500-CB',
-    category: 'natural-ventilation',
-    model: '500-CB',
+    name: 'Ventec 500cp',
+    categories: ['smoke-ventilation'],
+    model: '500cp',
     shape: 'panel',
-    tagline: 'Multi-zone control panel',
+    tagline: 'Multi-zone control for smoke ventilation systems',
     short:
-      'PLACEHOLDER SPEC — replace with verified data. Multi-zone control and indicating panel for larger installations spanning several zones.',
+      'Multi-zone control and indicating panel from the Ventec range, sequencing smoke ventilation openings, actuators and interfaces across several zones.',
     long: [
-      'PLACEHOLDER — this page was created from a reference name and product type only. Confirm real performance data, certifications and photography before publishing.',
-      'Positioned as the multi-zone counterpart to the Sterling 400 Series single-zone panel, for larger networked installations.',
+      'Ventec 500cp is the multi-zone control panel in the Ventec range. It sequences smoke ventilation openings, actuators, vents and associated devices across a number of zones, and presents system status and manual control to the operator.',
+      'Panel configuration follows the control philosophy for the project — activation sequences, zone allocation and interfaces with fire alarm systems, control panels, BMS, electrical systems and other building services are coordinated as part of the wider smoke control design.',
     ],
     quickStats: [
-      ['Zones', 'Multi-zone (TBC)'],
-      ['Standby', 'TBC'],
-      ['Interfaces', 'TBC'],
-      ['Standards', 'TBC'],
+      ['Range', 'Ventec'],
+      ['Duty', 'Multi-zone smoke ventilation control'],
+      ['Operation', 'Automatic and manual'],
+      ['Interfaces', 'Fire alarm, BMS, field devices'],
     ],
     features: [
-      { icon: 'control', title: 'Multi-zone sequencing', text: 'Placeholder — confirm actual zone capacity.' },
-      { icon: 'shield', title: 'Monitored circuits', text: 'Placeholder — confirm before publishing.' },
-      { icon: 'layers', title: 'BMS integration', text: 'Placeholder — confirm actual interfaces.' },
+      { icon: 'control', title: 'Multi-zone sequencing', text: 'Sequences openings, actuators and vents across several zones.' },
+      { icon: 'fire', title: 'Fire alarm interface', text: 'Activates on the agreed cause-and-effect from the fire alarm system.' },
+      { icon: 'layers', title: 'Building services integration', text: 'Coordinated with control panels, BMS and electrical systems.' },
+      { icon: 'gauge', title: 'Status and manual control', text: 'System status indication with authorised manual intervention.' },
     ],
     specs: [
       {
         group: 'System',
         rows: [
-          ['Zones', 'TBC'],
-          ['Interfaces', 'TBC'],
+          ['Duty', 'Multi-zone smoke ventilation control'],
+          ['Operation', 'Automatic activation with manual override'],
+          ['Interfaces', 'Fire alarm, BMS, electrical and field devices'],
+          ['Configuration', 'Set from the project control philosophy'],
         ],
       },
     ],
-    applications: ['Multi-zone commercial developments', 'Networked panel installations'],
-    benefits: [{ title: 'Scales across zones', text: 'Placeholder benefit text — confirm before publishing.' }],
+    applications: ['Multi-zone smoke ventilation systems', 'Stair and lobby vent systems', 'Networked panel installations'],
+    benefits: [
+      { title: 'Enhanced life safety', text: 'Drives the smoke ventilation system to its designed fire position.' },
+      { title: 'Effective smoke clearance', text: 'Zone sequencing opens the vents the strategy depends on.' },
+      { title: 'Reliable system operation', text: 'Automatic activation with authorised manual intervention.' },
+      { title: 'Regulatory compliance', text: 'Configured to the approved control philosophy and applicable requirements.' },
+    ],
     certifications: [CERT.ce],
-    related: ['smoke-control-panel', 'smoke-control-damper'],
+    related: ['smoke-control-panel', 'sterling-kas-s6a'],
     seo: {
-      title: 'Sterling 500-CB | Multi Zone Control Panel | Sterling Ventilation (Draft)',
-      description: 'Placeholder listing — content pending verification.',
-      keywords: 'sterling 500-cb, multi zone control panel',
+      title: 'Ventec 500cp | Multi-Zone Smoke Ventilation Control Panel | Sterling Ventilation',
+      description:
+        'Ventec 500cp multi-zone control and indicating panel for smoke ventilation systems, sequencing vents and actuators with fire alarm and BMS interfaces.',
+      keywords: 'Ventec 500cp, smoke ventilation control panel, multi zone control panel, AOV control panel Singapore',
     },
   },
 
   {
     slug: 'smoke-control-damper',
-    name: 'Sterling SCD LDN',
-    category: 'natural-ventilation',
-    model: 'SV-SCD',
+    name: 'Smoke Damper SCD LD',
+    categories: ['smoke-extraction'],
+    model: 'SCD LD',
     shape: 'damper',
     tagline: 'Zonal control of where smoke is extracted from',
     short:
       'Motorised smoke control dampers that open the fire zone to the extract system and hold every other zone closed, classified to EN 12101-8.',
     long: [
       'In a multi-zone extraction system the dampers decide where the air comes from. Extracting from the wrong zone wastes the whole installed capacity, so damper classification, leakage and actuation time are as critical as the fan duty.',
-      'The SV-SCD is classified for both fire resistance and smoke leakage, with actuators rated to drive the blade at elevated temperature. Multi-section assemblies cover large duct and shaft openings from a single control signal.',
+      'The SCD LD is classified for both fire resistance and smoke leakage, with actuators rated to drive the blade at elevated temperature. Multi-section assemblies cover large duct and shaft openings from a single control signal.',
     ],
     quickStats: [
       ['Classification', 'EIS 120 (ve ho i↔o)'],
@@ -665,24 +885,24 @@ export const products = [
     certifications: [CERT.en8, CERT.ce, CERT.iso, CERT.scdf],
     related: ['smoke-control-panel'],
     seo: {
-      title: 'Smoke Control Damper | EN 12101-8 | Sterling Ventilation',
+      title: 'Smoke Damper SCD LD | EN 12101-8 | Sterling Ventilation',
       description:
-        'SV-SCD motorised smoke control dampers classified EIS 120 to EN 12101-8 and EN 1366-10, with monitored actuation and multi-section shaft assemblies.',
-      keywords: 'smoke control damper, EN 12101-8, EN 1366-10, motorised fire damper, smoke damper, extract zoning',
+        'Smoke Damper SCD LD motorised smoke control dampers classified EIS 120 to EN 12101-8 and EN 1366-10, with monitored actuation and multi-section shaft assemblies.',
+      keywords: 'Smoke Damper SCD LD, smoke control damper, EN 12101-8, EN 1366-10, motorised smoke damper, extract zoning',
     },
   },
   {
     slug: 'smoke-control-panel',
-    name: 'Sterling 400 Series',
-    category: 'natural-ventilation',
-    model: 'SV-SCP',
+    name: 'Ventec 400cp',
+    categories: ['natural-ventilation', 'smoke-ventilation'],
+    model: '400cp',
     shape: 'panel',
     tagline: 'The logic layer that makes the system a system',
     short:
       'PLC-based smoke control and indicating panels that execute the cause-and-effect matrix, monitor every field device and present clear firefighter override.',
     long: [
       'Every component of a smoke control installation depends on the panel that operates it. It has to decide which zone extracts, which curtains descend and which dampers open — in seconds, on backed-up power, with a clear manual override for the fire service.',
-      'The SV-SCP is built to EN 12101-9 and EN 12101-10 with monitored outputs, integral battery support and a graphical zone mimic. IoT telemetry turns weekly statutory testing into an automatic logged record instead of a clipboard exercise.',
+      'The Ventec 400cp is built to EN 12101-9 and EN 12101-10 with monitored outputs, integral battery support and a zone mimic display. It sequences natural ventilation openings for daily duty and drives them to their designed fire position on activation.',
     ],
     quickStats: [
       ['Standards', 'EN 12101-9 / -10'],
@@ -696,7 +916,7 @@ export const products = [
       { icon: 'fire', title: 'Firefighter override', text: 'Clearly labelled manual control at the fire command point.' },
       { icon: 'gauge', title: 'Graphical mimic', text: 'Zone status, device faults and system mode on a single display.' },
       { icon: 'layers', title: 'BMS integration', text: 'BACnet/IP and Modbus for comfort-mode control and reporting.' },
-      { icon: 'spark', title: 'IoT monitoring', text: 'Automatic weekly self-test with remote logging and fault alerting.' },
+      { icon: 'wrench', title: 'Testable in service', text: 'Supports the periodic testing and functional verification regime.' },
     ],
     specs: [
       {
@@ -717,7 +937,7 @@ export const products = [
           ['Inputs', 'Fire alarm volt-free, detector, manual call'],
           ['Interfaces', 'BACnet/IP, Modbus RTU/TCP, volt-free'],
           ['Display', '7" or 10" graphical mimic'],
-          ['Self test', 'Automatic weekly cycle with event log'],
+          ['Testing', 'Functional verification and event log'],
         ],
       },
     ],
@@ -732,103 +952,102 @@ export const products = [
     benefits: [
       { title: 'One version of the truth', text: 'A single cause-and-effect shared by fire alarm, smoke control and BMS.' },
       { title: 'Faster commissioning', text: 'Simulated device testing shortens the integrated systems test.' },
-      { title: 'Audit-ready records', text: 'Automatic logging of every test, fault and manual intervention.' },
+      { title: 'Audit-ready records', text: 'Logging of tests, faults and manual interventions to support handover documentation.' },
       { title: 'Serviceable for decades', text: 'Standard industrial PLC hardware with long-term parts availability.' },
     ],
     certifications: [CERT.en9, CERT.ce, CERT.ip, CERT.scdf],
     related: ['smoke-control-damper'],
     seo: {
-      title: 'Smoke Control Panel | EN 12101-9 PLC Control | Sterling Ventilation',
+      title: 'Ventec 400cp | Smoke Control Panel | Sterling Ventilation',
       description:
-        'SV-SCP PLC smoke control and indicating panels to EN 12101-9 and EN 12101-10, with monitored outputs, firefighter override, BMS integration and IoT self-test logging.',
-      keywords: 'smoke control panel, EN 12101-9, fire smoke control system, PLC smoke panel, firefighter override panel',
+        'Ventec 400cp smoke control and indicating panel to EN 12101-9 and EN 12101-10, with monitored outputs, firefighter override and BMS integration, for natural and smoke ventilation systems.',
+      keywords: 'Ventec 400cp, smoke control panel, EN 12101-9, natural ventilation control panel, AOV control panel',
     },
   },
-
-  /* ====================== MECHANICAL VENTILATION ====================== */
   {
-    slug: 'axial-flow-fan',
-    name: 'Axial Flow Fan',
-    category: 'mechanical-ventilation',
-    model: 'SV-AXL',
-    shape: 'axial',
-    tagline: 'High volume, low pressure, precisely selected',
+    slug: 'smoke-extract-fan',
+    name: 'Smoke Extraction Fan',
+    categories: ['smoke-extraction'],
+    model: 'SV-SEF',
+    shape: 'fan',
+    tagline: 'Dedicated extraction for mechanical smoke control systems',
     short:
-      'Adjustable-pitch axial flow fans for general ventilation, process extraction and heat relief, selected from certified curves at the real system resistance.',
+      'Dedicated smoke extraction fans that remove smoke from designated areas as part of a mechanical smoke control system, sized from the building configuration and required airflow.',
     long: [
-      'Axial fans move large volumes efficiently where system resistance is moderate — which describes most general building and industrial ventilation. The efficiency you actually achieve depends almost entirely on whether the fan was selected at the correct duty point.',
-      'The SV-AXL range uses adjustable-pitch aerofoil impellers so the installed fan can be trimmed to the measured system resistance at commissioning, rather than throttled with a damper for the rest of its life.',
+      'Mechanical smoke control systems use dedicated fans, ductwork, dampers and air supply arrangements to extract smoke from designated areas and provide replacement air where required. The fan is selected as part of that system rather than in isolation — extract rate, duct resistance and replacement air provision are resolved together.',
+      'Systems can be applied to corridors, lobbies, staircases, smoke shafts, car parks and other areas in accordance with the building’s fire safety strategy. Each installation is engineered from the building configuration, smoke control objectives, required airflow, fire strategy and the applicable Singapore Fire Code and relevant standards.',
     ],
     quickStats: [
-      ['Airflow', '0.5 – 45 m³/s'],
-      ['Static pressure', 'To 1200 Pa'],
-      ['Impeller', '315 – 1800 mm'],
-      ['Efficiency', 'IE3 / IE4 motors'],
+      ['Duty', 'Mechanical smoke extraction'],
+      ['Certification', 'EN 12101-3'],
+      ['Operation', 'Automatic and manual'],
+      ['Control', 'Fire-rated cabling, battery back-up'],
     ],
     features: [
-      { icon: 'gauge', title: 'Adjustable pitch', text: 'Blade angle trimmed at commissioning to hit the measured duty exactly.' },
-      { icon: 'spark', title: 'Aerofoil impeller', text: 'Cast aluminium aerofoil blades for high efficiency and low noise.' },
-      { icon: 'control', title: 'Variable speed ready', text: 'Inverter-duty motors with insulated bearings as standard above 15 kW.' },
-      { icon: 'layers', title: 'Mounting options', text: 'In-line, wall, roof cowl, bifurcated and short-cased arrangements.' },
-      { icon: 'globe', title: 'Environmental options', text: 'Epoxy coating, stainless hardware and ATEX construction available.' },
-      { icon: 'wrench', title: 'Serviceable', text: 'Split casing and slide-out motor assemblies for in-situ maintenance.' },
+      { icon: 'extract', title: 'Dedicated smoke duty', text: 'Selected for smoke extraction rather than adapted from a comfort ventilation fan.' },
+      { icon: 'fire', title: 'Certified to EN 12101-3', text: 'Powered smoke and heat exhaust ventilator certification for fire-mode operation.' },
+      { icon: 'control', title: 'Resilient control', text: 'Fire-rated cabling with battery back-up so the fan runs when it is needed.' },
+      { icon: 'layers', title: 'Part of a system', text: 'Coordinated with ductwork, dampers and replacement air arrangements.' },
+      { icon: 'target', title: 'Sized from the design', text: 'Airflow derived from the building configuration and smoke control objectives.' },
+      { icon: 'gauge', title: 'Verified performance', text: 'Substantiated by engineering calculation and, where required, CFD.' },
     ],
     specs: [
       {
-        group: 'Aerodynamic',
+        group: 'Certification',
         rows: [
-          ['Impeller diameter', '315 – 1800 mm'],
-          ['Airflow range', '0.5 – 45 m³/s'],
-          ['Static pressure', 'Up to 1200 Pa'],
-          ['Blade material', 'Cast aluminium aerofoil'],
-          ['Blade pitch', 'Adjustable at standstill'],
-          ['Test standard', 'AMCA 210 / ISO 5801'],
+          ['Fan certification', 'EN 12101-3'],
+          ['Damper certification', 'EN 12101-8 (associated dampers)'],
+          ['Duct classification', '1.2 mm thick, fire resistant'],
         ],
       },
       {
-        group: 'Mechanical & electrical',
+        group: 'Control & verification',
         rows: [
-          ['Casing', 'Galvanised or epoxy coated steel'],
-          ['Motor', 'IE3 / IE4, 380–415 V 3 ph 50 Hz'],
-          ['Bearings', 'L10 100,000 hour design life'],
-          ['Protection', 'IP 55 standard, IP 66 optional'],
-          ['Options', 'Guards, silencers, anti-vibration mounts'],
-          ['Sound data', 'Certified octave band, inlet and outlet'],
+          ['Control', 'Fire-rated cabling and battery back-up'],
+          ['Operation', 'Automatic activation with manual control'],
+          ['Verification', 'Engineering calculation / CFD'],
         ],
       },
     ],
     applications: [
-      'General building ventilation',
-      'Industrial process extraction',
-      'Warehouse heat relief',
-      'Plant room and generator ventilation',
-      'Kitchen and laundry extract',
-      'Agricultural and livestock buildings',
+      'Corridors and lobbies',
+      'Staircases and smoke shafts',
+      'Car parks',
+      'Atria and large-volume spaces',
+      'Basement and enclosed areas',
     ],
     benefits: [
-      { title: 'Lower running cost', text: 'Correct duty selection avoids the throttling losses that dominate fan energy.' },
-      { title: 'Quieter installation', text: 'Aerofoil blades and certified sound data support acoustic compliance.' },
-      { title: 'Adaptable after handover', text: 'Pitch adjustment absorbs changes in system resistance over time.' },
-      { title: 'Long bearing life', text: '100,000 hour bearing design life reduces intervention frequency.' },
+      { title: 'Effective smoke extraction', text: 'Removes smoke from designated areas to support evacuation and fire-fighting.' },
+      { title: 'Controlled airflow', text: 'Extract rate and replacement air engineered as a balanced system.' },
+      { title: 'Multi-level applications', text: 'Applied across corridors, lobbies, staircases, shafts and car parks.' },
+      { title: 'Integrated operation', text: 'Sequenced with dampers, controls and other fire protection systems.' },
+      { title: 'Automatic and manual control', text: 'Activated automatically, with authorised manual intervention available.' },
+      { title: 'Reliable fire performance', text: 'Certified for fire-mode duty with resilient power and control.' },
     ],
-    certifications: [CERT.amca, CERT.ce, CERT.eurovent, CERT.iso],
+    certifications: [CERT.en3, CERT.ce, CERT.scdf],
     related: ['smoke-control-damper', 'smoke-control-panel'],
     seo: {
-      title: 'Axial Flow Fan | Adjustable Pitch Industrial Fans | Sterling Ventilation',
+      title: 'Smoke Extraction Fan | EN 12101-3 | Sterling Ventilation',
       description:
-        'SV-AXL adjustable pitch axial flow fans, 0.5–45 m³/s to 1200 Pa, AMCA certified performance, IE3/IE4 motors and inverter-ready construction.',
-      keywords: 'axial flow fan, industrial fan, adjustable pitch fan, AMCA certified fan, ventilation fan Singapore',
+        'Dedicated smoke extraction fans certified to EN 12101-3 for mechanical smoke control systems in corridors, lobbies, staircases, smoke shafts and car parks.',
+      keywords: 'smoke extraction fan, EN 12101-3, mechanical smoke extraction, car park smoke extract, Singapore Fire Code',
     },
   },
 ];
 
 /* --------------------------------- helpers -------------------------------- */
 
+/** Every category a product belongs to. Products may sit in more than one. */
+export const categoriesOf = (product) => product?.categories || [];
+
+/** The category used for breadcrumbs, SEO and the product hero label. */
+export const primaryCategoryId = (product) => categoriesOf(product)[0];
+
 export const getProduct = (slug) => products.find((p) => p.slug === slug);
 
 export const getCategory = (id) => productCategories.find((c) => c.id === id);
 
-export const productsByCategory = (id) => products.filter((p) => p.category === id);
+export const productsByCategory = (id) => products.filter((p) => categoriesOf(p).includes(id));
 
 export const categoriesWithProducts = () =>
   productCategories.map((c) => ({ ...c, items: productsByCategory(c.id) }));

@@ -78,7 +78,7 @@ export default function News() {
                   <span className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-600">
                     {n.category}
                   </span>
-                  <h3 className="mt-4 font-display text-[19px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-signal-700">
+                  <h3 className="mt-4 font-display text-[19px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-signal-700">
                     {n.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-steel-500">{n.excerpt}</p>

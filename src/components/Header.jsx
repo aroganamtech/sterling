@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Icon from './Icon';
 import { navigation } from '../data/navigation';
-import { company, contactChannels, offices } from '../data/company';
+import { company } from '../data/company';
 import logoMark from '../assets/logo-mark.png';
 
-function Wordmark({ light = false }) {
+function Wordmark() {
   return (
     <Link to="/" className="group flex shrink-0 items-center gap-3" aria-label={`${company.legalName} home`}>
       <img
@@ -14,21 +14,13 @@ function Wordmark({ light = false }) {
         className="h-10 w-auto shrink-0 transition-transform duration-500 group-hover:scale-[1.04] md:h-12"
       />
       <span className="block leading-none">
-        <span
-          className={`block font-display text-[19px] font-semibold uppercase tracking-[0.12em] xl:text-[22px] ${
-            light ? 'text-white' : 'text-navy-900'
-          }`}
-        >
+        <span className="block font-display text-[19px] font-semibold uppercase tracking-[0.12em] text-navy-900 xl:text-[22px]">
           Sterling
         </span>
-        <span className="block font-display text-[11.5px] font-medium uppercase tracking-[0.235em] text-signal-600 xl:text-[13px]">
+        <span className="block font-display text-[11.5px] font-medium tracking-[0.235em] text-signal-600 xl:text-[13px]">
           Ventilation
         </span>
-        <span
-          className={`mt-[3px] hidden text-[8px] font-semibold uppercase tracking-[0.18em] xl:block ${
-            light ? 'text-navy-300' : 'text-steel-400'
-          }`}
-        >
+        <span className="mt-[3px] hidden text-[8px] font-semibold uppercase tracking-[0.18em] text-steel-500 xl:block">
           Asia Pacific Pte Ltd
         </span>
       </span>
@@ -39,21 +31,19 @@ function Wordmark({ light = false }) {
 function MegaPanel({ item, onNavigate }) {
   return (
     <div className="shell">
-      <div className="grid gap-10 border-t border-white/50 py-10 lg:grid-cols-[minmax(0,1fr)_2.1fr]">
+      <div className="grid gap-10 border-t border-steel-200 py-10 lg:grid-cols-[minmax(0,1fr)_2.1fr]">
         <div className="pr-6">
           <span className="eyebrow">{item.label}</span>
-          <p className="mt-5 font-display text-[26px] font-semibold uppercase leading-[1.1] text-navy-900">
+          <p className="mt-5 font-display text-[26px] font-semibold leading-[1.1] text-navy-900">
             {item.label === 'Solutions'
               ? 'Systems, not products'
               : item.label === 'Products'
                 ? 'Certified equipment'
-                : item.label === 'Engineering'
-                  ? 'Evidence-led design'
-                  : item.label === 'Services'
-                    ? 'Support for the whole asset life'
-                    : item.label === 'Resources'
-                      ? 'For design teams'
-                      : 'The practice'}
+                : item.label === 'Services'
+                  ? 'Support across the system lifecycle'
+                  : item.label === 'Resources'
+                    ? 'For design teams'
+                    : 'The practice'}
           </p>
           <p className="mt-3 text-[14px] leading-relaxed text-steel-500">{item.description}</p>
           <Link to={item.to} onClick={onNavigate} className="link-arrow mt-6">
@@ -62,20 +52,34 @@ function MegaPanel({ item, onNavigate }) {
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-start gap-x-16 gap-y-7">
+        <div
+          className={
+            item.columns.length > 3
+              ? 'grid items-start gap-x-8 gap-y-7'
+              : 'flex flex-wrap items-start gap-x-16 gap-y-7'
+          }
+          style={item.columns.length > 3 ? { gridTemplateColumns: `repeat(${item.columns.length}, minmax(0, 1fr))` } : undefined}
+        >
           {item.columns.map((col) => (
-            <div key={col.title} className="w-full max-w-[260px] flex-1 sm:w-auto sm:flex-none">
-              <p className="mb-4 text-[10.5px] font-bold uppercase tracking-widest2 text-steel-400">{col.title}</p>
+            <div
+              key={col.title}
+              className={
+                item.columns.length > 3
+                  ? 'min-w-0'
+                  : 'w-full max-w-[260px] flex-1 sm:w-auto sm:flex-none'
+              }
+            >
+              <p className="mb-4 text-[10.5px] font-bold uppercase tracking-widest2 text-steel-500">{col.title}</p>
               <ul className="space-y-1">
                 {col.items.map((sub) => (
                   <li key={sub.to}>
                     <Link
                       to={sub.to}
                       onClick={onNavigate}
-                      className="group flex items-start gap-3 border-l-2 border-transparent py-2 pl-3 transition-all hover:border-signal-600 hover:bg-navy-50/60"
+                      className="group flex items-start gap-3 border-l-2 border-transparent py-2 pl-3 transition-all hover:border-signal-600 hover:bg-steel-100"
                     >
                       <span className="min-w-0">
-                        <span className="block text-[14.5px] font-semibold text-navy-900 group-hover:text-signal-700">
+                        <span className="block text-[14.5px] font-semibold text-navy-900 group-hover:text-signal-600">
                           {sub.label}
                         </span>
                         {sub.blurb ? (
@@ -145,25 +149,21 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* utility bar */}
-      <div className="glass-dark relative z-10 hidden text-navy-200 lg:block">
+      <div className="glass-dark relative z-10 hidden text-steel-600 lg:block">
         <div className="mx-auto flex h-9 w-full max-w-[1560px] items-center justify-between px-5 text-[11.5px] sm:px-8 lg:px-10">
-          <p className="font-semibold uppercase tracking-[0.2em] text-navy-300">
+          <p className="font-semibold uppercase tracking-[0.2em] text-navy-800">
             {company.promise.split('.')[0]}.
-            <span className="text-signal-400"> {company.promise.split('.')[1]}.</span>
+            <span className="text-signal-600"> {company.promise.split('.')[1]}.</span>
           </p>
           <div className="flex items-center gap-6">
-            <a href={`tel:${offices[0].phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-white">
-              <Icon name="phone" className="h-3.5 w-3.5" />
-              {offices[0].phone}
-            </a>
-            <a href={`mailto:${contactChannels.general}`} className="flex items-center gap-2 hover:text-white">
-              <Icon name="mail" className="h-3.5 w-3.5" />
-              {contactChannels.general}
-            </a>
-            <span className="flex items-center gap-2 text-navy-400">
+            <span className="flex items-center gap-2 text-steel-600">
               <Icon name="pin" className="h-3.5 w-3.5" />
-              Singapore
+              No. 6, Tuas Basin Close, Singapore 638799
             </span>
+            <Link to="/contact" className="flex items-center gap-2 hover:text-signal-600">
+              <Icon name="mail" className="h-3.5 w-3.5" />
+              Send an enquiry
+            </Link>
           </div>
         </div>
       </div>
@@ -171,7 +171,7 @@ export default function Header() {
       {/* main bar */}
       <div
         className={`glass glass-sheen relative rounded-b-2xl transition-all duration-500 ${
-          scrolled ? 'shadow-[0_18px_50px_-30px_rgba(10,19,39,.75)]' : ''
+          scrolled ? 'shadow-[0_18px_50px_-30px_rgba(0,0,0,.8)]' : ''
         }`}
         onMouseLeave={leave}
       >
@@ -194,7 +194,7 @@ export default function Header() {
                     end={item.to === '/'}
                     className={({ isActive }) =>
                       `relative flex items-center gap-1 whitespace-nowrap px-2 py-3 text-[10.5px] font-semibold uppercase tracking-[0.06em] transition-colors xl:gap-1.5 xl:px-3 xl:text-[11.5px] xl:tracking-[0.08em] ${
-                        isActive || open === item.label ? 'text-signal-700' : 'text-navy-800 hover:text-signal-700'
+                        isActive || open === item.label ? 'text-signal-600' : 'text-navy-900 hover:text-signal-600'
                       }`
                     }
                   >
@@ -228,7 +228,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileOpen((v) => !v)}
-              className="inline-flex h-11 w-11 items-center justify-center border border-steel-200 text-navy-900 lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center border border-steel-300 text-navy-900 transition-colors hover:border-signal-600 hover:text-signal-600 lg:hidden"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
@@ -239,7 +239,7 @@ export default function Header() {
 
         {/* mega menu */}
         <div
-          className={`absolute inset-x-0 top-full hidden overflow-hidden rounded-b-2xl border-t border-steel-100 bg-white shadow-[0_40px_80px_-40px_rgba(10,19,39,.7)] backdrop-blur-2xl transition-all duration-300 lg:block ${
+          className={`absolute inset-x-0 top-full hidden overflow-hidden rounded-b-2xl border-t border-steel-100 bg-white shadow-[0_40px_80px_-40px_rgba(0,0,0,.75)] backdrop-blur-2xl transition-all duration-300 lg:block ${
             open ? 'pointer-events-auto max-h-[560px] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
           onMouseEnter={() => clearTimeout(closeTimer.current)}
@@ -257,7 +257,7 @@ export default function Header() {
 
       {/* mobile drawer */}
       <div
-        className={`glass fixed inset-0 top-[74px] z-40 transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 top-[74px] z-40 border-t border-steel-200 bg-white transition-all duration-300 lg:hidden ${
           mobileOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
@@ -271,7 +271,7 @@ export default function Header() {
                   <div className="flex items-center justify-between">
                     <Link
                       to={item.to}
-                      className="flex-1 py-4 font-display text-[19px] font-semibold uppercase tracking-wide text-navy-900"
+                      className="flex-1 py-4 font-display text-[19px] font-semibold tracking-wide text-navy-900"
                     >
                       {item.label}
                     </Link>
@@ -279,7 +279,7 @@ export default function Header() {
                       <button
                         type="button"
                         onClick={() => setMobileSub(isOpen ? null : item.label)}
-                        className="flex h-10 w-10 items-center justify-center text-navy-700"
+                        className="flex h-10 w-10 items-center justify-center text-steel-500"
                         aria-label={`Toggle ${item.label} submenu`}
                       >
                         <Icon name="chevron" className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -290,13 +290,13 @@ export default function Header() {
                     <div className="space-y-5 pb-5">
                       {item.columns.map((col) => (
                         <div key={col.title}>
-                          <p className="mb-2 text-[10px] font-bold uppercase tracking-widest2 text-steel-400">
+                          <p className="mb-2 text-[10px] font-bold uppercase tracking-widest2 text-signal-600">
                             {col.title}
                           </p>
                           <ul className="space-y-0.5 border-l border-steel-200 pl-4">
                             {col.items.map((sub) => (
                               <li key={sub.to}>
-                                <Link to={sub.to} className="block py-2 text-[15px] text-navy-800">
+                                <Link to={sub.to} className="block py-2 text-[15px] text-steel-600 transition-colors hover:text-signal-600">
                                   {sub.label}
                                 </Link>
                               </li>
@@ -314,10 +314,10 @@ export default function Header() {
             <Link to="/contact" className="btn-primary w-full">
               Request Consultation
             </Link>
-            <a href={`tel:${offices[0].phone.replace(/\s/g, '')}`} className="btn-outline w-full">
-              <Icon name="phone" className="h-4 w-4" />
-              Call Singapore
-            </a>
+            <Link to="/about/global-coverage" className="btn-ghost w-full">
+              <Icon name="pin" className="h-4 w-4" />
+              Singapore office
+            </Link>
           </div>
         </div>
       </div>

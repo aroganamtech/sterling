@@ -1,5 +1,5 @@
 import { useInView } from './Reveal';
-import { processSteps } from '../data/engineering';
+import { processSteps } from '../data/services';
 
 export default function ProcessFlow() {
   const [ref, inView] = useInView({ threshold: 0.05 });
@@ -13,7 +13,7 @@ export default function ProcessFlow() {
         style={{ height: inView ? 'calc(100% - 16px)' : 0 }}
       />
 
-      <ol className="relative grid gap-7 lg:grid-cols-5 lg:gap-x-5 lg:gap-y-14">
+      <ol className="relative grid gap-7 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-14">
         {processSteps.map((s, i) => (
           <li
             key={s.step}
@@ -39,7 +39,7 @@ export default function ProcessFlow() {
             </span>
 
             <div className="lg:mt-6 lg:pr-4">
-              <p className="font-display text-[17px] font-semibold uppercase tracking-wide text-white">{s.step}</p>
+              <p className="font-display text-[17px] font-semibold tracking-wide text-white">{s.step}</p>
               <p className="mt-2 text-[13.5px] leading-relaxed text-navy-300">{s.text}</p>
             </div>
           </li>

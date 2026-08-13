@@ -40,7 +40,7 @@ export function SpecAccordion({ groups = [] }) {
                 {String(gi + 1).padStart(2, '0')}
               </span>
               <span className="flex-1">
-                <span className="block font-display text-[17px] font-semibold uppercase tracking-tight text-navy-900">
+                <span className="block font-display text-[17px] font-semibold tracking-tight text-navy-900">
                   {g.group}
                 </span>
                 <span className="mt-0.5 block text-[12px] text-steel-500">{g.rows.length} parameters</span>
@@ -90,13 +90,13 @@ export function DetailFeatures({ features = [] }) {
     <RevealGroup className="grid gap-px bg-steel-200 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
       {features.map((f, i) => (
         <article key={f.title} className="group relative h-full bg-white p-7">
-          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-300 transition-colors group-hover:text-signal-500">
+          <span className="absolute right-6 top-6 font-display text-[13px] font-semibold text-steel-500 transition-colors group-hover:text-signal-600">
             {String(i + 1).padStart(2, '0')}
           </span>
           <span className="flex h-12 w-12 items-center justify-center bg-navy-50 text-navy-700 transition-colors duration-300 group-hover:bg-signal-600 group-hover:text-white">
             <Icon name={f.icon} className="h-5 w-5" />
           </span>
-          <h3 className="mt-6 font-display text-[18px] font-semibold uppercase leading-tight text-navy-900">
+          <h3 className="mt-6 font-display text-[18px] font-semibold leading-tight text-navy-900">
             {f.title}
           </h3>
           <p className="mt-2.5 text-[13.5px] leading-relaxed text-steel-500">{f.text}</p>
@@ -162,7 +162,7 @@ export function DetailBenefits({ benefits = [] }) {
               {String(i + 1).padStart(2, '0')}
             </span>
             <div>
-              <h3 className="font-display text-[18px] font-semibold uppercase leading-tight text-navy-900">
+              <h3 className="font-display text-[18px] font-semibold leading-tight text-navy-900">
                 {b.title}
               </h3>
               <p className="mt-2 text-[13.5px] leading-relaxed text-steel-500">{b.text}</p>
@@ -184,7 +184,7 @@ export function DetailCertifications({ certifications = [] }) {
           <span className="flex h-11 w-11 items-center justify-center border border-navy-200 text-navy-700 transition-colors group-hover:bg-signal-600 group-hover:border-signal-600 group-hover:text-white">
             <Icon name="shield" className="h-5 w-5" />
           </span>
-          <p className="mt-5 font-display text-[16px] font-semibold uppercase text-navy-900">{c.code}</p>
+          <p className="mt-5 font-display text-[16px] font-semibold text-navy-900">{c.code}</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.1em] text-signal-600">{c.body}</p>
           <p className="mt-3 text-[12.5px] leading-relaxed text-steel-500">{c.note}</p>
         </div>
@@ -234,10 +234,10 @@ export function DetailRelated({ items = [] }) {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-[18px] font-semibold uppercase leading-tight text-navy-900 group-hover:text-signal-700">
+                <h3 className="font-display text-[18px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                   {p.name}
                 </h3>
-                <p className="mt-1.5 text-[12px] uppercase tracking-[0.1em] text-steel-400">{p.tagline}</p>
+                <p className="mt-1.5 text-[12px] uppercase tracking-[0.1em] text-steel-500">{p.tagline}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.13em] text-navy-800 group-hover:text-signal-600">
                   View product
                   <Icon name="arrow" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />

@@ -12,21 +12,21 @@ function Scene({ mode }) {
           <feGaussianBlur stdDeviation="7" />
         </filter>
         <linearGradient id={`smoke-${id}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f8b26a" stopOpacity="0.95" />
-          <stop offset="35%" stopColor="#e2703a" stopOpacity="0.85" />
-          <stop offset="75%" stopColor="#8b3a20" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="#3a1f18" stopOpacity="0.25" />
+          <stop offset="0%" stopColor="#ff3b52" stopOpacity="0.95" />
+          <stop offset="35%" stopColor="#e0002a" stopOpacity="0.85" />
+          <stop offset="75%" stopColor="#8a0b20" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#2b0206" stopOpacity="0.25" />
         </linearGradient>
         <linearGradient id={`floor-${id}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1f3560" />
-          <stop offset="100%" stopColor="#0a1327" />
+          <stop offset="0%" stopColor="#333333" />
+          <stop offset="100%" stopColor="#050505" />
         </linearGradient>
       </defs>
 
-      <rect width="960" height="480" fill="#0a1327" />
+      <rect width="960" height="480" fill="#050505" />
 
       {/* structure */}
-      <g stroke="#5d7cae" strokeOpacity="0.42" fill="none" strokeWidth="1.4">
+      <g stroke="#8c8c8c" strokeOpacity="0.42" fill="none" strokeWidth="1.4">
         <path d="M70 44 h820 v392 h-820 z" />
         <path d="M70 200 h250 M640 200 h250" />
         <path d="M70 320 h250 M640 320 h250" />
@@ -55,38 +55,38 @@ function Scene({ mode }) {
       {managed ? (
         <g>
           <rect x="322" y="46" width="8" height="112" fill="#c8102e" />
-          <rect x="316" y="152" width="20" height="7" fill="#f07084" />
-          <g stroke="#93a9cd" strokeWidth="2" fill="none">
+          <rect x="316" y="152" width="20" height="7" fill="#ff3b52" />
+          <g stroke="#bfbfbf" strokeWidth="2" fill="none">
             <path d="M700 44 l30 -18 M760 44 l30 -18" />
           </g>
-          <text x="742" y="20" fill="#93a9cd" fontSize="12" textAnchor="middle" letterSpacing="0.08em">
+          <text x="742" y="20" fill="#bfbfbf" fontSize="12" textAnchor="middle" letterSpacing="0.08em">
             VENT OPEN
           </text>
           {/* clear layer dimension */}
-          <g stroke="#4ade80" strokeWidth="1.3">
+          <g stroke="#ffffff" strokeWidth="1.3">
             <path d="M380 170 v240 M370 176 h20 M370 404 h20" />
           </g>
-          <text x="398" y="296" fill="#4ade80" fontSize="14" fontWeight="600" letterSpacing="0.06em">
+          <text x="398" y="296" fill="#ffffff" fontSize="14" fontWeight="600" letterSpacing="0.06em">
             CLEAR LAYER MAINTAINED
           </text>
         </g>
       ) : (
         <g>
-          <text x="480" y="420" fill="#f07084" fontSize="14" fontWeight="600" textAnchor="middle" letterSpacing="0.08em">
+          <text x="480" y="420" fill="#ff3b52" fontSize="14" fontWeight="600" textAnchor="middle" letterSpacing="0.08em">
             SMOKE LOGGING AT HEAD HEIGHT
           </text>
-          <g stroke="#f07084" strokeWidth="1.3" strokeDasharray="6 6">
+          <g stroke="#ff3b52" strokeWidth="1.3" strokeDasharray="6 6">
             <path d="M90 358 h780" />
           </g>
         </g>
       )}
 
       {/* people for scale */}
-      <g fill="#93a9cd" opacity={managed ? 0.9 : 0.35}>
+      <g fill="#bfbfbf" opacity={managed ? 0.9 : 0.35}>
         {[180, 240, 700, 760, 820].map((x) => (
           <g key={x} transform={`translate(${x} 436)`}>
             <circle cx="0" cy="-26" r="5" />
-            <path d="M0 -21 v14 M0 -7 l-6 9 M0 -7 l6 9 M-7 -16 h14" stroke="#93a9cd" strokeWidth="2.4" fill="none" />
+            <path d="M0 -21 v14 M0 -7 l-6 9 M0 -7 l6 9 M-7 -16 h14" stroke="#bfbfbf" strokeWidth="2.4" fill="none" />
           </g>
         ))}
       </g>

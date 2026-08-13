@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
-import { company, contactChannels, offices } from '../data/company';
+import { company, offices } from '../data/company';
 import { solutions } from '../data/solutions';
-import { engineeringServices } from '../data/engineering';
-import { productCategories, products } from '../data/products';
+import { services } from '../data/services';
+import { productCategories } from '../data/products';
 import logoLight from '../assets/logo-mark-light.png';
 
 const columns = [
@@ -15,36 +15,25 @@ const columns = [
     title: 'Products',
     links: [
       ...productCategories.map((c) => ({ label: c.name, to: `/products#${c.id}` })),
-      ...products
-        .filter((p) => ['smoke-control-panel', 'smoke-control-damper', 'window-actuator', 'axial-flow-fan'].includes(p.slug))
-        .map((p) => ({ label: p.name, to: `/products/${p.slug}` })),
       { label: 'All products', to: '/products' },
     ],
   },
   {
-    title: 'Engineering',
-    links: engineeringServices.map((s) => ({ label: s.title, to: `/engineering/${s.slug}` })),
+    title: 'Services',
+    links: [
+      ...services.map((s) => ({ label: s.title, to: `/services/${s.slug}` })),
+      { label: 'All services', to: '/services' },
+    ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About Us', to: '/about' },
-      { label: 'Vision & Mission', to: '/about/vision-mission' },
+      { label: 'Company Overview', to: '/about' },
+      { label: 'Our Vision', to: '/about/vision' },
       { label: 'Leadership', to: '/about/leadership' },
-      { label: 'Global Presence', to: '/about/global-presence' },
-      { label: 'Industries', to: '/industries' },
-      { label: 'Projects', to: '/projects' },
-      { label: 'Careers', to: '/careers' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
+      { label: 'Global Coverage', to: '/about/global-coverage' },
       { label: 'Design Standards', to: '/resources/standards' },
-      { label: 'Technical Library', to: '/resources/library' },
       { label: 'Downloads', to: '/resources/downloads' },
-      { label: 'FAQ', to: '/resources/faq' },
-      { label: 'News & Articles', to: '/resources/news' },
       { label: 'Contact', to: '/contact' },
     ],
   },
@@ -56,7 +45,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-70" />
       <div
         className="pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full opacity-25 blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(200,16,46,.55), transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(200,16,46,.4), transparent 70%)' }}
       />
 
       <div className="relative">
@@ -66,17 +55,17 @@ export default function Footer() {
             <div className="flex items-center gap-3.5">
               <img src={logoLight} alt="" className="h-12 w-auto" />
               <span className="leading-none">
-                <span className="block font-display text-[22px] font-semibold uppercase tracking-[0.13em] text-white">
+                <span className="block font-display text-[22px] font-semibold tracking-[0.13em] text-white">
                   Sterling
                 </span>
-                <span className="block font-display text-[13px] font-medium uppercase tracking-[0.24em] text-signal-400">
+                <span className="block font-display text-[13px] font-medium tracking-[0.24em] text-signal-400">
                   Ventilation
                 </span>
               </span>
             </div>
             <p className="mt-6 max-w-sm text-[14px] leading-relaxed text-navy-300">
-              {company.legalName} engineers life safety smoke management systems for buildings and critical
-              infrastructure across the Asia-Pacific region.
+              {company.legalName} is a Singapore-based specialist in engineered smoke control and ventilation
+              solutions for modern buildings, supporting projects across Asia and Australia.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
               {company.values.map((v) => (
@@ -120,7 +109,7 @@ export default function Footer() {
 
         {/* offices */}
         <div className="border-t border-white/10">
-          <div className="shell grid gap-8 py-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="shell grid gap-8 py-10 md:grid-cols-2">
             {offices.map((o) => (
               <div key={o.id}>
                 <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-400">{o.label}</p>
@@ -131,49 +120,29 @@ export default function Footer() {
                     </span>
                   ))}
                 </address>
-                <div className="mt-3 space-y-1 text-[13.5px]">
-                  <a href={`tel:${o.phone.replace(/\s/g, '')}`} className="block text-navy-200 hover:text-white">
-                    {o.phone}
-                  </a>
-                  <a href={`mailto:${o.email}`} className="block text-navy-200 hover:text-white">
-                    {o.email}
-                  </a>
-                </div>
               </div>
             ))}
             <div>
-              <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-400">Direct Channels</p>
-              <ul className="mt-3 space-y-2 text-[13.5px] text-navy-300">
-                <li>
-                  Engineering ·{' '}
-                  <a href={`mailto:${contactChannels.engineering}`} className="hover:text-white">
-                    {contactChannels.engineering}
-                  </a>
-                </li>
-                <li>
-                  Service ·{' '}
-                  <a href={`mailto:${contactChannels.service}`} className="hover:text-white">
-                    {contactChannels.service}
-                  </a>
-                </li>
-                <li>
-                  Careers ·{' '}
-                  <a href={`mailto:${contactChannels.careers}`} className="hover:text-white">
-                    {contactChannels.careers}
-                  </a>
-                </li>
-              </ul>
+              <p className="text-[10.5px] font-bold uppercase tracking-widest2 text-signal-400">Enquiries</p>
+              <p className="mt-3 max-w-sm text-[13.5px] leading-relaxed text-navy-300">
+                Technical enquiries reach an engineer. Send us the building, the fire strategy or the constraint you
+                are working around.
+              </p>
+              <Link to="/contact" className="link-arrow mt-4 !text-signal-400 hover:!text-white">
+                Send an enquiry
+                <Icon name="arrow" className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/10">
-          <div className="shell flex flex-col items-center justify-between gap-3 py-6 text-[12px] text-navy-400 sm:flex-row">
-            <p>
+          <div className="shell flex flex-col items-center justify-between gap-3 py-6 text-[12px] text-navy-300 sm:flex-row">
+            <p className="text-navy-300">
               © {new Date().getFullYear()} {company.legalName}. All rights reserved.
             </p>
-            <p className="font-semibold uppercase tracking-[0.18em]">
-              {company.promise.split('.')[0]}.<span className="text-signal-500"> {company.promise.split('.')[1]}.</span>
+            <p className="font-semibold uppercase tracking-[0.18em] text-navy-300">
+              {company.promise.split('.')[0]}.<span className="text-signal-400"> {company.promise.split('.')[1]}.</span>
             </p>
           </div>
         </div>

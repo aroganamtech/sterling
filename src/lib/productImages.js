@@ -34,6 +34,18 @@ Object.entries(modules).forEach(([path, url]) => {
   index[slug][view] = url;
 });
 
+/* Flat lookup by file basename, e.g. illustration('smoke-curtain-section').
+   Where both a vector and a photographic asset exist for the same name the
+   photograph wins. Used by the Services pages for their supporting imagery. */
+const byFile = {};
+
+Object.entries(modules).forEach(([path, url]) => {
+  const file = (path.split('/').pop() || '').replace(/\.(svg|png|jpe?g|webp)$/i, '');
+  if (!byFile[file] || /\.(webp|png|jpe?g)$/i.test(path)) byFile[file] = url;
+});
+
+export const illustration = (name) => byFile[name] || null;
+
 /** Ordered gallery for a product: [{ src, view, label }] */
 export function galleryFor(slug, name = '') {
   const views = index[slug] || {};

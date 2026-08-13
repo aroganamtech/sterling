@@ -5,7 +5,7 @@ const tone = {
   3: 'bg-signal-600 text-white',
   2: 'bg-navy-700 text-white',
   1: 'bg-navy-200 text-navy-800',
-  0: 'bg-steel-100 text-steel-400',
+  0: 'bg-steel-100 text-steel-500',
 };
 
 const short = { 3: 'Primary', 2: 'Common', 1: 'Partial', 0: '—' };
@@ -21,7 +21,7 @@ export default function ComplianceMatrix({ light = false }) {
             <tr>
               <th
                 className={`sticky left-0 z-10 border-b px-4 py-4 text-[10.5px] font-bold uppercase tracking-widest2 ${
-                  light ? 'border-white/15 bg-navy-950 text-navy-300' : 'border-steel-200 bg-white text-steel-400'
+                  light ? 'border-white/15 bg-navy-950 text-navy-300' : 'border-steel-200 bg-white text-steel-500'
                 }`}
               >
                 Building type
@@ -87,7 +87,7 @@ export default function ComplianceMatrix({ light = false }) {
           </span>
         ))}
       </div>
-      <p className={`mt-4 text-[12px] ${light ? 'text-navy-400' : 'text-steel-400'}`}>
+      <p className={`mt-4 text-[12px] ${light ? 'text-navy-300' : 'text-steel-500'}`}>
         Indicative only. The governing basis of design is set by the authority having jurisdiction and the
         project fire strategy.
       </p>

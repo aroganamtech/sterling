@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Icon from '../Icon';
-import logoMark from '../../assets/logo-mark-light.png';
+import logoMark from '../../assets/logo-mark.png';
 import { ASSISTANT_ENDPOINT, askAssistant, suggestedPrompts } from '../../lib/aiAssistant';
 import { EASE, modalBackdrop, modalPanel } from '../../lib/motion';
 
@@ -20,7 +20,7 @@ function Bubble({ msg }) {
     >
       <span
         className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border text-[10px] font-bold uppercase ${
-          isUser ? 'border-ink-700 bg-ink-800 text-ink-300' : 'border-ember-500/50 bg-ember-500/10 text-ember-400'
+          isUser ? 'border-signal-600 bg-signal-600 text-white' : 'border-signal-200 bg-signal-50 text-signal-600'
         }`}
       >
         {isUser ? 'You' : 'SV'}
@@ -28,7 +28,7 @@ function Bubble({ msg }) {
       <div className={`max-w-[86%] ${isUser ? 'text-right' : ''}`}>
         <div
           className={`whitespace-pre-line px-4 py-3 text-[14px] leading-relaxed ${
-            isUser ? 'bg-ink-800 text-ink-100' : 'border border-ink-800 bg-ink-900 text-ink-200'
+            isUser ? 'rounded-2xl bg-signal-600 text-white' : 'rounded-2xl bg-navy-50 text-navy-950'
           }`}
         >
           {msg.text}
@@ -39,7 +39,7 @@ function Bubble({ msg }) {
               <Link
                 key={l.to + l.label}
                 to={l.to}
-                className="inline-flex items-center gap-1.5 border border-ember-500/40 px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ember-400 transition hover:bg-ember-500 hover:text-ink-950"
+                className="inline-flex items-center gap-1.5 border border-signal-200 px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-signal-600 transition hover:bg-signal-600 hover:text-white"
               >
                 {l.label}
                 <Icon name="arrow" className="h-3 w-3" strokeWidth={2} />
@@ -134,7 +134,7 @@ export default function AIAssistantModal({ open, onClose, product }) {
           initial="hidden"
           animate="show"
           exit="exit"
-          className="fixed inset-0 z-[90] flex items-end justify-center bg-ink-950/80 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+          className="fixed inset-0 z-[90] flex items-end justify-center bg-navy-950/70 p-0 backdrop-blur-sm sm:items-center sm:p-6"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -146,32 +146,32 @@ export default function AIAssistantModal({ open, onClose, product }) {
             animate="show"
             exit="exit"
             onClick={(e) => e.stopPropagation()}
-            className="flex h-[86vh] w-full max-w-2xl flex-col border border-ink-800 bg-ink-950 shadow-2xl sm:h-[640px]"
+            className="flex h-[86vh] w-full max-w-2xl flex-col overflow-hidden rounded-card-lg bg-white shadow-lift ring-1 ring-steel-200 sm:h-[640px]"
           >
             {/* header */}
-            <div className="flex items-center gap-4 border-b border-ink-800 px-5 py-4">
-              <span className="relative flex h-10 w-10 items-center justify-center border border-ember-500/40 bg-ember-500/10">
+            <div className="flex items-center gap-4 border-b border-steel-200 px-5 py-4">
+              <span className="relative flex h-10 w-10 items-center justify-center border border-signal-200 bg-signal-50">
                 <img src={logoMark} alt="" className="h-6 w-auto" />
-                <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-ember-500">
-                  <span className="absolute inset-0 animate-ping rounded-full bg-ember-500 opacity-70" />
+                <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-signal-600">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-signal-600 opacity-70" />
                 </span>
               </span>
               <div className="min-w-0 flex-1">
-                <p className="font-display text-[16px] font-semibold uppercase tracking-wide text-white">
+                <p className="font-display text-[16px] font-semibold tracking-tight text-navy-950">
                   Engineering Assistant
                 </p>
-                <p className="truncate text-[11.5px] text-ink-400">
+                <p className="truncate text-[11.5px] text-steel-500">
                   {product ? `Context: ${product.name} · ${product.model}` : 'Sterling Ventilation product range'}
                 </p>
               </div>
-              <span className="hidden border border-ink-700 px-2 py-1 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-ink-400 sm:inline-block">
+              <span className="hidden border border-steel-200 px-2 py-1 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-steel-500 sm:inline-block">
                 {ASSISTANT_ENDPOINT ? 'Live model' : 'Demo mode'}
               </span>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close assistant"
-                className="flex h-9 w-9 items-center justify-center border border-ink-700 text-ink-300 transition hover:border-ember-500 hover:text-ember-400"
+                className="flex h-9 w-9 items-center justify-center border border-steel-200 text-steel-600 transition hover:border-signal-600 hover:text-signal-700"
               >
                 <Icon name="close" className="h-4 w-4" strokeWidth={1.8} />
               </button>
@@ -185,14 +185,14 @@ export default function AIAssistantModal({ open, onClose, product }) {
 
               {busy ? (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-3">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-ember-500/50 bg-ember-500/10 text-[10px] font-bold text-ember-400">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-signal-200 bg-signal-50 text-[10px] font-bold text-signal-600">
                     SV
                   </span>
-                  <div className="flex items-center gap-1.5 border border-ink-800 bg-ink-900 px-4 py-4">
+                  <div className="flex items-center gap-1.5 border border-steel-200 bg-white px-4 py-4">
                     {[0, 1, 2].map((i) => (
                       <motion.span
                         key={i}
-                        className="h-1.5 w-1.5 rounded-full bg-ember-500"
+                        className="h-1.5 w-1.5 rounded-full bg-signal-600"
                         animate={{ opacity: [0.25, 1, 0.25], y: [0, -3, 0] }}
                         transition={{ duration: 1, repeat: Infinity, delay: i * 0.16 }}
                       />
@@ -204,15 +204,15 @@ export default function AIAssistantModal({ open, onClose, product }) {
 
             {/* suggestions */}
             {messages.length <= 1 ? (
-              <div className="border-t border-ink-800 px-5 py-3">
-                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-widest2 text-ink-500">Try asking</p>
+              <div className="border-t border-steel-200 px-5 py-3">
+                <p className="mb-2.5 text-[10px] font-bold uppercase tracking-widest2 text-steel-500">Try asking</p>
                 <div className="flex flex-wrap gap-2">
                   {prompts.map((p) => (
                     <button
                       key={p}
                       type="button"
                       onClick={() => send(p)}
-                      className="border border-ink-700 px-3 py-2 text-left text-[12px] text-ink-300 transition hover:border-ember-500 hover:text-ember-400"
+                      className="border border-steel-200 px-3 py-2 text-left text-[12px] text-steel-600 transition hover:border-signal-600 hover:text-signal-700"
                     >
                       {p}
                     </button>
@@ -227,7 +227,7 @@ export default function AIAssistantModal({ open, onClose, product }) {
                 e.preventDefault();
                 send();
               }}
-              className="flex items-center gap-3 border-t border-ink-800 px-5 py-4"
+              className="flex items-center gap-3 border-t border-steel-200 px-5 py-4"
             >
               <input
                 ref={inputRef}
@@ -235,19 +235,19 @@ export default function AIAssistantModal({ open, onClose, product }) {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about specifications, standards, lead times…"
                 aria-label="Message"
-                className="min-w-0 flex-1 border border-ink-700 bg-ink-900 px-4 py-3 text-[14px] text-white outline-none transition placeholder:text-ink-500 focus:border-ember-500"
+                className="min-w-0 flex-1 border border-steel-200 bg-white px-4 py-3 text-[14px] text-navy-950 outline-none transition placeholder:text-steel-500 focus:border-signal-600"
               />
               <button
                 type="submit"
                 disabled={busy || !input.trim()}
-                className="flex h-[46px] w-[46px] shrink-0 items-center justify-center bg-ember-500 text-ink-950 transition hover:bg-ember-400 disabled:cursor-not-allowed disabled:opacity-35"
+                className="flex h-[46px] w-[46px] shrink-0 items-center justify-center bg-signal-600 text-white transition hover:bg-signal-700 disabled:cursor-not-allowed disabled:opacity-35"
                 aria-label="Send message"
               >
                 <Icon name="arrow" className="h-4 w-4" strokeWidth={2.2} />
               </button>
             </form>
 
-            <p className="border-t border-ink-800 px-5 py-2.5 text-[10.5px] leading-relaxed text-ink-500">
+            <p className="border-t border-steel-200 px-5 py-2.5 text-[10.5px] leading-relaxed text-steel-500">
               {ASSISTANT_ENDPOINT
                 ? 'Responses are generated by a language model and may contain errors. Verify against the project specification.'
                 : 'Demo mode — answers come from a built-in engineering knowledge base, not a language model. Set VITE_ASSISTANT_ENDPOINT to connect a real model.'}

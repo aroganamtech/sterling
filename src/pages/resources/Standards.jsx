@@ -59,7 +59,7 @@ export default function Standards() {
                       className="flex flex-wrap items-baseline gap-x-5 gap-y-1 py-3.5"
                       style={{ animation: `floatUp .45s cubic-bezier(.22,1,.36,1) ${i * 45}ms both` }}
                     >
-                      <span className="min-w-[140px] font-display text-[15px] font-semibold uppercase text-navy-900">
+                      <span className="min-w-[140px] font-display text-[15px] font-semibold text-navy-900">
                         {code}
                       </span>
                       <span className="text-[14px] text-steel-600">{title}</span>
@@ -90,7 +90,7 @@ export default function Standards() {
       <CTASection
         title="Unsure which code governs your project?"
         text="Send us the location, the occupancy and the client standard. We will map the applicable requirements and tell you where they conflict."
-        secondary={{ label: 'Compliance consulting', to: '/engineering/compliance-consulting' }}
+        secondary={{ label: 'System design', to: '/services/system-design' }}
       />
     </>
   );

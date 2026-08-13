@@ -25,7 +25,7 @@ export default function LazyImage({
       ) : null}
 
       {failed ? (
-        <div className="absolute inset-0 grid place-items-center text-[11px] uppercase tracking-widest2 text-steel-400">
+        <div className="absolute inset-0 grid place-items-center text-[11px] uppercase tracking-widest2 text-steel-500">
           Image unavailable
         </div>
       ) : (

@@ -47,7 +47,7 @@ export default function CategoryAccordion({ categories = [], defaultOpen, multip
               </span>
 
               <span className="min-w-0 flex-1">
-                <span className="block font-display text-[22px] font-semibold uppercase leading-tight text-navy-900 transition-colors group-hover:text-signal-700 md:text-[26px]">
+                <span className="block font-display text-[22px] font-semibold leading-tight text-navy-900 transition-colors group-hover:text-signal-700 md:text-[26px]">
                   {cat.name}
                 </span>
                 <span className="mt-1 block text-[13.5px] text-steel-500">{cat.blurb}</span>
@@ -103,7 +103,7 @@ export default function CategoryAccordion({ categories = [], defaultOpen, multip
                             <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-signal-600">
                               {p.model}
                             </span>
-                            <span className="mt-1 block font-display text-[16.5px] font-semibold uppercase leading-tight text-navy-900 group-hover/item:text-signal-700">
+                            <span className="mt-1 block font-display text-[16.5px] font-semibold leading-tight text-navy-900 group-hover/item:text-signal-700">
                               {p.name}
                             </span>
                             <span className="mt-1.5 block text-[12.5px] leading-snug text-steel-500">

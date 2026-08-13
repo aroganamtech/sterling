@@ -456,7 +456,7 @@ export default function HeroStage() {
       camera={{ fov: 42, near: 0.1, far: 60, position: [0, 0, 6] }}
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
       onCreated={({ gl }) => {
-        gl.setClearColor(new THREE.Color('#07080a'), 1);
+        gl.setClearColor(new THREE.Color('#06162a'), 1);
       }}
     >
       <Scene tier={tier} />

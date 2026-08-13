@@ -63,7 +63,7 @@ export default function ProjectsIndex() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-7">
-                    <h3 className="font-display text-[19px] font-semibold uppercase leading-tight text-navy-900 group-hover:text-signal-700">
+                    <h3 className="font-display text-[19px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                       {p.title}
                     </h3>
                     <p className="mt-1.5 text-[12px] uppercase tracking-[0.13em] text-steel-400">{p.location}</p>

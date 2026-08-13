@@ -70,20 +70,27 @@ export default function Reveal({
 
     const targets = el.querySelectorAll('[data-stagger]');
     const ctx = gsap.context(() => {
+      /* The timeline is built paused and driven by a standalone ScrollTrigger
+         rather than passing `scrollTrigger` into gsap.timeline(). A
+         timeline-attached trigger defers its start/end for one tick (they sit
+         at 0), and ScrollTrigger.refresh() force-refreshes every trigger whose
+         `end` is still falsy — which re-enters the same loop. On a long page
+         holding several not-yet-initialised triggers, navigating away recurses
+         until `_triggers[i]` is undefined and it throws, unmounting the app.
+         Driving the timeline from onEnter keeps start/end resolved up front.
+         Positions below reproduce the previous timing exactly. */
+      const offset = delay / 1000;
+
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-          once: true,
-        },
+        paused: true,
         defaults: { ease: 'expo.out', duration: 1.05 },
-        delay: delay / 1000,
       });
 
       tl.fromTo(
         el,
         { opacity: 0, y, willChange: 'transform, opacity' },
-        { opacity: 1, y: 0, clearProps: 'willChange' }
+        { opacity: 1, y: 0, clearProps: 'willChange' },
+        offset
       );
 
       if (targets.length) {
@@ -91,9 +98,16 @@ export default function Reveal({
           targets,
           { opacity: 0, y: y * 0.7 },
           { opacity: 1, y: 0, stagger, duration: 0.85 },
-          '-=0.78'
+          offset + 0.27 // previously '-=0.78' against the 1.05s tween above
         );
       }
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        once: true,
+        onEnter: () => tl.play(),
+      });
     }, el);
 
     return () => ctx.revert();

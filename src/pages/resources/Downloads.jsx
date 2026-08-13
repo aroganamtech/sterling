@@ -10,7 +10,7 @@ export default function Downloads() {
       <PageHero
         eyebrow="Resources"
         title="Downloads"
-        lede="Company profile, product catalogues, datasheets, certification and BIM content — everything a design team needs to specify and coordinate our systems."
+        lede="Company profile, product catalogues, datasheets and certification — everything a design team needs to specify and coordinate our systems."
         breadcrumbs={[{ label: 'Resources', to: '/resources' }, { label: 'Downloads' }]}
       />
 
@@ -29,7 +29,7 @@ export default function Downloads() {
                   <span className="flex h-12 w-12 items-center justify-center bg-navy-900 text-signal-400 transition-colors group-hover:bg-signal-600 group-hover:text-white">
                     <Icon name="download" className="h-5 w-5" />
                   </span>
-                  <span className="font-display text-[17px] font-semibold uppercase leading-tight text-navy-900">
+                  <span className="font-display text-[17px] font-semibold leading-tight text-navy-900">
                     {d.title}
                   </span>
                   <span className="text-[13.5px] leading-relaxed text-steel-500">{d.desc}</span>
@@ -57,7 +57,7 @@ export default function Downloads() {
       <CTASection
         title="Need certification for a submission?"
         text="We can issue project-specific certification packs mapped to the exact equipment configuration you are installing."
-        secondary={{ label: 'Compliance consulting', to: '/engineering/compliance-consulting' }}
+        secondary={{ label: 'System design', to: '/services/system-design' }}
       />
     </>
   );

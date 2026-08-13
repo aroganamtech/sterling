@@ -168,7 +168,7 @@ export default function ProjectDetail() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-[17px] font-semibold uppercase leading-tight text-navy-900 group-hover:text-signal-700">
+                  <h3 className="font-display text-[17px] font-semibold leading-tight text-navy-900 group-hover:text-signal-700">
                     {p.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[13px] leading-relaxed text-steel-500">{p.overview}</p>

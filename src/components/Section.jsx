@@ -24,10 +24,10 @@ export default function Section({
 }) {
   const tones = {
     light: 'bg-white',
-    tint: 'bg-navy-50',
-    steel: 'bg-steel-50',
+    tint: 'bg-steel-100',
+    steel: 'bg-steel-200',
     dark: 'bg-navy-950 text-white',
-    navy: 'bg-navy-900 text-white',
+    navy: 'bg-navy-950 text-white',
   };
   return (
     <section id={id} className={`relative ${tones[tone] || tones.light} ${padded ? 'py-20 md:py-28' : ''} ${className}`}>

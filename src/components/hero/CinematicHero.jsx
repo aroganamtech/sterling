@@ -41,7 +41,7 @@ function CssStage({ still }) {
         </>
       ) : null}
       {/* Layer 5 — foreground haze */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#07080a] via-[#07080a]/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#06162a] via-[#06162a]/60 to-transparent" />
     </div>
   );
 }
@@ -62,7 +62,7 @@ export default function CinematicHero({ children, scrollCue = true }) {
 
   return (
     <section
-      className="hero-root relative isolate flex w-full items-center overflow-hidden bg-[#07080a]"
+      className="hero-root relative isolate flex w-full items-center overflow-hidden bg-[#06162a]"
       style={{ height: '100svh', minHeight: '620px' }}
     >
       {/* progressive placeholder — always painted, never removed */}
@@ -81,8 +81,8 @@ export default function CinematicHero({ children, scrollCue = true }) {
       ) : null}
 
       {/* cinematic grading */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#07080a]/94 via-[#07080a]/38 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-[#07080a]/55" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#06162a]/94 via-[#06162a]/38 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06162a] via-transparent to-[#06162a]/55" />
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-35" />
       <div className="hero-grain pointer-events-none absolute inset-0 opacity-[0.05]" />
 

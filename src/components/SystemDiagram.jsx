@@ -25,49 +25,49 @@ const nodes = [
     id: 'ventilator',
     x: 610,
     y: 74,
-    label: 'Roof Ventilators',
-    solution: 'smoke-ventilators',
-    text: 'Natural ventilators open on the same signal, releasing buoyant hot gases through the tested aerodynamic free area.',
+    label: 'Smoke Ventilators',
+    solution: 'smoke-ventilation',
+    text: 'Natural smoke ventilators open on the same signal, releasing buoyant hot gases through the designed ventilation openings.',
   },
   {
     id: 'extract',
     x: 782,
     y: 96,
     label: 'Extract Plant',
-    solution: 'smoke-extraction-systems',
-    text: 'F300 / F400 rated fans draw from the reservoir at the design extract rate, balanced against the make-up air provision.',
+    solution: 'smoke-ventilation',
+    text: 'Dedicated smoke extraction fans, certified to EN 12101-3, draw from the reservoir at the design extract rate, balanced against the replacement air provision.',
   },
   {
     id: 'makeup',
     x: 700,
     y: 300,
-    label: 'Make-up Air',
-    solution: 'smoke-extraction-systems',
-    text: 'Low-level inlet air replaces the extracted volume at a controlled velocity, preventing plug-holing of the smoke layer.',
+    label: 'Replacement Air',
+    solution: 'smoke-ventilation',
+    text: 'Low-level inlet air replaces the extracted volume at a controlled velocity, so the extract system delivers the airflow the design assumes.',
   },
   {
-    id: 'pressurisation',
+    id: 'natural',
     x: 128,
     y: 168,
-    label: 'Stair Pressurisation',
-    solution: 'staircase-pressurization',
-    text: 'The protected shaft is held at positive pressure so smoke cannot enter the escape route, with relief modulating door forces.',
+    label: 'Natural Ventilation',
+    solution: 'natural-ventilation',
+    text: 'Ventilation openings, louvres and actuated windows use wind pressure and temperature difference to move air, and are driven to their designed position when the smoke strategy calls for it.',
   },
   {
     id: 'jetfan',
     x: 360,
     y: 392,
-    label: 'Car Park Ventilation',
-    solution: null,
-    text: 'Impulse fans direct smoke away from escape routes toward the extract shaft, zoned to the level of the incident.',
+    label: 'Mechanical Ventilation',
+    solution: 'mechanical-ventilation',
+    text: 'Supply and exhaust fans, ductwork, grilles and louvres deliver controlled airflow to car parks, plant areas and back-of-house spaces.',
   },
   {
     id: 'panel',
     x: 880,
     y: 300,
-    label: 'Control & Automation',
-    solution: null,
-    text: 'The PLC smoke control panel executes the cause-and-effect sequence, monitors every device and presents firefighter override.',
+    label: 'Control & Integration',
+    solution: 'engineering-system-integration',
+    text: 'The smoke control panel executes the activation sequence and is coordinated with the fire alarm system, BMS, electrical systems and other building services.',
   },
 ];
 
@@ -77,7 +77,7 @@ const links = [
   ['panel', 'ventilator'],
   ['panel', 'extract'],
   ['panel', 'makeup'],
-  ['panel', 'pressurisation'],
+  ['panel', 'natural'],
   ['panel', 'jetfan'],
 ];
 
@@ -90,17 +90,17 @@ export default function SystemDiagram() {
 
   return (
     <div ref={ref} className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:gap-10">
-      <div className="relative overflow-hidden border border-white/10 bg-navy-950">
+      <div className="relative overflow-hidden border border-white/10 bg-navy-950 shadow-card">
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-60" />
         <svg viewBox="0 0 960 460" className="relative w-full" role="img" aria-label="Smoke control system architecture">
           <defs>
             <linearGradient id="sd-smoke" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#e2405d" stopOpacity="0.42" />
-              <stop offset="100%" stopColor="#e2405d" stopOpacity="0" />
+              <stop offset="0%" stopColor="#c8102e" stopOpacity="0.42" />
+              <stop offset="100%" stopColor="#c8102e" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="sd-struct" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#5d7cae" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#5d7cae" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#8c8c8c" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#8c8c8c" stopOpacity="0.15" />
             </linearGradient>
           </defs>
 
@@ -122,7 +122,7 @@ export default function SystemDiagram() {
           <g transform="translate(520 330)">
             <path
               d="M0 0 c-10 -16 4 -24 2 -38 8 8 20 14 20 26 0 8 -6 12 -12 12"
-              fill="#e2405d"
+              fill="#c8102e"
               opacity="0.85"
             >
               <animateTransform
@@ -138,7 +138,7 @@ export default function SystemDiagram() {
           {/* plume */}
           <path
             d="M524 322 C518 262 540 210 548 130"
-            stroke="#e2405d"
+            stroke="#c8102e"
             strokeWidth="1.2"
             fill="none"
             strokeDasharray="5 9"
@@ -148,7 +148,7 @@ export default function SystemDiagram() {
           </path>
 
           {/* stair shaft */}
-          <g stroke="#93a9cd" fill="none" strokeWidth="1.2" opacity="0.65">
+          <g stroke="#bfbfbf" fill="none" strokeWidth="1.2" opacity="0.65">
             <path d="M96 340 v-8 h26 v-16 h26 v-16 h26 v-16" />
             <path d="M96 268 v-8 h26 v-16 h26 v-16 h26 v-16" />
           </g>
@@ -190,8 +190,8 @@ export default function SystemDiagram() {
                 }}
               >
                 {on ? <circle r="22" fill="#c8102e" opacity="0.16" /> : null}
-                <circle r="13" fill={on ? '#c8102e' : '#111d38'} stroke={on ? '#f07084' : '#5d7cae'} strokeWidth="1.4" />
-                <circle r="4" fill={on ? '#fff' : '#93a9cd'} />
+                <circle r="13" fill={on ? '#c8102e' : '#111111'} stroke={on ? '#ff3b52' : '#8c8c8c'} strokeWidth="1.4" />
+                <circle r="4" fill={on ? '#fff' : '#bfbfbf'} />
                 <text
                   x="0"
                   y="-24"
@@ -199,7 +199,7 @@ export default function SystemDiagram() {
                   fontSize="11.5"
                   fontWeight="600"
                   letterSpacing="0.06em"
-                  fill={on ? '#ffffff' : '#93a9cd'}
+                  fill={on ? '#ffffff' : '#bfbfbf'}
                   style={{ textTransform: 'uppercase' }}
                 >
                   {n.label}
@@ -210,7 +210,7 @@ export default function SystemDiagram() {
         </svg>
       </div>
 
-      <div className="flex flex-col justify-center border border-white/10 bg-white/[0.03] p-7 md:p-8">
+      <div className="flex flex-col justify-center border border-white/10 bg-navy-950 p-7 shadow-card md:p-8">
         <span className="eyebrow-light">Interactive</span>
         <h3 className="h3 mt-4 text-white">{current.label}</h3>
         <p className="mt-4 text-[15px] leading-relaxed text-navy-200">{current.text}</p>
