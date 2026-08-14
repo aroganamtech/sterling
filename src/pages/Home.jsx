@@ -134,21 +134,6 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-10 grid gap-px border border-steel-200 bg-steel-200 sm:grid-cols-2">
-                {[
-                  ['Vent Engineering, UK', 'Exclusive Singapore distributor covering Asia and Australia'],
-                  ['Prime Curtain', 'Manufactured and tested in Singapore to EN 12101-1'],
-                  ['One accountable party', 'Design, supply, install, commission, service, maintain'],
-                  ['Engineering-led', 'Calculations and analysis before specification'],
-                ].map(([t, s]) => (
-                  <div key={t} className="bg-white px-6 py-5">
-                    <p className="text-[14px] font-semibold text-navy-900">{t}</p>
-                    <p className="mt-1 text-[13px] text-steel-500">{s}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
             <Reveal delay={280}>
               <Link to="/about" className="link-arrow mt-9">
                 About the company

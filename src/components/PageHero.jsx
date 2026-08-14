@@ -79,11 +79,13 @@ export default function PageHero({
       <div className={`shell relative ${compact ? 'py-14 md:py-16' : 'py-16 md:py-24'}`}>
         {aside ? (
           /* The left column keeps its original width and line breaks exactly.
-             On lg+ the aside is lifted out of flow into the empty band to the
-             right of the max-w-4xl text; below lg it simply stacks underneath. */
+             On xl+ the aside is lifted out of flow into the empty band to the
+             right of the max-w-4xl text; below xl there isn't reliably enough
+             room beside a full-width heading (1024-1279px measured the two
+             colliding), so it stacks underneath instead, same as on mobile. */
           <div className="relative">
             {content}
-            <div className="mt-10 lg:absolute lg:right-0 lg:top-1/2 lg:mt-0 lg:w-[344px] lg:-translate-y-1/2 xl:w-[380px]">
+            <div className="mt-10 xl:absolute xl:right-0 xl:top-1/2 xl:mt-0 xl:w-[380px] xl:-translate-y-1/2">
               {aside}
             </div>
           </div>

@@ -18,63 +18,6 @@ export const standardFamilies = [
     ],
   },
   {
-    code: 'NFPA',
-    name: 'National Fire Protection Association',
-    body: 'NFPA, United States',
-    summary:
-      'NFPA documents give the design methodology most commonly referenced on international projects, particularly for atria, transport tunnels and large-volume smoke management.',
-    parts: [
-      ['NFPA 92', 'Standard for Smoke Control Systems'],
-      ['NFPA 204', 'Standard for Smoke and Heat Venting'],
-      ['NFPA 130', 'Fixed Guideway Transit and Passenger Rail Systems'],
-      ['NFPA 502', 'Road Tunnels, Bridges and Limited Access Highways'],
-      ['NFPA 88A', 'Parking Structures'],
-      ['NFPA 101', 'Life Safety Code'],
-      ['NFPA 75', 'Information Technology Equipment'],
-      ['NFPA 850', 'Electric Generating Plants'],
-    ],
-  },
-  {
-    code: 'BS',
-    name: 'British Standards',
-    body: 'BSI, United Kingdom',
-    summary:
-      'BS documents remain widely used across the region for smoke ventilation design guidance and for the overall fire safety design of buildings.',
-    parts: [
-      ['BS 7346-4', 'Functional recommendations for smoke and heat exhaust'],
-      ['BS 7346-7', 'Code of practice — car park ventilation'],
-      ['BS 7346-8', 'Code of practice — smoke control systems'],
-      ['BS 9999', 'Fire safety in the design and use of buildings'],
-      ['BS 9991', 'Fire safety — residential buildings'],
-      ['BS EN 12101-13', 'Pressure differential systems — design'],
-    ],
-  },
-  {
-    code: 'ASHRAE',
-    name: 'ASHRAE',
-    body: 'American Society of Heating, Refrigerating and Air-Conditioning Engineers',
-    summary:
-      'ASHRAE guidance underpins the airflow, pressurisation and HVAC interface engineering that smoke control depends on.',
-    parts: [
-      ['ASHRAE Handbook — HVAC Applications', 'Fire and smoke control chapter'],
-      ['Handbook of Smoke Control Engineering', 'Design methodology and calculation'],
-      ['ASHRAE 62.1', 'Ventilation for acceptable indoor air quality'],
-    ],
-  },
-  {
-    code: 'IBC',
-    name: 'International Building Code',
-    body: 'International Code Council',
-    summary:
-      'The IBC sets the prescriptive framework for smoke control in jurisdictions that adopt the I-Codes, including atrium, underground and covered mall provisions.',
-    parts: [
-      ['IBC Chapter 9', 'Fire protection and life safety systems'],
-      ['IBC Section 909', 'Smoke control systems'],
-      ['IBC Section 404', 'Atriums'],
-      ['IBC Section 405', 'Underground buildings'],
-    ],
-  },
-  {
     code: 'SCDF',
     name: 'SCDF Fire Code',
     body: 'Singapore Civil Defence Force',

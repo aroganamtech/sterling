@@ -164,10 +164,10 @@ export default function ProductDetail() {
                     Ask an engineer
                   </button>
                   <span className="h-4 w-px bg-steel-200" />
-                  <Link to="/resources/downloads" className="link-arrow">
+                  {/* <Link to="/resources/downloads" className="link-arrow">
                     Technical datasheet
                     <Icon name="download" className="h-3.5 w-3.5" />
-                  </Link>
+                  </Link> */}
                 </div>
               </Reveal>
             </div>

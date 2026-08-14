@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../components/Icon';
 import Seo from '../../components/Seo';
@@ -7,14 +7,12 @@ import SmokeCanvas from '../../components/SmokeCanvas';
 import Reveal, { RevealGroup } from '../../components/Reveal';
 import Section, { SectionHead } from '../../components/Section';
 import ProductCard from '../../components/products/ProductCard';
+import ProductShowcase from '../../components/hero/ProductShowcase';
 import AIAssistantModal from '../../components/products/AIAssistantModal';
 import BrochureButton from '../../components/products/BrochureButton';
 import { categoriesWithProducts, products } from '../../data/products';
 import { illustration } from '../../lib/productImages';
 import fireMid from '../../assets/hero/fire-1400.jpg';
-
-/* 3D hero presentation — deferred so the hero copy paints before three.js loads */
-const HeroProduct3D = lazy(() => import('../../components/products/HeroProduct3D'));
 
 /* ---------------------------------------------------------------------------
    Products — one section per category, laid out content-left / image-right as
@@ -67,9 +65,10 @@ export default function ProductsIndex() {
         lede="Four product families — smoke containment, natural ventilation, smoke ventilation and mechanical smoke extraction — engineered, certified and delivered as part of a complete smoke control strategy rather than as line items on a schedule."
         breadcrumbs={[{ label: 'Products' }]}
         aside={
-          <Suspense fallback={<div className="h-[320px] w-full sm:h-[380px] lg:h-[400px]" />}>
-            <HeroProduct3D />
-          </Suspense>
+          <ProductShowcase
+            stageHeightClass="h-[min(36vh,285px)] sm:h-[min(46vh,380px)] md:h-[min(52vh,420px)] lg:h-[360px] xl:h-[400px]"
+            showAllProductsLink={false}
+          />
         }
         actions={
           <>

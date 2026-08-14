@@ -35,7 +35,11 @@ const caption = {
   exit: { opacity: 0, y: -10 },
 };
 
-export default function ProductShowcase() {
+export default function ProductShowcase({
+  maxWidthClass = 'max-w-[680px]',
+  stageHeightClass = 'h-[min(36vh,285px)] sm:h-[min(46vh,380px)] md:h-[min(52vh,460px)] lg:h-[min(56vh,540px)]',
+  showAllProductsLink = true,
+}) {
   const reduced = useReducedMotion();
   const total = Array.isArray(heroProducts) ? heroProducts.length : 0;
 
@@ -129,10 +133,10 @@ export default function ProductShowcase() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto w-full max-w-[680px]">
+      <div className={`relative mx-auto w-full ${maxWidthClass}`}>
         {/* ------------------------------ stage ------------------------------ */}
         <div
-          className="relative h-[min(36vh,285px)] w-full touch-pan-y select-none overflow-hidden border border-steel-200 bg-white shadow-[0_40px_90px_-35px_rgba(11,23,36,.22)] sm:h-[min(46vh,380px)] md:h-[min(52vh,460px)] lg:h-[min(56vh,540px)]"
+          className={`relative ${stageHeightClass} w-full touch-pan-y select-none overflow-hidden border border-steel-200 bg-white shadow-[0_40px_90px_-35px_rgba(11,23,36,.22)]`}
           style={{ minHeight: 220 }}
           onPointerDown={onPointerDown}
           onPointerUp={onPointerUp}
@@ -248,13 +252,15 @@ export default function ProductShowcase() {
             ))}
           </div>
 
-          <Link
-            to="/products"
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-steel-500 transition-colors hover:text-signal-600"
-          >
-            View all products
-            <Icon name="arrow" className="h-3.5 w-3.5" />
-          </Link>
+          {showAllProductsLink ? (
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-steel-500 transition-colors hover:text-signal-600"
+            >
+              View all products
+              <Icon name="arrow" className="h-3.5 w-3.5" />
+            </Link>
+          ) : null}
         </div>
 
         <p className="sr-only" aria-live="polite">
